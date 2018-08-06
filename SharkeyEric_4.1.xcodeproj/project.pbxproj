@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AA8DE242117AB2F00A2765F /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA8DE232117AB2F00A2765F /* ImageCollectionViewCell.swift */; };
 		4AB8267A2116946B0035F7E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB826792116946B0035F7E6 /* AppDelegate.swift */; };
 		4AB8267C2116946B0035F7E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8267B2116946B0035F7E6 /* ViewController.swift */; };
 		4AB8267F2116946B0035F7E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AB8267D2116946B0035F7E6 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AA8DE232117AB2F00A2765F /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		4AB826762116946B0035F7E6 /* SharkeyEric_4.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharkeyEric_4.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB826792116946B0035F7E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AB8267B2116946B0035F7E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				4AB826792116946B0035F7E6 /* AppDelegate.swift */,
 				4AB8267B2116946B0035F7E6 /* ViewController.swift */,
 				4AB8267D2116946B0035F7E6 /* Main.storyboard */,
+				4AA8DE232117AB2F00A2765F /* ImageCollectionViewCell.swift */,
 				4AB826802116946C0035F7E6 /* Assets.xcassets */,
 				4AB826822116946C0035F7E6 /* LaunchScreen.storyboard */,
 				4AB826852116946C0035F7E6 /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA8DE242117AB2F00A2765F /* ImageCollectionViewCell.swift in Sources */,
 				4AB8267C2116946B0035F7E6 /* ViewController.swift in Sources */,
 				4AB8267A2116946B0035F7E6 /* AppDelegate.swift in Sources */,
 			);
