@@ -7,10 +7,12 @@
 //
 
 import UIKit
-import CoreAudio
+import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var imageCollection: [UIImageView]!
+    
+    var player = AVAudioPlayer()
     
     var iPadImages: [UIImage] = [#imageLiteral(resourceName: "casino dice"),#imageLiteral(resourceName: "casino dice"),#imageLiteral(resourceName: "casino token"),#imageLiteral(resourceName: "casino token"),#imageLiteral(resourceName: "minerals blue stone"),#imageLiteral(resourceName: "minerals blue stone"),#imageLiteral(resourceName: "minerals red stone"),#imageLiteral(resourceName: "minerals red stone"),#imageLiteral(resourceName: "music microphone"),#imageLiteral(resourceName: "music microphone")]
     var iPhoneImages: [UIImage] = [#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask"),#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask")]
@@ -18,7 +20,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         for image in imageCollection{
             image.backgroundColor = UIColor.black
             image.layer.cornerRadius = 5
@@ -66,8 +67,6 @@ class ViewController: UIViewController {
         // For loop to add an UITapGestureRecognizer to each imageView and set the user interaction to true and adding images.
         for image in imageCollection{
             //MARK: Add countdown.
-
-            
             //MARK: Turn play button to a stop button and reset the playing field.
             image.backgroundColor = UIColor.cyan
             let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
@@ -83,6 +82,34 @@ class ViewController: UIViewController {
                 image.image = iPhoneImages[Int(index)]
                 iPhoneImages.remove(at: Int(index))
             }
+        }
+        playAudio()
+        
+    }
+    
+    func playAudio(){
+        if let path = Bundle.main.path(forResource: "countdown", ofType: "wav"){
+            do{
+                let url = URL(fileURLWithPath: path)
+                player = try AVAudioPlayer(contentsOf: url)
+                player.delegate = self
+                player.prepareToPlay()
+            } catch{
+                print(error.localizedDescription)
+            }
+            
+            player.play()
+            
+        }
+        
+    }
+    
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        print("What")
+        for image in imageCollection{
+            image.backgroundColor = UIColor.black
+            image.image = nil
         }
     }
 }

@@ -24,6 +24,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZC-hN-DO9">
                                         <rect key="frame" x="192" y="22" width="30" height="30"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                        </accessibility>
                                         <state key="normal" title="Play"/>
                                         <connections>
                                             <action selector="playButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fNn-Zf-dEK"/>
