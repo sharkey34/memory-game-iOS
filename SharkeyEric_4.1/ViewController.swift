@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(imageCollection.count)
         for image in imageCollection{
             image.backgroundColor = UIColor.black
         }
@@ -31,7 +31,6 @@ class ViewController: UIViewController {
     @objc func imageTapped(sender: UITapGestureRecognizer){
         print("tapped")
         guard let imageView = sender.view else {return}
-        
         switch selectedImage.count {
         case 0:
             selectedImage.append(imageView.tag)
@@ -39,8 +38,8 @@ class ViewController: UIViewController {
         case 1:
             selectedImage.append(imageView.tag)
             //MARK: Show images clicked.
-            
-            if imageCollection[selectedImage[0]].image == imageCollection[selectedImage[1]].image{
+            if imageCollection[selectedImage[0]].image == imageCollection[selectedImage[1]].image {
+             
                 //MARK: Play correct sound.
                 for index in selectedImage{
                     imageCollection[index].image = nil
