@@ -10,8 +10,8 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, AVAudioPlayerDelegate {
+    
     @IBOutlet var imageCollection: [UIImageView]!
-    @IBOutlet var viewCollection: [UIView]!
     
     var player = AVAudioPlayer()
     
@@ -22,13 +22,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for view in viewCollection{
-            let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
-            view.isUserInteractionEnabled = true
-            view.addGestureRecognizer(tap)
-            view.backgroundColor = UIColor.cyan
-            view.layer.cornerRadius = 10
-        }
         
         for image in imageCollection{
             image.backgroundColor = UIColor.cyan
@@ -44,29 +37,30 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @objc func imageTapped(sender: UITapGestureRecognizer){
         print("tapped")
         guard let imageView = sender.view else {return}
+        
         switch selectedImage.count {
         case 0:
-            imageCollection[imageView.tag].isHidden = false
             selectedImage.append(imageView.tag)
             imageView.isUserInteractionEnabled = false
+            imageCollection[imageView.tag].image = imageArray[imageView.tag]
         //MARK: Show image when clicked.
         case 1:
-            imageCollection[imageView.tag].isHidden = false
+            imageCollection[imageView.tag].image = imageArray[imageView.tag]
             selectedImage.append(imageView.tag)
             imageView.isUserInteractionEnabled = false
             //MARK: Show image clicked.
-            if imageCollection[selectedImage[0]].image == imageCollection[selectedImage[1]].image {
+            if imageArray[selectedImage[0]] == imageArray[selectedImage[1]] {
                 
                 //MARK: Play correct sound.
                 for index in selectedImage{
-                    viewCollection[index].backgroundColor = UIColor.black
-                    imageCollection[index].isHidden = true
+                    imageCollection[index].backgroundColor = UIColor.black
+                    imageCollection[index].image = nil
                 }
             } else {
                 //MARK: Play incorrect sound and flip cards back over.
                 for index in selectedImage{
-                    viewCollection[index].isUserInteractionEnabled = true
-                    imageCollection[index].isHidden = true
+                    imageCollection[index].isUserInteractionEnabled = true
+                    imageCollection[index].image = nil
                 }
                 print("You suck")
             }
@@ -83,7 +77,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             //MARK: Turn play button to a stop button and reset the playing field.
             
             let index = arc4random_uniform(UInt32(iPhoneImages.count))
-            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
+            image.isUserInteractionEnabled = true
+            image.addGestureRecognizer(tap)
             if iPhoneImages.count == 0{
                 image.image = iPadImages[Int(index)]
                 imageArray.append(iPadImages[Int(index)])
@@ -120,7 +116,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("What")
         for image in imageCollection{
-            image.isHidden = true
+            image.image = nil
         }
     }
 }
