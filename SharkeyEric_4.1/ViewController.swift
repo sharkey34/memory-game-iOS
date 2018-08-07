@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreAudio
 
 class ViewController: UIViewController {
     @IBOutlet var imageCollection: [UIImageView]!
@@ -17,9 +18,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(imageCollection.count)
+        
         for image in imageCollection{
             image.backgroundColor = UIColor.black
+            image.layer.cornerRadius = 5
         }
     }
 
@@ -34,20 +36,24 @@ class ViewController: UIViewController {
         switch selectedImage.count {
         case 0:
             selectedImage.append(imageView.tag)
+            imageView.isUserInteractionEnabled = false
         //MARK: Show image when clicked.
         case 1:
             selectedImage.append(imageView.tag)
-            //MARK: Show images clicked.
+            imageView.isUserInteractionEnabled = false
+            //MARK: Show image clicked.
             if imageCollection[selectedImage[0]].image == imageCollection[selectedImage[1]].image {
              
                 //MARK: Play correct sound.
                 for index in selectedImage{
                     imageCollection[index].image = nil
                     imageCollection[index].backgroundColor = UIColor.black
-                    imageCollection[index].isUserInteractionEnabled = false
                 }
             } else {
                 //MARK: Play incorrect sound and flip cards back over.
+                for index in selectedImage{
+                    imageCollection[index].isUserInteractionEnabled = true
+                }
                 print("You suck")
             }
             selectedImage.removeAll()
@@ -63,7 +69,6 @@ class ViewController: UIViewController {
 
             
             //MARK: Turn play button to a stop button and reset the playing field.
-            
             image.backgroundColor = UIColor.cyan
             let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
             image.isUserInteractionEnabled = true
