@@ -35,6 +35,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     @objc func imageTapped(sender: UITapGestureRecognizer){
         print("tapped")
+        playAudio(resource: "tap", type: "mp3")
         guard let imageView = sender.view else {return}
         
         switch selectedImage.count {
@@ -52,6 +53,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             //MARK: Show image clicked.
             if imageArray[selectedImage[0]] == imageArray[selectedImage[1]] {
                 
+                playAudio(resource: "correct", type: "wav")
                 //MARK: Play correct sound.
                 for index in selectedImage{
                     imageCollection[index].backgroundColor = UIColor.black
@@ -59,6 +61,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 }
             } else {
                 //MARK: Play incorrect sound and flip cards back over.
+                playAudio(resource: "incorrect", type: "wav")
                 for index in selectedImage{
                     imageCollection[index].isUserInteractionEnabled = true
                     imageCollection[index].image = nil
@@ -119,7 +122,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             do{
                 let url = URL(fileURLWithPath: path)
                 player = try AVAudioPlayer(contentsOf: url)
-                player.delegate = self
+                
+                if resource == "countdown"{
+                    player.delegate = self
+                }
                 player.prepareToPlay()
             } catch{
                 print(error.localizedDescription)
