@@ -98,6 +98,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBAction func playButtonSelected(_ sender: UIButton) {
         // For loop to add an UITapGestureRecognizer to each imageView and set the user interaction to true and adding images.
+        
         if sender.titleLabel?.text == "Play"{
         for image in iPhoneCollection{
             image.backgroundColor = UIColor.cyan
@@ -108,6 +109,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             image.isUserInteractionEnabled = true
             image.addGestureRecognizer(tap)
             
+            //MARK: Instead of using the array of arrays of images then 
             if iPhoneImages[0].count == 0{
                 let index = arc4random_uniform(UInt32(iPhoneImages[1].count))
                 image.image = iPhoneImages[1][Int(index)]
