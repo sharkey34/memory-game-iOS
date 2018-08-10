@@ -10,10 +10,16 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, AVAudioPlayerDelegate {
+    @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet weak var movesTextLabel: UILabel!
+    @IBOutlet weak var timeAmountLabel: UILabel!
+    @IBOutlet weak var numMovesLabel: UILabel!
     
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet var iPhoneCollection: [UIImageView]!
+    @IBOutlet weak var timerLabel: UILabel!
     
     var player = AVAudioPlayer()
     var iPhoneImages: [[UIImage]] = [[#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask"),#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask")],[#imageLiteral(resourceName: "casino dice"),#imageLiteral(resourceName: "casino dice"),#imageLiteral(resourceName: "casino token"),#imageLiteral(resourceName: "casino token"),#imageLiteral(resourceName: "minerals blue stone"),#imageLiteral(resourceName: "minerals blue stone"),#imageLiteral(resourceName: "minerals red stone"),#imageLiteral(resourceName: "minerals red stone"),#imageLiteral(resourceName: "music microphone"),#imageLiteral(resourceName: "music microphone")]]
@@ -23,6 +29,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var numMoves: Int = 0
     var device = ""
     var numImages = 0
+    var timer = Timer()
+    var timeElapsed = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +46,17 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             print("Device Unsepecified.")
         }
         
+        
         playButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        winLabel.text = ""
+        movesTextLabel.text = ""
+        timeAmountLabel.text = ""
+        numMovesLabel.text = ""
+        timeLabel.text = ""
         movesLabel.text = ""
-        var counter = 0
+        timerLabel.text = ""
+        
         for image in iPhoneCollection[...numImages]{
-            counter += 1
-        print(counter)
             image.backgroundColor = UIColor.black
             image.layer.cornerRadius = 10
         }
@@ -64,32 +77,32 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             selectedImage.append(imageView.tag)
             imageView.isUserInteractionEnabled = false
             iPhoneCollection[imageView.tag].image = imageArray[imageView.tag]
-        //MARK: Show image when clicked.
         case 1:
             numMoves += 1
             movesLabel.text = "Moves: \(numMoves)"
             selectedImage.append(imageView.tag)
             imageView.isUserInteractionEnabled = false
             iPhoneCollection[imageView.tag].image = imageArray[imageView.tag]
-            //MARK: Show image clicked.
-            if imageArray[selectedImage[0]] == imageArray[selectedImage[1]] {
-                
-                playAudio(resource: "correct", type: "wav")
-                //MARK: Play correct sound.
-                for index in selectedImage{
-                    iPhoneCollection[index].backgroundColor = UIColor.black
-                    iPhoneCollection[index].image = nil
+            
+            DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) {
+                if self.imageArray[self.selectedImage[0]] == self.imageArray[self.selectedImage[1]] {
+                    self.playAudio(resource: "correct", type: "wav")
+                    for index in self.selectedImage{
+                        self.iPhoneCollection[index].backgroundColor = UIColor.black
+                        self.iPhoneCollection[index].image = nil
+                    }
+                    self.alert()
+                } else {
+                    self.playAudio(resource: "incorrect", type: "wav")
+                    for index in self.selectedImage{
+                        self.iPhoneCollection[index].isUserInteractionEnabled = true
+                        self.iPhoneCollection[index].image = nil
+                    }
+                    print("You suck")
                 }
-            } else {
-                //MARK: Play incorrect sound and flip cards back over.
-                playAudio(resource: "incorrect", type: "wav")
-                for index in selectedImage{
-                    iPhoneCollection[index].isUserInteractionEnabled = true
-                    iPhoneCollection[index].image = nil
-                }
-                print("You suck")
+                self.selectedImage.removeAll()
+
             }
-            selectedImage.removeAll()
         default:
             print("Invalid Index")
         }
@@ -98,6 +111,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBAction func playButtonSelected(_ sender: UIButton) {
         // For loop to add an UITapGestureRecognizer to each imageView and set the user interaction to true and adding images.
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        
         
         if sender.titleLabel?.text == "Play"{
         for image in iPhoneCollection{
@@ -137,6 +152,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             imageArray = []
             movesLabel.text = "Moves:"
             sender.setTitle("Play", for: .normal)
+            
+            timer.invalidate()
         }
     }
     
@@ -162,6 +179,30 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             }
             player.play()
         }
+    }
+    
+    func alert(){
+        var counter = -1
+        
+        for image in iPhoneCollection{
+            if image.backgroundColor == UIColor.black{
+                counter += 1
+            }
+        }
+        
+        if counter == numImages {
+            
+            winLabel.text = "You Win!!!!"
+            movesTextLabel.text = "Moves:"
+            numMovesLabel.text = "\(numMoves)"
+            timeLabel.text = "Time:"
+            
+        }
+    }
+    
+    @objc func updateTimer(){
+        timeElapsed += timer.timeInterval
+            timerLabel.text = "\(timeElapsed)"
     }
 }
 
