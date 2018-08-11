@@ -36,31 +36,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        switch UIDevice.current.userInterfaceIdiom {
-        case .phone:
-            device = "phone"
-            numImages = 19
-        case .pad:
-            device = "pad"
-            numImages = 29
-        default:
-            print("Device Unsepecified.")
-        }
-        
-        
-        playButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        winLabel.text = ""
-        movesTextLabel.text = ""
-        timeAmountLabel.text = ""
-        numMovesLabel.text = ""
-        timeLabel.text = ""
-        movesLabel.text = ""
-        timerLabel.text = ""
-        
-        for image in iPhoneCollection[...numImages]{
-            image.backgroundColor = UIColor.black
-            image.layer.cornerRadius = 10
-        }
+        setupViewDidLoad()
     }
     
     override func didReceiveMemoryWarning() {
@@ -236,6 +212,34 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             timeMinutes += 1
         }
         timerLabel.text = "Min: \(timeMinutes) Sec:\(timeSeconds)"
+    }
+    
+    func setupViewDidLoad(){
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            device = "phone"
+            numImages = 19
+        case .pad:
+            device = "pad"
+            numImages = 29
+        default:
+            print("Device Unsepecified.")
+        }
+        
+        
+        playButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        winLabel.text = ""
+        movesTextLabel.text = ""
+        timeAmountLabel.text = ""
+        numMovesLabel.text = ""
+        timeLabel.text = ""
+        movesLabel.text = ""
+        timerLabel.text = ""
+        
+        for image in iPhoneCollection[...numImages]{
+            image.backgroundColor = UIColor.black
+            image.layer.cornerRadius = 10
+        }
     }
 }
 
