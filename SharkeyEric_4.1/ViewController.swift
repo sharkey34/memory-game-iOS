@@ -111,56 +111,64 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 print("Invalid Index")
             }
         } else {
-            print("image flipped.")
+            print("cards flipped")
         }
         
     }
-    
+
     @IBAction func playButtonSelected(_ sender: UIButton) {
-        // For loop to add an UITapGestureRecognizer to each imageView and set the user interaction to true and adding images.
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        
+        winLabel.text = ""
+        movesTextLabel.text = ""
+        numMovesLabel.text = ""
+        timeLabel.text = ""
+        timeAmountLabel.text = ""
+        // For loop to add an UITapGestureRecognizer to each imageView and set the user interaction to true and adding images
         
         if sender.titleLabel?.text == "Play"{
-            for image in iPhoneCollection{
-                image.backgroundColor = UIColor.cyan
-                //MARK: Add countdown.
-                //MARK: Turn play button to a stop button and reset the playing field.
-                
-                let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
-                image.isUserInteractionEnabled = true
-                image.addGestureRecognizer(tap)
-                
-                //MARK: Instead of using the array of arrays of images then
-                if iPhoneImages[0].count == 0{
-                    let index = arc4random_uniform(UInt32(iPhoneImages[1].count))
-                    image.image = iPhoneImages[1][Int(index)]
-                    imageArray.append(iPhoneImages[1][Int(index)])
-                    iPhoneImages[1].remove(at: Int(index))
-                    
-                } else {
-                    let index = arc4random_uniform(UInt32(iPhoneImages[0].count))
-                    image.image = iPhoneImages[0][Int(index)]
-                    imageArray.append(image.image!)
-                    iPhoneImages[0].remove(at: Int(index))
-                }
-                playAudio(resource: "countdown", type: "wav")
+            if timer.isValid == false{
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
             }
-            sender.setTitle("Stop", for: .normal)
+        for image in iPhoneCollection{
+            image.backgroundColor = UIColor.cyan
+            //MARK: Add countdown.
+            //MARK: Turn play button to a stop button and reset the playing field.
+                
+            let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
+            image.isUserInteractionEnabled = true
+            image.addGestureRecognizer(tap)
+            
+            //MARK: Instead of using the array of arrays of images then 
+            if iPhoneImages[0].count == 0{
+                let index = arc4random_uniform(UInt32(iPhoneImages[1].count))
+                image.image = iPhoneImages[1][Int(index)]
+                imageArray.append(iPhoneImages[1][Int(index)])
+                iPhoneImages[1].remove(at: Int(index))
+                
+            } else {
+                let index = arc4random_uniform(UInt32(iPhoneImages[0].count))
+                image.image = iPhoneImages[0][Int(index)]
+                imageArray.append(image.image!)
+                iPhoneImages[0].remove(at: Int(index))
+            }
+                playAudio(resource: "countdown", type: "wav")
+        }
+                  sender.setTitle("Stop", for: .normal)
         } else if sender.titleLabel?.text == "Stop"{
             for image in iPhoneCollection{
                 image.image = nil
                 image.backgroundColor = UIColor.black
             }
-            
+        
+            timer.invalidate()
+            timeSeconds = 0
+            timeMinutes = 0
             iPhoneImages = images
             numMoves = 0
             selectedImage = []
             imageArray = []
             movesLabel.text = "Moves:"
+            timerLabel.text = "Min: \(timeMinutes) Sec:\(timeSeconds)"
             sender.setTitle("Play", for: .normal)
-            
-            timer.invalidate()
         }
     }
     
@@ -198,14 +206,25 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
         if counter == numImages {
+            
+            
+            timer.invalidate()
             winLabel.text = "You Win!!!!"
             movesTextLabel.text = "Moves:"
             numMovesLabel.text = "\(numMoves)"
             timeLabel.text = "Time:"
             
-            if let time = timerLabel.text{
-                timeAmountLabel.text = "\(time)"
-            }
+            playButton.setTitle("Play", for: .normal)
+            iPhoneImages = images
+            numMoves = 0
+            selectedImage = []
+            imageArray = []
+            movesLabel.text = "Moves:"
+            timeAmountLabel.text = ""
+            
+            timeAmountLabel.text = "\(timeMinutes) Minute(s) \(timeSeconds) Seconds"
+            timeSeconds = 0
+            timeMinutes = 0
         }
     }
     
@@ -216,8 +235,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             timeSeconds = 0
             timeMinutes += 1
         }
-        
-        timerLabel.text = "\(timeMinutes):\(timeSeconds)"
+        timerLabel.text = "Min: \(timeMinutes) Sec:\(timeSeconds)"
     }
 }
 
