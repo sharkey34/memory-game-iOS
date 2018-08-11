@@ -30,7 +30,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var device = ""
     var numImages = 0
     var timer = Timer()
-    var timeElapsed = 0.0
+    var timeSeconds = 0
+    var timeMinutes = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,78 +69,84 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     @objc func imageTapped(sender: UITapGestureRecognizer){
-        print("tapped")
-        playAudio(resource: "tap", type: "mp3")
-        guard let imageView = sender.view else {return}
         
-        switch selectedImage.count {
-        case 0:
-            selectedImage.append(imageView.tag)
-            imageView.isUserInteractionEnabled = false
-            iPhoneCollection[imageView.tag].image = imageArray[imageView.tag]
-        case 1:
-            numMoves += 1
-            movesLabel.text = "Moves: \(numMoves)"
-            selectedImage.append(imageView.tag)
-            imageView.isUserInteractionEnabled = false
-            iPhoneCollection[imageView.tag].image = imageArray[imageView.tag]
+        
+        guard let imageView = sender.view as? UIImageView else {return}
+        
+        if imageView.image == nil{
+            playAudio(resource: "tap", type: "mp3")
             
-            DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) {
-                if self.imageArray[self.selectedImage[0]] == self.imageArray[self.selectedImage[1]] {
-                    self.playAudio(resource: "correct", type: "wav")
-                    for index in self.selectedImage{
-                        self.iPhoneCollection[index].backgroundColor = UIColor.black
-                        self.iPhoneCollection[index].image = nil
+            switch selectedImage.count {
+            case 0:
+                selectedImage.append(imageView.tag)
+                imageView.isUserInteractionEnabled = false
+                iPhoneCollection[imageView.tag].image = imageArray[imageView.tag]
+            case 1:
+                numMoves += 1
+                movesLabel.text = "Moves: \(numMoves)"
+                selectedImage.append(imageView.tag)
+                imageView.isUserInteractionEnabled = false
+                iPhoneCollection[imageView.tag].image = imageArray[imageView.tag]
+                
+                DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) {
+                    if self.imageArray[self.selectedImage[0]] == self.imageArray[self.selectedImage[1]] {
+                        self.playAudio(resource: "correct", type: "wav")
+                        for index in self.selectedImage{
+                            self.iPhoneCollection[index].backgroundColor = UIColor.black
+                            self.iPhoneCollection[index].image = nil
+                        }
+                        self.alert()
+                    } else {
+                        self.playAudio(resource: "incorrect", type: "wav")
+                        for index in self.selectedImage{
+                            self.iPhoneCollection[index].isUserInteractionEnabled = true
+                            self.iPhoneCollection[index].image = nil
+                        }
+                        print("You suck")
                     }
-                    self.alert()
-                } else {
-                    self.playAudio(resource: "incorrect", type: "wav")
-                    for index in self.selectedImage{
-                        self.iPhoneCollection[index].isUserInteractionEnabled = true
-                        self.iPhoneCollection[index].image = nil
-                    }
-                    print("You suck")
+                    self.selectedImage.removeAll()
+                    
                 }
-                self.selectedImage.removeAll()
-
+            default:
+                print("Invalid Index")
             }
-        default:
-            print("Invalid Index")
+        } else {
+            print("image flipped.")
         }
         
     }
-
+    
     @IBAction func playButtonSelected(_ sender: UIButton) {
         // For loop to add an UITapGestureRecognizer to each imageView and set the user interaction to true and adding images.
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
         
         if sender.titleLabel?.text == "Play"{
-        for image in iPhoneCollection{
-            image.backgroundColor = UIColor.cyan
-            //MARK: Add countdown.
-            //MARK: Turn play button to a stop button and reset the playing field.
+            for image in iPhoneCollection{
+                image.backgroundColor = UIColor.cyan
+                //MARK: Add countdown.
+                //MARK: Turn play button to a stop button and reset the playing field.
                 
-            let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
-            image.isUserInteractionEnabled = true
-            image.addGestureRecognizer(tap)
-            
-            //MARK: Instead of using the array of arrays of images then 
-            if iPhoneImages[0].count == 0{
-                let index = arc4random_uniform(UInt32(iPhoneImages[1].count))
-                image.image = iPhoneImages[1][Int(index)]
-                imageArray.append(iPhoneImages[1][Int(index)])
-                iPhoneImages[1].remove(at: Int(index))
+                let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
+                image.isUserInteractionEnabled = true
+                image.addGestureRecognizer(tap)
                 
-            } else {
-                let index = arc4random_uniform(UInt32(iPhoneImages[0].count))
-                image.image = iPhoneImages[0][Int(index)]
-                imageArray.append(image.image!)
-                iPhoneImages[0].remove(at: Int(index))
-            }
+                //MARK: Instead of using the array of arrays of images then
+                if iPhoneImages[0].count == 0{
+                    let index = arc4random_uniform(UInt32(iPhoneImages[1].count))
+                    image.image = iPhoneImages[1][Int(index)]
+                    imageArray.append(iPhoneImages[1][Int(index)])
+                    iPhoneImages[1].remove(at: Int(index))
+                    
+                } else {
+                    let index = arc4random_uniform(UInt32(iPhoneImages[0].count))
+                    image.image = iPhoneImages[0][Int(index)]
+                    imageArray.append(image.image!)
+                    iPhoneImages[0].remove(at: Int(index))
+                }
                 playAudio(resource: "countdown", type: "wav")
-        }
-                  sender.setTitle("Stop", for: .normal)
+            }
+            sender.setTitle("Stop", for: .normal)
         } else if sender.titleLabel?.text == "Stop"{
             for image in iPhoneCollection{
                 image.image = nil
@@ -191,18 +198,26 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
         if counter == numImages {
-            
             winLabel.text = "You Win!!!!"
             movesTextLabel.text = "Moves:"
             numMovesLabel.text = "\(numMoves)"
             timeLabel.text = "Time:"
             
+            if let time = timerLabel.text{
+                timeAmountLabel.text = "\(time)"
+            }
         }
     }
     
     @objc func updateTimer(){
-        timeElapsed += timer.timeInterval
-            timerLabel.text = "\(timeElapsed)"
+        timeSeconds += Int(timer.timeInterval)
+        
+        if timeSeconds == 60{
+            timeSeconds = 0
+            timeMinutes += 1
+        }
+        
+        timerLabel.text = "\(timeMinutes):\(timeSeconds)"
     }
 }
 
