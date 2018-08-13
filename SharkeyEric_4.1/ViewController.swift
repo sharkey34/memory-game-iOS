@@ -114,14 +114,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         if sender.titleLabel?.text == "Play"{
             
             switch UIDevice.current.userInterfaceIdiom {
-                // If the button was play and the user is using a phone.
-                // Then looping through the collection of imageVies and adding a tap gesture to each imageView.
+                // If the button was play and the user is using a phone and allowing user interaction
             case .phone:
                 for image in iPhoneCollection[...numImages]{
-                    
-                    let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
                     image.isUserInteractionEnabled = true
-                    image.addGestureRecognizer(tap)
                     image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
                     // Getting a random index setting the imageView image to a random image based on the index.
                     // Adding to the imageArray and removing the image from the iPhoneImages.
@@ -132,13 +128,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 }
                 // Setting the iPhoneImages array to the imageArray.
                 iPhoneImages = imageArray
-                // If the user is using an iPad then looping through the collection adding a tap gesture adding the random image and removing from iPadImages array.
+                // If the user is using an iPad then looping through the collection adding the random image and removing from iPadImages array.
             case .pad:
                 for image in iPhoneCollection[...numImages]{
                     image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
-                    let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
                     image.isUserInteractionEnabled = true
-                    image.addGestureRecognizer(tap)
                         let index = arc4random_uniform(UInt32(iPadImages.count))
                         image.image = iPadImages[Int(index)]
                         imageArray.append(image.image!)
@@ -150,13 +144,14 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     print("Device unspecified.")
                 }
             // Playing countdown audio and setting the buttons title to stop.
-            playAudio(resource: "countdown", type: "wav")
+            playAudio(resource: "countdown", type: "mp3")
                   sender.setTitle("Stop", for: .normal)
             
             // If the title equals stop then looping through the image collection and setting the images to nil and the backgroung color to blue.
         } else if sender.titleLabel?.text == "Stop"{
             for image in iPhoneCollection{
                 image.image = nil
+                image.isUserInteractionEnabled = false
                 image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
             }
         
@@ -264,6 +259,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             print("Device Unsepecified.")
         }
         
+        playButton.titleLabel?.adjustsFontSizeToFitWidth = true
         // Setting all the labels to empty.
         winLabel.text = ""
         movesTextLabel.text = ""
@@ -273,8 +269,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         movesLabel.text = ""
         timerLabel.text = ""
         
-        // Looping through the imageView collection and setting the background color and the cornerRadius.
+        // Looping through the imageView collection and setting the background color and the cornerRadius, and adding a tap gesture to the image views
         for image in iPhoneCollection[...numImages]{
+            let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
+            image.addGestureRecognizer(tap)
             image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
             image.layer.cornerRadius = 10
         }

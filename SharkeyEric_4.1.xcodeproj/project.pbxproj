@@ -10,7 +10,7 @@
 		4A24B2B0211B398500E3236B /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4A24B2AF211B398500E3236B /* correct.wav */; };
 		4A24B2B2211B398D00E3236B /* incorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4A24B2B1211B398D00E3236B /* incorrect.wav */; };
 		4A24B2B4211B399400E3236B /* tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4A24B2B3211B399400E3236B /* tap.mp3 */; };
-		4AA8DE28211A048300A2765F /* countdown.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4AA8DE27211A048300A2765F /* countdown.wav */; };
+		4AAC6A8521211C5F00F09C85 /* countdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AAC6A8421211C5F00F09C85 /* countdown.mp3 */; };
 		4AB8267A2116946B0035F7E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB826792116946B0035F7E6 /* AppDelegate.swift */; };
 		4AB8267C2116946B0035F7E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8267B2116946B0035F7E6 /* ViewController.swift */; };
 		4AB8267F2116946B0035F7E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AB8267D2116946B0035F7E6 /* Main.storyboard */; };
@@ -22,7 +22,7 @@
 		4A24B2AF211B398500E3236B /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
 		4A24B2B1211B398D00E3236B /* incorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incorrect.wav; sourceTree = "<group>"; };
 		4A24B2B3211B399400E3236B /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tap.mp3; sourceTree = "<group>"; };
-		4AA8DE27211A048300A2765F /* countdown.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = countdown.wav; sourceTree = "<group>"; };
+		4AAC6A8421211C5F00F09C85 /* countdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdown.mp3; sourceTree = "<group>"; };
 		4AB826762116946B0035F7E6 /* SharkeyEric_4.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharkeyEric_4.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB826792116946B0035F7E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AB8267B2116946B0035F7E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 				4AB8267B2116946B0035F7E6 /* ViewController.swift */,
 				4AB8267D2116946B0035F7E6 /* Main.storyboard */,
 				4AB826802116946C0035F7E6 /* Assets.xcassets */,
-				4AA8DE27211A048300A2765F /* countdown.wav */,
+				4AAC6A8421211C5F00F09C85 /* countdown.mp3 */,
 				4A24B2AF211B398500E3236B /* correct.wav */,
 				4A24B2B1211B398D00E3236B /* incorrect.wav */,
 				4A24B2B3211B399400E3236B /* tap.mp3 */,
@@ -137,9 +137,9 @@
 				4A24B2B0211B398500E3236B /* correct.wav in Resources */,
 				4AB826842116946C0035F7E6 /* LaunchScreen.storyboard in Resources */,
 				4AB826812116946C0035F7E6 /* Assets.xcassets in Resources */,
+				4AAC6A8521211C5F00F09C85 /* countdown.mp3 in Resources */,
 				4A24B2B4211B399400E3236B /* tap.mp3 in Resources */,
 				4A24B2B2211B398D00E3236B /* incorrect.wav in Resources */,
-				4AA8DE28211A048300A2765F /* countdown.wav in Resources */,
 				4AB8267F2116946B0035F7E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
