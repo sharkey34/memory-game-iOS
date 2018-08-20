@@ -16,6 +16,8 @@
 		4AB8267F2116946B0035F7E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AB8267D2116946B0035F7E6 /* Main.storyboard */; };
 		4AB826812116946C0035F7E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AB826802116946C0035F7E6 /* Assets.xcassets */; };
 		4AB826842116946C0035F7E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AB826822116946C0035F7E6 /* LaunchScreen.storyboard */; };
+		4ABD1AA3212B47AC0063AC74 /* ScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABD1AA2212B47AC0063AC74 /* ScoresTableViewController.swift */; };
+		4ABD1AA5212B47F90063AC74 /* ScoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABD1AA4212B47F90063AC74 /* ScoresTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		4AB826802116946C0035F7E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AB826832116946C0035F7E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4AB826852116946C0035F7E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ABD1AA2212B47AC0063AC74 /* ScoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresTableViewController.swift; sourceTree = "<group>"; };
+		4ABD1AA4212B47F90063AC74 /* ScoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				4A24B2B3211B399400E3236B /* tap.mp3 */,
 				4AB826822116946C0035F7E6 /* LaunchScreen.storyboard */,
 				4AB826852116946C0035F7E6 /* Info.plist */,
+				4ABD1AA2212B47AC0063AC74 /* ScoresTableViewController.swift */,
+				4ABD1AA4212B47F90063AC74 /* ScoresTableViewCell.swift */,
 			);
 			path = SharkeyEric_4.1;
 			sourceTree = "<group>";
@@ -153,6 +159,8 @@
 			files = (
 				4AB8267C2116946B0035F7E6 /* ViewController.swift in Sources */,
 				4AB8267A2116946B0035F7E6 /* AppDelegate.swift in Sources */,
+				4ABD1AA5212B47F90063AC74 /* ScoresTableViewCell.swift in Sources */,
+				4ABD1AA3212B47AC0063AC74 /* ScoresTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

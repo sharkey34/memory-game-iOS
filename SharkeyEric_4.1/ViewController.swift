@@ -24,16 +24,20 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var timerLabel: UILabel!
     
     // Creating variables for the audioPlayer, to hold the images for each device, number of moves, and other information needed in the application.
-    var player = AVAudioPlayer()
-    var iPhoneImages: [UIImage] = [#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask"),#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask")]
-    var iPadImages: [UIImage] = [#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask"),#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask"),#imageLiteral(resourceName: "casino dice"),#imageLiteral(resourceName: "casino dice"),#imageLiteral(resourceName: "casino token"),#imageLiteral(resourceName: "casino token"),#imageLiteral(resourceName: "minerals blue stone"),#imageLiteral(resourceName: "minerals blue stone"),#imageLiteral(resourceName: "minerals red stone"),#imageLiteral(resourceName: "minerals red stone"),#imageLiteral(resourceName: "music microphone"),#imageLiteral(resourceName: "music microphone")]
-    var selectedImage: [Int] = []
-    var imageArray: [UIImage] = []
-    var numMoves: Int = 0
-    var numImages = 0
-    var timer = Timer()
-    var timeSeconds = 0
-    var timeMinutes = 0
+    private var player = AVAudioPlayer()
+    private var iPhoneImages: [UIImage] = [#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask"),#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask")]
+    private var iPadImages: [UIImage] = [#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask"),#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask"),#imageLiteral(resourceName: "casino dice"),#imageLiteral(resourceName: "casino dice"),#imageLiteral(resourceName: "casino token"),#imageLiteral(resourceName: "casino token"),#imageLiteral(resourceName: "minerals blue stone"),#imageLiteral(resourceName: "minerals blue stone"),#imageLiteral(resourceName: "minerals red stone"),#imageLiteral(resourceName: "minerals red stone"),#imageLiteral(resourceName: "music microphone"),#imageLiteral(resourceName: "music microphone")]
+    private var selectedImage: [Int] = []
+    private var imageArray: [UIImage] = []
+    private var numMoves: Int = 0
+    private var numImages = 0
+    private var timer = Timer()
+    private var timeSeconds = 0
+    private var timeMinutes = 0
+    
+    // Core Data variables.
+    private var managedContext: NSManagedObjectContext!
+    private var entityDescription: NSEntityDescription!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +53,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     // Function to run when image is tapped.
     @objc func imageTapped(sender: UITapGestureRecognizer){
         print("Tap")
+        
         // Checking that the sender is an imageView.
         guard let imageView = sender.view as? UIImageView else {return}
         
@@ -64,7 +69,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 imageView.isUserInteractionEnabled = false
                 iPhoneCollection[imageView.tag].image = imageArray[imageView.tag]
                 
-                // If there already is an image selected then upping the number of moves, setting userInteraction to false and displaying the image associated with that imageView.
+            // If there already is an image selected then upping the number of moves, setting userInteraction to false and displaying the image associated with that imageView.
             case 1:
                 numMoves += 1
                 movesLabel.text = "Moves: \(numMoves)"
@@ -102,7 +107,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
     }
-
+    
     @IBAction func playButtonSelected(_ sender: UIButton) {
         // Setting the labels to empty.
         winLabel.text = ""
@@ -115,38 +120,38 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         if sender.titleLabel?.text == "Play"{
             
             switch UIDevice.current.userInterfaceIdiom {
-                // If the button was play and the user is using a phone and allowing user interaction
+            // If the button was play and the user is using a phone and allowing user interaction
             case .phone:
                 for image in iPhoneCollection[...numImages]{
                     image.isUserInteractionEnabled = true
                     image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
                     // Getting a random index setting the imageView image to a random image based on the index.
                     // Adding to the imageArray and removing the image from the iPhoneImages.
-                        let index = arc4random_uniform(UInt32(iPhoneImages.count))
-                        image.image = iPhoneImages[Int(index)]
-                        imageArray.append(iPhoneImages[Int(index)])
-                        iPhoneImages.remove(at: Int(index))
+                    let index = arc4random_uniform(UInt32(iPhoneImages.count))
+                    image.image = iPhoneImages[Int(index)]
+                    imageArray.append(iPhoneImages[Int(index)])
+                    iPhoneImages.remove(at: Int(index))
                 }
                 // Setting the iPhoneImages array to the imageArray.
                 iPhoneImages = imageArray
-                // If the user is using an iPad then looping through the collection adding the random image and removing from iPadImages array.
+            // If the user is using an iPad then looping through the collection adding the random image and removing from iPadImages array.
             case .pad:
                 for image in iPhoneCollection[...numImages]{
                     image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
                     image.isUserInteractionEnabled = true
-                        let index = arc4random_uniform(UInt32(iPadImages.count))
-                        image.image = iPadImages[Int(index)]
-                        imageArray.append(image.image!)
-                        iPadImages.remove(at: Int(index))
-                    }
+                    let index = arc4random_uniform(UInt32(iPadImages.count))
+                    image.image = iPadImages[Int(index)]
+                    imageArray.append(image.image!)
+                    iPadImages.remove(at: Int(index))
+                }
                 // Setting the iPadImages to the imageArray.
                 iPadImages = imageArray
             default:
-                    print("Device unspecified.")
-                }
+                print("Device unspecified.")
+            }
             // Playing countdown audio and setting the buttons title to stop.
             playAudio(resource: "countdown", type: "mp3")
-                  sender.setTitle("Stop", for: .normal)
+            sender.setTitle("Stop", for: .normal)
             
             // If the title equals stop then looping through the image collection and setting the images to nil and the backgroung color to blue.
         } else if sender.titleLabel?.text == "Stop"{
@@ -155,7 +160,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 image.isUserInteractionEnabled = false
                 image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
             }
-        
+            
             // Stopping the audio, invalidating the timer and resetting variables and labels, then setting the button title to Play.
             player.stop()
             timer.invalidate()
