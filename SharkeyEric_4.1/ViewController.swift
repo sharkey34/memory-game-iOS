@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CoreData
 
 class ViewController: UIViewController, AVAudioPlayerDelegate {
     
@@ -47,7 +48,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     // Function to run when image is tapped.
     @objc func imageTapped(sender: UITapGestureRecognizer){
-        
+        print("Tap")
         // Checking that the sender is an imageView.
         guard let imageView = sender.view as? UIImageView else {return}
         
