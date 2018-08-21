@@ -29,12 +29,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     private var iPadImages: [UIImage] = [#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask"),#imageLiteral(resourceName: "misc space rocket"),#imageLiteral(resourceName: "monetary gold bars"),#imageLiteral(resourceName: "dressup lips"),#imageLiteral(resourceName: "emoticons crush"),#imageLiteral(resourceName: "emoticons laughing out loud"),#imageLiteral(resourceName: "music speaker"),#imageLiteral(resourceName: "magic ripped eye"),#imageLiteral(resourceName: "monster zombie2"),#imageLiteral(resourceName: "monster brain"),#imageLiteral(resourceName: "magic triangle flask"),#imageLiteral(resourceName: "casino dice"),#imageLiteral(resourceName: "casino dice"),#imageLiteral(resourceName: "casino token"),#imageLiteral(resourceName: "casino token"),#imageLiteral(resourceName: "minerals blue stone"),#imageLiteral(resourceName: "minerals blue stone"),#imageLiteral(resourceName: "minerals red stone"),#imageLiteral(resourceName: "minerals red stone"),#imageLiteral(resourceName: "music microphone"),#imageLiteral(resourceName: "music microphone")]
     private var selectedImage: [Int] = []
     private var imageArray: [UIImage] = []
-    private var numMoves: Int = 0
+    private var moves: Int = 0
     private var numImages = 0
     private var timer = Timer()
     private var timeSeconds = 0
     private var timeMinutes = 0
     private var time = 0
+    private var userName: NSManagedObject!
+    private var numTime: NSManagedObject!
+    private var numMoves: NSManagedObject!
+    private var dateCompleted: NSManagedObject!
     
     // Core Data variables.
     private var managedContext: NSManagedObjectContext!
@@ -72,8 +76,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 
             // If there already is an image selected then upping the number of moves, setting userInteraction to false and displaying the image associated with that imageView.
             case 1:
-                numMoves += 1
-                movesLabel.text = "Moves: \(numMoves)"
+                moves += 1
+                movesLabel.text = "Moves: \(moves)"
                 selectedImage.append(imageView.tag)
                 imageView.isUserInteractionEnabled = false
                 iPhoneCollection[imageView.tag].image = imageArray[imageView.tag]
@@ -167,7 +171,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             timer.invalidate()
             timeSeconds = 0
             timeMinutes = 0
-            numMoves = 0
+            moves = 0
             selectedImage = []
             imageArray = []
             movesLabel.text = ""
@@ -232,7 +236,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             timeLabel.text = "Time:"
             
             playButton.setTitle("Play", for: .normal)
-            numMoves = 0
+            moves = 0
             selectedImage = []
             imageArray = []
             movesLabel.text = ""
