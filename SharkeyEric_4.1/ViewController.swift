@@ -34,6 +34,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     private var timer = Timer()
     private var timeSeconds = 0
     private var timeMinutes = 0
+    private var time = 0
     
     // Core Data variables.
     private var managedContext: NSManagedObjectContext!
@@ -222,6 +223,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // If the number of black views is as many as the number of images for the device then resetting variabels and labels and displaying the win labels.
         if counter == numImages {
             
+            // Mark Call save function.
             
             timer.invalidate()
             winLabel.text = "You Win!!!!"
@@ -239,19 +241,19 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             timeAmountLabel.text = "\(timeMinutes) Minute(s) \(timeSeconds) Seconds"
             timeSeconds = 0
             timeMinutes = 0
+            time = 0
             timerLabel.text = ""
         }
     }
     
-    // Funciton to keep track of the time that has passed counter the interval each time it is fired and displaying the time in the label.
+    // Funtion to keep track of the time that has passed counter the interval each time it is fired and displaying the time in the label.
     @objc func updateTimer(){
-        timeSeconds += Int(timer.timeInterval)
+        time += Int(timer.timeInterval)
         
-        if timeSeconds == 60{
-            timeSeconds = 0
-            timeMinutes += 1
-        }
-        timerLabel.text = "Min: \(timeMinutes) Sec:\(timeSeconds)"
+         timeMinutes = Int(time) / 60 % 60
+         timeSeconds = Int(time) % 60
+        
+        timerLabel.text = String(format:"%02i:%02i", timeMinutes, timeSeconds)
     }
     
     func setupViewDidLoad(){
@@ -282,6 +284,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
             image.layer.cornerRadius = 10
         }
+    }
+    
+    func save(){
+        
     }
 }
 
