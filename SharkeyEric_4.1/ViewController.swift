@@ -13,11 +13,6 @@ import CoreData
 class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     // Creating outlets to access the needed UI elements.
-    @IBOutlet weak var winLabel: UILabel!
-    @IBOutlet weak var movesTextLabel: UILabel!
-    @IBOutlet weak var timeAmountLabel: UILabel!
-    @IBOutlet weak var numMovesLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet var iPhoneCollection: [UIImageView]!
@@ -35,7 +30,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     private var timeSeconds = 0
     private var timeMinutes = 0
     private var time = 0
-    private var name = ""
+    private var name: String!
     private var leaderBoardData: NSManagedObject!
     
     // Core Data variables.
@@ -115,13 +110,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func playButtonSelected(_ sender: UIButton) {
-        // Setting the labels to empty.
-        winLabel.text = ""
-        movesTextLabel.text = ""
-        numMovesLabel.text = ""
-        timeLabel.text = ""
-        timeAmountLabel.text = ""
-        
         // Checking to see if the play button was selected then which device the user is using.
         if sender.titleLabel?.text == "Play"{
             
@@ -229,25 +217,25 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         if counter == numImages {
             
             // Mark Call save function.
+//            save()
             
             timer.invalidate()
-            winLabel.text = "You Win!!!!"
-            movesTextLabel.text = "Moves:"
-            numMovesLabel.text = "\(moves)"
-            timeLabel.text = "Time:"
+//            winLabel.text = "You Win!!!!"
+//            movesTextLabel.text = "Moves:"
+//            numMovesLabel.text = "\(moves)"
+//            timeLabel.text = "Time:"
             
             playButton.setTitle("Play", for: .normal)
             moves = 0
             selectedImage = []
             imageArray = []
-            movesLabel.text = ""
-            timeAmountLabel.text = ""
+            movesLabel.text = nil
             
-            timeAmountLabel.text = "\(timeMinutes) Minute(s) \(timeSeconds) Seconds"
+//            timeAmountLabel.text = "\(timeMinutes) Minute(s) \(timeSeconds) Seconds"
             timeSeconds = 0
             timeMinutes = 0
             time = 0
-            timerLabel.text = ""
+            timerLabel.text = nil
         }
     }
     
@@ -273,14 +261,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
         playButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        // Setting all the labels to empty.
-        winLabel.text = ""
-        movesTextLabel.text = ""
-        timeAmountLabel.text = ""
-        numMovesLabel.text = ""
-        timeLabel.text = ""
-        movesLabel.text = ""
-        timerLabel.text = ""
+        // Setting all the labels to nil.
+        movesLabel.text = nil
+        timerLabel.text = nil
         
         // Looping through the imageView collection and setting the background color and the cornerRadius, and adding a tap gesture to the image views
         for image in iPhoneCollection[...numImages]{
