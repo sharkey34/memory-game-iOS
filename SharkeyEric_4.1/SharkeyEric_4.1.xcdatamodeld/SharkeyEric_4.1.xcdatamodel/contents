@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="DateCompleted" representedClassName="DateCompleted" syncable="YES" codeGenerationType="class">
+    <entity name="LeaderBoardData" representedClassName="LeaderBoardData" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-    </entity>
-    <entity name="NumMoves" representedClassName="NumMoves" syncable="YES" codeGenerationType="class">
         <attribute name="moves" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-    </entity>
-    <entity name="NumTime" representedClassName="NumTime" syncable="YES" codeGenerationType="class">
         <attribute name="time" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-    </entity>
-    <entity name="UserName" representedClassName="UserName" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="UserName" positionX="-54" positionY="-9" width="128" height="60"/>
-        <element name="NumTime" positionX="-36" positionY="18" width="128" height="60"/>
-        <element name="NumMoves" positionX="-18" positionY="36" width="128" height="60"/>
-        <element name="DateCompleted" positionX="0" positionY="54" width="128" height="60"/>
+        <element name="LeaderBoardData" positionX="36" positionY="90" width="128" height="105"/>
     </elements>
 </model>

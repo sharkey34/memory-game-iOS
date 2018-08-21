@@ -35,10 +35,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     private var timeSeconds = 0
     private var timeMinutes = 0
     private var time = 0
-    private var userName: NSManagedObject!
-    private var numTime: NSManagedObject!
-    private var numMoves: NSManagedObject!
-    private var dateCompleted: NSManagedObject!
+    private var name = ""
+    private var leaderBoardData: NSManagedObject!
     
     // Core Data variables.
     private var managedContext: NSManagedObjectContext!
@@ -46,6 +44,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        entityDescription = NSEntityDescription.entity(forEntityName: "LeaderBoardData", in: managedContext)
         
         // Calling the funtion to perform the needed actions when the application is loaded.
         setupViewDidLoad()
@@ -232,7 +233,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             timer.invalidate()
             winLabel.text = "You Win!!!!"
             movesTextLabel.text = "Moves:"
-            numMovesLabel.text = "\(numMoves)"
+            numMovesLabel.text = "\(moves)"
             timeLabel.text = "Time:"
             
             playButton.setTitle("Play", for: .normal)
@@ -254,8 +255,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @objc func updateTimer(){
         time += Int(timer.timeInterval)
         
-         timeMinutes = Int(time) / 60 % 60
-         timeSeconds = Int(time) % 60
+         timeMinutes = time / 60 % 60
+         timeSeconds = time % 60
         
         timerLabel.text = String(format:"%02i:%02i", timeMinutes, timeSeconds)
     }
@@ -292,6 +293,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     func save(){
         
+        leaderBoardData.setValue(moves, forKey: "moves")
+        leaderBoardData.setValue(time, forKey: "time")
+        leaderBoardData.setValue(Date(), forKey: "date")
+        leaderBoardData.setValue(name, forKey: "userName")
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
 }
 
