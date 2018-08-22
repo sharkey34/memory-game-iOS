@@ -161,6 +161,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             timer.invalidate()
             timeSeconds = 0
             timeMinutes = 0
+            time = 0
             moves = 0
             selectedImage = []
             imageArray = []
@@ -215,10 +216,16 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
         // If the number of black views is as many as the number of images for the device then resetting variabels and labels and displaying the win labels.
+        var alert = UIAlertController()
         if counter == numImages {
             timer.invalidate()
-            let alert = UIAlertController.init(title: "You Win!!", message: "Please enter your user name or initials.", preferredStyle: .alert)
             
+            if timeMinutes > 0{
+                alert = UIAlertController.init(title: "You Win!!", message: "You finished in \(moves) moves with a time of \(timeMinutes) minute(s) \(timeSeconds) seconds!\n To save your score enter your user name or initials below!", preferredStyle: .alert)
+            } else {
+                  alert = UIAlertController.init(title: "You Win!!", message: "You finished in \(moves) moves with a time of \(timeSeconds) seconds!\n To save your score enter your user name or initials below!", preferredStyle: .alert)
+            }
+           
             alert.addTextField(configurationHandler: nil)
             let ok = UIAlertAction.init(title: "OK", style: .default, handler:{ [weak alert] (_) in
                 if let textField = alert?.textFields![0]{
@@ -271,7 +278,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func save(){
-  
+        
         leaderBoardData = NSManagedObject(entity: entityDescription, insertInto: managedContext)
         leaderBoardData.setValue(moves, forKey: "moves")
         leaderBoardData.setValue(time, forKey: "time")
@@ -287,7 +294,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         imageArray = []
         movesLabel.text = nil
         
-        //            timeAmountLabel.text = "\(timeMinutes) Minute(s) \(timeSeconds) Seconds"
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
             numImages = 19

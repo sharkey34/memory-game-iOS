@@ -18,7 +18,6 @@ class ScoresTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.init(red:1.00, green:1.00, blue:0.92, alpha:1.0)
         navigationController?.isNavigationBarHidden = false
         load()
     }
@@ -31,6 +30,7 @@ class ScoresTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         tableView.rowHeight = 106
+        tableView.separatorColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
         return 1
     }
 
@@ -38,15 +38,17 @@ class ScoresTableViewController: UITableViewController {
         return "LeaderBoard: Top 10"
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataObj.count
+        if dataObj.count > 10{
+            return 10
+        } else {
+            return dataObj.count
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath) as? ScoresTableViewCell else {return tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)}
  
-        let position = indexPath.row + 1
-        cell.positionLabel.text = position.description
         cell.nameLabel.text = dataObj[indexPath.row].value(forKey: "userName") as? String
         let moves = dataObj[indexPath.row].value(forKey: "moves") as? Int
         let date = dataObj[indexPath.row].value(forKey: "date") as? Date
@@ -59,9 +61,20 @@ class ScoresTableViewController: UITableViewController {
         } else {
            cell.timeLabel.text = "N/A"
         }
+    
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        if let d = date{
+            let dateString = formatter.string(from: d)
+            cell.dateLabel.text = dateString
 
+        }
         
-         cell.dateLabel.text = date?.description
+        let position = indexPath.row + 1
+        cell.positionLabel.text = "\(position)."
+        
+        cell.backgroundColor = UIColor.init(red:1.00, green:1.00, blue:0.92, alpha:1.0)
         cell.movesLabel.text = moves?.description
         return cell
     }
