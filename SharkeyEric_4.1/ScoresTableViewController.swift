@@ -18,7 +18,7 @@ class ScoresTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
+        view.backgroundColor = UIColor.init(red:1.00, green:1.00, blue:0.92, alpha:1.0)
         navigationController?.isNavigationBarHidden = false
         load()
     }
@@ -30,7 +30,7 @@ class ScoresTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        tableView.rowHeight = 65
+        tableView.rowHeight = 106
         return 1
     }
 
@@ -69,7 +69,8 @@ class ScoresTableViewController: UITableViewController {
     func load(){
         /* We use Fetch Requests to get the data we want off of the "notepad" */
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LeaderBoardData")
-        
+        let sorty = NSSortDescriptor(key: "time", ascending: true)
+        fetchRequest.sortDescriptors = [sorty]
         do{
             let data: [NSManagedObject] = try managedContext.fetch(fetchRequest)
             

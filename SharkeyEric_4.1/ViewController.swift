@@ -216,10 +216,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         // If the number of black views is as many as the number of images for the device then resetting variabels and labels and displaying the win labels.
         if counter == numImages {
-            
-            // Mark Call save function.
-//            save()
-            
+            timer.invalidate()
             let alert = UIAlertController.init(title: "You Win!!", message: "Please enter your user name or initials.", preferredStyle: .alert)
             
             alert.addTextField(configurationHandler: nil)
@@ -284,7 +281,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         
-        timer.invalidate()
         playButton.setTitle("Play", for: .normal)
         moves = 0
         selectedImage = []
