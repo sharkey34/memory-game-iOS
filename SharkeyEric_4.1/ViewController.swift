@@ -43,6 +43,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         entityDescription = NSEntityDescription.entity(forEntityName: "LeaderBoardData", in: managedContext)
         
+        navigationController?.isNavigationBarHidden = true
         // Calling the funtion to perform the needed actions when the application is loaded.
         setupViewDidLoad()
     }

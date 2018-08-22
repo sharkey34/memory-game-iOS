@@ -18,6 +18,8 @@ class ScoresTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
+        navigationController?.isNavigationBarHidden = false
         load()
     }
 
@@ -28,11 +30,12 @@ class ScoresTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        tableView.rowHeight = 65
         return 1
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Place       Name        Time        Moves       Date"
+        return "LeaderBoard: Top 10"
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataObj.count
@@ -48,8 +51,17 @@ class ScoresTableViewController: UITableViewController {
         let moves = dataObj[indexPath.row].value(forKey: "moves") as? Int
         let date = dataObj[indexPath.row].value(forKey: "date") as? Date
         let time = dataObj[indexPath.row].value(forKey: "time") as? Int
+        
+        if let t = time {
+            let timeMinutes = t / 60 % 60
+            let timeSeconds = t % 60
+            cell.timeLabel.text = String(format:"%02i:%02i", timeMinutes, timeSeconds)
+        } else {
+           cell.timeLabel.text = "N/A"
+        }
+
+        
          cell.dateLabel.text = date?.description
-        cell.timeLabel.text = time?.description
         cell.movesLabel.text = moves?.description
         return cell
     }
@@ -62,12 +74,15 @@ class ScoresTableViewController: UITableViewController {
             let data: [NSManagedObject] = try managedContext.fetch(fetchRequest)
             
             for obj in data {
-                print("whaaaaaaaaaaaaaa")
                 dataObj.append(obj)
             }
             
         } catch {
             assertionFailure()
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
     }
 }
