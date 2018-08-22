@@ -30,7 +30,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     private var timeSeconds = 0
     private var timeMinutes = 0
     private var time = 0
-    private var name: String!
+    private var name = ""
     private var leaderBoardData: NSManagedObject!
     
     // Core Data variables.
@@ -219,23 +219,21 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             // Mark Call save function.
 //            save()
             
-            timer.invalidate()
-//            winLabel.text = "You Win!!!!"
-//            movesTextLabel.text = "Moves:"
-//            numMovesLabel.text = "\(moves)"
-//            timeLabel.text = "Time:"
+            let alert = UIAlertController.init(title: "You Win!!", message: "Please enter your user name or initials.", preferredStyle: .alert)
             
-            playButton.setTitle("Play", for: .normal)
-            moves = 0
-            selectedImage = []
-            imageArray = []
-            movesLabel.text = nil
+            alert.addTextField(configurationHandler: nil)
+            let ok = UIAlertAction.init(title: "OK", style: .default, handler:{ [weak alert] (_) in
+                if let textField = alert?.textFields![0]{
+                    if let text =  textField.text{
+                       self.name = text
+                    }
+                }
+                self.save()
+            })
             
-//            timeAmountLabel.text = "\(timeMinutes) Minute(s) \(timeSeconds) Seconds"
-            timeSeconds = 0
-            timeMinutes = 0
-            time = 0
-            timerLabel.text = nil
+            alert.addAction(ok)
+            
+            present(alert, animated: true, completion: nil)
         }
     }
     
@@ -275,13 +273,48 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func save(){
-        
+  
+        leaderBoardData = NSManagedObject(entity: entityDescription, insertInto: managedContext)
         leaderBoardData.setValue(moves, forKey: "moves")
         leaderBoardData.setValue(time, forKey: "time")
         leaderBoardData.setValue(Date(), forKey: "date")
         leaderBoardData.setValue(name, forKey: "userName")
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        
+        timer.invalidate()
+        playButton.setTitle("Play", for: .normal)
+        moves = 0
+        selectedImage = []
+        imageArray = []
+        movesLabel.text = nil
+        
+        //            timeAmountLabel.text = "\(timeMinutes) Minute(s) \(timeSeconds) Seconds"
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            numImages = 19
+        case .pad:
+            numImages = 29
+        default:
+            print("Device Unsepecified.")
+        }
+        for image in iPhoneCollection[...numImages]{
+            image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
+            image.layer.cornerRadius = 10
+        }
+        
+        timeSeconds = 0
+        timeMinutes = 0
+        time = 0
+        timerLabel.text = nil
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         let sTC = segue.destination as! ScoresTableViewController
+        
+        sTC.managedContext = managedContext
+        sTC.leaderBoardData = leaderBoardData
     }
 }
 
