@@ -21,13 +21,20 @@ class ScoresTableViewController: UITableViewController {
         tableView.backgroundColor = UIColor.init(red:0.80, green:0.25, blue:0.25, alpha:1.0)
         navigationController?.isNavigationBarHidden = false
         load()
+        if dataObj.count == 0{
+            
+            let alert = UIAlertController.init(title: "Sorry!", message: "No scores have been saved to display.", preferredStyle: .alert)
+            let ok = UIAlertAction.init(title: "OK", style: .default) { (_) in
+                self.navigationController?.popViewController(animated: true)
+            }
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         tableView.rowHeight = 106
@@ -46,7 +53,6 @@ class ScoresTableViewController: UITableViewController {
             return dataObj.count
         }
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath) as? ScoresTableViewCell else {return tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)}
@@ -81,7 +87,6 @@ class ScoresTableViewController: UITableViewController {
     }
     
     func load(){
-        /* We use Fetch Requests to get the data we want off of the "notepad" */
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LeaderBoardData")
         let sorty = NSSortDescriptor(key: "time", ascending: true)
         fetchRequest.sortDescriptors = [sorty]
@@ -96,7 +101,6 @@ class ScoresTableViewController: UITableViewController {
             assertionFailure()
         }
     }
-    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
     }
