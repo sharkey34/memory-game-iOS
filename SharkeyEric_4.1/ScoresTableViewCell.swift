@@ -10,6 +10,7 @@ import UIKit
 
 class ScoresTableViewCell: UITableViewCell {
     
+    // Outlets
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!

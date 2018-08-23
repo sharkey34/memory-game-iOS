@@ -39,7 +39,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Setting up context and entity description for CoreData.
         managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         entityDescription = NSEntityDescription.entity(forEntityName: "LeaderBoardData", in: managedContext)
         
@@ -218,29 +219,33 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         if counter == numImages {
             timer.invalidate()
             
+            // Creating alert
             if timeMinutes > 0{
-                alert = UIAlertController.init(title: "You Win!!", message: "You finished in \(moves) moves with a time of \(timeMinutes) minute(s) \(timeSeconds) seconds!\n To save your score enter your user name or initials below!", preferredStyle: .alert)
+                alert = UIAlertController.init(title: "You Win!!", message: "You finished in \(moves) moves with a time of \(timeMinutes) minute(s) \(timeSeconds) seconds!\n\n To save your score enter your user name or initials below!", preferredStyle: .alert)
             } else {
                   alert = UIAlertController.init(title: "You Win!!", message: "You finished in \(moves) moves with a time of \(timeSeconds) seconds!\n To save your score enter your user name or initials below!", preferredStyle: .alert)
             }
            
+            // Adding textfield.
             alert.addTextField(configurationHandler: nil)
+            // Creating an alert action with completion handler to run when ok is selected.
             let ok = UIAlertAction.init(title: "OK", style: .default, handler:{ [weak alert] (_) in
                 if let textField = alert?.textFields![0]{
                     if let text =  textField.text{
-                       self.name = text
+                            self.name = text
                     }
                 }
+                // Calling the save function when ok is selected.
                 self.save()
             })
             
+            // Adding alertAction and presenting alertController.
             alert.addAction(ok)
-            
             present(alert, animated: true, completion: nil)
         }
     }
     
-    // Funtion to keep track of the time that has passed counter the interval each time it is fired and displaying the time in the label.
+    // Function to keep track of the time that has passed counter the interval each time it is fired and displaying the time in the label.
     @objc func updateTimer(){
         time += Int(timer.timeInterval)
         
@@ -275,31 +280,30 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    // Function to save CoreData.
     func save(){
+        if name.isEmpty{
+            name = "N/A"
+        }
         
+        // Setting values.
         leaderBoardData = NSManagedObject(entity: entityDescription, insertInto: managedContext)
         leaderBoardData.setValue(moves, forKey: "moves")
         leaderBoardData.setValue(time, forKey: "time")
         leaderBoardData.setValue(Date(), forKey: "date")
         leaderBoardData.setValue(name, forKey: "userName")
         
+        // Saving
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         
+        // Resetting variables
         playButton.setTitle("Play", for: .normal)
         moves = 0
         selectedImage = []
         imageArray = []
         movesLabel.text = nil
-        
-        switch UIDevice.current.userInterfaceIdiom {
-        case .phone:
-            numImages = 19
-        case .pad:
-            numImages = 29
-        default:
-            print("Device Unsepecified.")
-        }
+
         for image in iPhoneCollection[...numImages]{
             image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
             image.layer.cornerRadius = 10
@@ -311,6 +315,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         timerLabel.text = nil
     }
     
+    // Passing the context and leaderBoardData to the leaderBoardViewController.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          let sTC = segue.destination as! ScoresTableViewController
         
