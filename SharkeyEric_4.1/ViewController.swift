@@ -99,7 +99,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                         }
                     }
                     self.selectedImage.removeAll()
-                    
                 }
             default:
                 print("Invalid Index")
@@ -107,7 +106,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         } else {
             print("cards flipped")
         }
-        
     }
     
     @IBAction func playButtonSelected(_ sender: UIButton) {
@@ -271,6 +269,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // Setting all the labels to nil.
         movesLabel.text = nil
         timerLabel.text = nil
+        
+        for view in viewCollection[...numImages]{
+            view.layer.cornerRadius = 10
+        }
         
         // Looping through the imageView collection and setting the background color and the cornerRadius, and adding a tap gesture to the image views
         for image in iPhoneCollection[...numImages]{
