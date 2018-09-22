@@ -17,6 +17,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet var iPhoneCollection: [UIImageView]!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet var viewCollection: [UIView]!
     
     // Creating variables for the audioPlayer, to hold the images for each device, number of moves, and other information needed in the application.
     private var player = AVAudioPlayer()
@@ -295,7 +296,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         // Saving
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-        
         
         // Resetting variables
         playButton.setTitle("Play", for: .normal)

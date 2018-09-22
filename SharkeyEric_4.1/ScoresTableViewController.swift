@@ -114,6 +114,11 @@ class ScoresTableViewController: UITableViewController {
         }
     }
     
+    // TODO: Implement a reset button to delete the leaderboard data.
+    func reset(){
+          managedContext.delete(leaderBoardData)
+    }
+    
     // Displaying the navigation bar when the view has disappeared.
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
