@@ -15,7 +15,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     // Creating outlets to access the needed UI elements.
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var movesLabel: UILabel!
-    @IBOutlet var iPhoneCollection: [UIImageView]!
+    @IBOutlet var imageViewCollection: [UIImageView]!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var viewCollection: [UIView]!
     
@@ -40,7 +40,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Setting up context and entity description for CoreData.
         managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         entityDescription = NSEntityDescription.entity(forEntityName: "LeaderBoardData", in: managedContext)
@@ -69,7 +69,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             case 0:
                 selectedImage.append(imageView.tag)
                 imageView.isUserInteractionEnabled = false
-                iPhoneCollection[imageView.tag].image = imageArray[imageView.tag]
+                imageViewCollection[imageView.tag].image = imageArray[imageView.tag]
                 
             // If there already is an image selected then upping the number of moves, setting userInteraction to false and displaying the image associated with that imageView.
             case 1:
@@ -77,16 +77,15 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                 movesLabel.text = "Moves: \(moves)"
                 selectedImage.append(imageView.tag)
                 imageView.isUserInteractionEnabled = false
-                iPhoneCollection[imageView.tag].image = imageArray[imageView.tag]
-                
+                imageViewCollection[imageView.tag].image = imageArray[imageView.tag]
                 // Stalling for .5 seconds to display the second card to the user. when the time is up comparing the two selected images.
                 // if they are correct playing the correct sound and turning the image views over setting the images to nil.
                 DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) {
                     if self.imageArray[self.selectedImage[0]] == self.imageArray[self.selectedImage[1]] {
                         self.playAudio(resource: "correct", type: "wav")
                         for index in self.selectedImage{
-                            self.iPhoneCollection[index].backgroundColor = UIColor.init(displayP3Red: 1.00, green:1.00, blue:0.92, alpha:1.0)
-                            self.iPhoneCollection[index].image = nil
+                            self.imageViewCollection[index].backgroundColor = UIColor.init(displayP3Red: 1.00, green:1.00, blue:0.92, alpha:1.0)
+                            self.imageViewCollection[index].image = nil
                         }
                         // Checking to see if they are the last two imageViews and display the win message.
                         self.alert()
@@ -94,8 +93,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
                     } else {
                         self.playAudio(resource: "incorrect", type: "wav")
                         for index in self.selectedImage{
-                            self.iPhoneCollection[index].isUserInteractionEnabled = true
-                            self.iPhoneCollection[index].image = nil
+                            self.imageViewCollection[index].isUserInteractionEnabled = true
+                            self.imageViewCollection[index].image = nil
                         }
                     }
                     self.selectedImage.removeAll()
@@ -115,27 +114,27 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             switch UIDevice.current.userInterfaceIdiom {
             // If the button was play and the user is using a phone and allowing user interaction
             case .phone:
-                for image in iPhoneCollection[...numImages]{
+                for image in imageViewCollection[...numImages]{
                     image.isUserInteractionEnabled = true
                     image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
                     // Getting a random index setting the imageView image to a random image based on the index.
                     // Adding to the imageArray and removing the image from the iPhoneImages.
-                    let index = arc4random_uniform(UInt32(iPhoneImages.count))
-                    image.image = iPhoneImages[Int(index)]
-                    imageArray.append(iPhoneImages[Int(index)])
-                    iPhoneImages.remove(at: Int(index))
+                    let index:Int = Int(arc4random_uniform(UInt32(iPhoneImages.count)))
+                    image.image = iPhoneImages[index]
+                    imageArray.append(iPhoneImages[index])
+                    iPhoneImages.remove(at: index)
                 }
                 // Setting the iPhoneImages array to the imageArray.
                 iPhoneImages = imageArray
             // If the user is using an iPad then looping through the collection adding the random image and removing from iPadImages array.
             case .pad:
-                for image in iPhoneCollection[...numImages]{
+                for image in imageViewCollection[...numImages]{
                     image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
                     image.isUserInteractionEnabled = true
-                    let index = arc4random_uniform(UInt32(iPadImages.count))
-                    image.image = iPadImages[Int(index)]
+                    let index: Int = Int(arc4random_uniform(UInt32(iPadImages.count)))
+                    image.image = iPadImages[index]
                     imageArray.append(image.image!)
-                    iPadImages.remove(at: Int(index))
+                    iPadImages.remove(at: index)
                 }
                 // Setting the iPadImages to the imageArray.
                 iPadImages = imageArray
@@ -148,7 +147,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             
             // If the title equals stop then looping through the image collection and setting the images to nil and the backgroung color to blue.
         } else if sender.titleLabel?.text == "Stop"{
-            for image in iPhoneCollection{
+            for image in imageViewCollection{
                 image.image = nil
                 image.isUserInteractionEnabled = false
                 image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
@@ -171,7 +170,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     // When the audio is finished playing setting the imageviews images to nil.
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        for image in iPhoneCollection{
+        for image in imageViewCollection{
             image.image = nil
         }
         
@@ -207,7 +206,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         // Creating a counter variable, looping through the iphoneCollection and counting to see how many imageviews are black.
         var counter = -1
-        for image in iPhoneCollection[...numImages]{
+        for image in imageViewCollection[...numImages]{
             if image.backgroundColor == UIColor.init(displayP3Red: 1.00, green:1.00, blue:0.92, alpha:1.0) {
                 counter += 1
             }
@@ -275,7 +274,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
         // Looping through the imageView collection and setting the background color and the cornerRadius, and adding a tap gesture to the image views
-        for image in iPhoneCollection[...numImages]{
+        for image in imageViewCollection[...numImages]{
             let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
             image.addGestureRecognizer(tap)
             image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
@@ -306,7 +305,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         imageArray = []
         movesLabel.text = nil
 
-        for image in iPhoneCollection[...numImages]{
+        for image in imageViewCollection[...numImages]{
             image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
             image.layer.cornerRadius = 10
         }
