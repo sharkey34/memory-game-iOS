@@ -51,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A15683721CDEFDC00A686E9 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				4AAC6A8421211C5F00F09C85 /* countdown.mp3 */,
+				4A24B2AF211B398500E3236B /* correct.wav */,
+				4A24B2B1211B398D00E3236B /* incorrect.wav */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		4AB8266D2116946B0035F7E6 = {
 			isa = PBXGroup;
 			children = (
@@ -70,13 +80,11 @@
 		4AB826782116946B0035F7E6 /* SharkeyEric_4.1 */ = {
 			isa = PBXGroup;
 			children = (
+				4A15683721CDEFDC00A686E9 /* Audio */,
 				4AB826792116946B0035F7E6 /* AppDelegate.swift */,
 				4AB8267B2116946B0035F7E6 /* ViewController.swift */,
 				4AB8267D2116946B0035F7E6 /* Main.storyboard */,
 				4AB826802116946C0035F7E6 /* Assets.xcassets */,
-				4AAC6A8421211C5F00F09C85 /* countdown.mp3 */,
-				4A24B2AF211B398500E3236B /* correct.wav */,
-				4A24B2B1211B398D00E3236B /* incorrect.wav */,
 				4A24B2B3211B399400E3236B /* tap.mp3 */,
 				4AB826822116946C0035F7E6 /* LaunchScreen.storyboard */,
 				4AB826852116946C0035F7E6 /* Info.plist */,

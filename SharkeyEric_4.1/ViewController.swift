@@ -6,6 +6,8 @@
 //  Copyright © 2018 Eric Sharkey. All rights reserved.
 //
 
+// Play Button by Freepik form flaticon.com
+
 import UIKit
 import AVFoundation
 import CoreData
@@ -44,7 +46,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         // Setting up context and entity description for CoreData.
         managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         entityDescription = NSEntityDescription.entity(forEntityName: "LeaderBoardData", in: managedContext)
-        
         navigationController?.isNavigationBarHidden = true
         // Calling the funtion to perform the needed actions when the application is loaded.
         setupViewDidLoad()

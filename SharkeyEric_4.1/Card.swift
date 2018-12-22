@@ -11,5 +11,12 @@ import UIKit
 class Card: UIButton {
     
     
-
+    // Initializer to set up the card values
+    
+    
+    // Function to perform all the flipe logic on each card.
+    func flipCard (){
+        
+        
+    }
 }
