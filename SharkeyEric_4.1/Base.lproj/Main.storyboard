@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="C4b-wu-3kr">
             <objects>
-                <viewController id="Zty-iN-Cq4" sceneMemberID="viewController">
+                <viewController id="Zty-iN-Cq4" customClass="StartViewController" customModule="SharkeyEric_4_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="shk-2z-44W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,8 +30,8 @@
                                 <color key="textColor" red="0.44570845365524292" green="0.74466651678085327" blue="0.7686430811882019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="IN5-g4-KM9">
-                                <rect key="frame" x="160" y="388" width="94" height="108"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="IN5-g4-KM9">
+                                <rect key="frame" x="145" y="362" width="124" height="147.33333333333337"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,8 +40,10 @@
                             <constraint firstItem="Mo7-3o-MGn" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" id="47n-Ri-oP9"/>
                             <constraint firstItem="f9K-Ai-j8p" firstAttribute="top" secondItem="Mo7-3o-MGn" secondAttribute="bottom" constant="46" id="5om-so-J4s"/>
                             <constraint firstItem="Mo7-3o-MGn" firstAttribute="top" secondItem="TsX-Ly-eeo" secondAttribute="top" constant="104" id="8aP-eD-jWH"/>
+                            <constraint firstItem="IN5-g4-KM9" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" multiplier="0.3" id="JIS-Pg-b13"/>
                             <constraint firstItem="f9K-Ai-j8p" firstAttribute="centerX" secondItem="TsX-Ly-eeo" secondAttribute="centerX" id="Pft-iF-8Ig"/>
-                            <constraint firstItem="IN5-g4-KM9" firstAttribute="top" secondItem="f9K-Ai-j8p" secondAttribute="bottom" constant="74" id="R2W-Oa-iEs"/>
+                            <constraint firstItem="IN5-g4-KM9" firstAttribute="top" secondItem="f9K-Ai-j8p" secondAttribute="bottom" constant="48" id="R2W-Oa-iEs"/>
+                            <constraint firstItem="IN5-g4-KM9" firstAttribute="height" secondItem="shk-2z-44W" secondAttribute="height" multiplier="0.2" id="uPv-ZF-QKF"/>
                             <constraint firstItem="Mo7-3o-MGn" firstAttribute="centerX" secondItem="TsX-Ly-eeo" secondAttribute="centerX" id="wXf-Xm-dDU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TsX-Ly-eeo"/>
