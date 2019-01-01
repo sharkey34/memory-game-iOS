@@ -56,11 +56,35 @@
 		4A15683721CDEFDC00A686E9 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				4A24B2B3211B399400E3236B /* tap.mp3 */,
 				4AAC6A8421211C5F00F09C85 /* countdown.mp3 */,
 				4A24B2AF211B398500E3236B /* correct.wav */,
 				4A24B2B1211B398D00E3236B /* incorrect.wav */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		4A8877F021DC11BF009500D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A15680721CC5FCA00A686E9 /* Card.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A8877F121DC120E009500D2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4A8877F221DC1217009500D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A3DC79021D8393C00D2321F /* StartViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4AB8266D2116946B0035F7E6 = {
@@ -82,19 +106,19 @@
 		4AB826782116946B0035F7E6 /* SharkeyEric_4.1 */ = {
 			isa = PBXGroup;
 			children = (
-				4A15683721CDEFDC00A686E9 /* Audio */,
+				4A8877F221DC1217009500D2 /* Views */,
+				4A8877F121DC120E009500D2 /* ViewModels */,
 				4AB826792116946B0035F7E6 /* AppDelegate.swift */,
-				4AB8267B2116946B0035F7E6 /* ViewController.swift */,
 				4AB8267D2116946B0035F7E6 /* Main.storyboard */,
-				4AB826802116946C0035F7E6 /* Assets.xcassets */,
-				4A24B2B3211B399400E3236B /* tap.mp3 */,
-				4AB826822116946C0035F7E6 /* LaunchScreen.storyboard */,
 				4AB826852116946C0035F7E6 /* Info.plist */,
+				4A8877F021DC11BF009500D2 /* Models */,
+				4A15683721CDEFDC00A686E9 /* Audio */,
+				4AB8267B2116946B0035F7E6 /* ViewController.swift */,
+				4AB826802116946C0035F7E6 /* Assets.xcassets */,
+				4AB826822116946C0035F7E6 /* LaunchScreen.storyboard */,
 				4ABD1AA2212B47AC0063AC74 /* ScoresTableViewController.swift */,
 				4ABD1AA4212B47F90063AC74 /* ScoresTableViewCell.swift */,
 				4ABD1AA6212CA82E0063AC74 /* SharkeyEric_4.1.xcdatamodeld */,
-				4A15680721CC5FCA00A686E9 /* Card.swift */,
-				4A3DC79021D8393C00D2321F /* StartViewController.swift */,
 			);
 			path = SharkeyEric_4.1;
 			sourceTree = "<group>";
