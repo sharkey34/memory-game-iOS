@@ -6,13 +6,11 @@
 //  Copyright © 2018 Eric Sharkey. All rights reserved.
 //
 
-// Play Button by Freepik form flaticon.com
-
 import UIKit
 import AVFoundation
 import CoreData
 
-class ViewController: UIViewController, AVAudioPlayerDelegate {
+class GameViewController: UIViewController, AVAudioPlayerDelegate {
     
     // Creating outlets to access the needed UI elements.
     @IBOutlet weak var playButton: UIButton!
@@ -276,7 +274,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         // Looping through the imageView collection and setting the background color and the cornerRadius, and adding a tap gesture to the image views
         for image in imageViewCollection[...numImages]{
-            let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.imageTapped(sender:)))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(GameViewController.imageTapped(sender:)))
             image.addGestureRecognizer(tap)
             image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
             image.layer.cornerRadius = 10

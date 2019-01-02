@@ -12,9 +12,11 @@
 		4A24B2B2211B398D00E3236B /* incorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4A24B2B1211B398D00E3236B /* incorrect.wav */; };
 		4A24B2B4211B399400E3236B /* tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4A24B2B3211B399400E3236B /* tap.mp3 */; };
 		4A3DC79121D8393C00D2321F /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3DC79021D8393C00D2321F /* StartViewController.swift */; };
+		4A8877F421DC2F6D009500D2 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8877F321DC2F6D009500D2 /* GameViewModel.swift */; };
+		4A8877F621DC2FDB009500D2 /* ScoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8877F521DC2FDB009500D2 /* ScoresViewModel.swift */; };
 		4AAC6A8521211C5F00F09C85 /* countdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4AAC6A8421211C5F00F09C85 /* countdown.mp3 */; };
 		4AB8267A2116946B0035F7E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB826792116946B0035F7E6 /* AppDelegate.swift */; };
-		4AB8267C2116946B0035F7E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8267B2116946B0035F7E6 /* ViewController.swift */; };
+		4AB8267C2116946B0035F7E6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8267B2116946B0035F7E6 /* GameViewController.swift */; };
 		4AB8267F2116946B0035F7E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AB8267D2116946B0035F7E6 /* Main.storyboard */; };
 		4AB826812116946C0035F7E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AB826802116946C0035F7E6 /* Assets.xcassets */; };
 		4AB826842116946C0035F7E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AB826822116946C0035F7E6 /* LaunchScreen.storyboard */; };
@@ -29,10 +31,12 @@
 		4A24B2B1211B398D00E3236B /* incorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incorrect.wav; sourceTree = "<group>"; };
 		4A24B2B3211B399400E3236B /* tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tap.mp3; sourceTree = "<group>"; };
 		4A3DC79021D8393C00D2321F /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		4A8877F321DC2F6D009500D2 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		4A8877F521DC2FDB009500D2 /* ScoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewModel.swift; sourceTree = "<group>"; };
 		4AAC6A8421211C5F00F09C85 /* countdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdown.mp3; sourceTree = "<group>"; };
 		4AB826762116946B0035F7E6 /* SharkeyEric_4.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharkeyEric_4.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB826792116946B0035F7E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4AB8267B2116946B0035F7E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4AB8267B2116946B0035F7E6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4AB8267E2116946B0035F7E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AB826802116946C0035F7E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AB826832116946C0035F7E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				4A15680721CC5FCA00A686E9 /* Card.swift */,
+				4ABD1AA4212B47F90063AC74 /* ScoresTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -75,6 +80,8 @@
 		4A8877F121DC120E009500D2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4A8877F321DC2F6D009500D2 /* GameViewModel.swift */,
+				4A8877F521DC2FDB009500D2 /* ScoresViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -83,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				4A3DC79021D8393C00D2321F /* StartViewController.swift */,
+				4AB8267B2116946B0035F7E6 /* GameViewController.swift */,
+				4ABD1AA2212B47AC0063AC74 /* ScoresTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,11 +122,8 @@
 				4AB826852116946C0035F7E6 /* Info.plist */,
 				4A8877F021DC11BF009500D2 /* Models */,
 				4A15683721CDEFDC00A686E9 /* Audio */,
-				4AB8267B2116946B0035F7E6 /* ViewController.swift */,
 				4AB826802116946C0035F7E6 /* Assets.xcassets */,
 				4AB826822116946C0035F7E6 /* LaunchScreen.storyboard */,
-				4ABD1AA2212B47AC0063AC74 /* ScoresTableViewController.swift */,
-				4ABD1AA4212B47F90063AC74 /* ScoresTableViewCell.swift */,
 				4ABD1AA6212CA82E0063AC74 /* SharkeyEric_4.1.xcdatamodeld */,
 			);
 			path = SharkeyEric_4.1;
@@ -199,11 +205,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AB8267C2116946B0035F7E6 /* ViewController.swift in Sources */,
+				4AB8267C2116946B0035F7E6 /* GameViewController.swift in Sources */,
 				4A3DC79121D8393C00D2321F /* StartViewController.swift in Sources */,
 				4A15680821CC5FCA00A686E9 /* Card.swift in Sources */,
 				4AB8267A2116946B0035F7E6 /* AppDelegate.swift in Sources */,
+				4A8877F421DC2F6D009500D2 /* GameViewModel.swift in Sources */,
 				4ABD1AA8212CA82E0063AC74 /* SharkeyEric_4.1.xcdatamodeld in Sources */,
+				4A8877F621DC2FDB009500D2 /* ScoresViewModel.swift in Sources */,
 				4ABD1AA5212B47F90063AC74 /* ScoresTableViewCell.swift in Sources */,
 				4ABD1AA3212B47AC0063AC74 /* ScoresTableViewController.swift in Sources */,
 			);
