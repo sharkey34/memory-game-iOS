@@ -10,6 +10,9 @@ import UIKit
 
 class Card: UIButton {
     
+    var cardImage: UIImage?
+    var backImage: UIImage?
+    
     
     // Initializer to set up the card values
     
