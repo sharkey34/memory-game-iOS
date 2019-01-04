@@ -15,7 +15,6 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     // Creating outlets to access the needed UI elements.
     
     // New and Improved
-    @IBOutlet var viewBottomConstraints: [NSLayoutConstraint]!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
@@ -24,12 +23,12 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     // New Member Variables
     private var viewModel = GameViewModel()
     private var cards: [Card]?
+    private var imageArray: [UIImage] = []
     
 //    @IBOutlet var imageViewCollection: [UIImageView]!
     // Creating variables for the audioPlayer, to hold the images for each device, number of moves, and other information needed in the application.
     private var player = AVAudioPlayer()
     private var selectedImage: [Int] = []
-    private var imageArray: [UIImage] = []
     private var moves: Int = 0
     private var numImages = 0
     private var timer = Timer()
@@ -58,15 +57,41 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         super.didReceiveMemoryWarning()
     }
     
+//    // Getting and setting the images for the cards.
+//    if let imageArray = viewModel.imageArray{
+//
+//        for (index, card) in cardCollection.enumerated() {
+//
+//            card.cardImage = imageArray[index]
+//            card.setImage(card.cardImage, for: .normal)
+//        }
+//    }
+    
     func setUp(){
         
+        animateCards()
         
+        // Setting up labels.
         playButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        // Setting all the labels to nil.
         movesLabel.text = nil
         timerLabel.text = nil
+    }
+    
+    func animateCards(){
+    
+        // animating card display with incrementing delay.
+        var delay = 0.3
+           for card in self.cardCollection{
+        UIView.animate(withDuration: 1.0, delay: delay, options: .curveLinear, animations: {
         
-        
+                var frame = card.frame
+                frame.origin.y += UIScreen.main.bounds.height
+            
+                card.frame = frame
+            
+        }, completion: nil)
+            delay += 0.3
+        }
     }
     
 //    func setupViewDidLoad(){

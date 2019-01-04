@@ -12,13 +12,19 @@ class Card: UIButton {
     
     var cardImage: UIImage?
     var backImage: UIImage?
-    
-    
+
     // Initializer to set up the card values
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        backImage = UIImage(named: "cardBack")
+
+        self.setImage(backImage, for: .normal)
+    }
     
-    
-    // Function to perform all the flipe logic on each card.
+    // Function to perform all the flip logic on each card.
     func flipCard (){
+        
         
         
     }

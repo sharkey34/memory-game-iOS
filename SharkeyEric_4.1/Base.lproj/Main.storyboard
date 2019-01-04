@@ -613,16 +613,12 @@
                                 <exclude reference="iO5-Oe-zUh"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="28s-Kp-aLa"/>
-                                <exclude reference="Qzq-rB-Ohs"/>
-                                <exclude reference="yt1-jA-BAV"/>
-                                <exclude reference="zxH-lm-wU2"/>
-                                <exclude reference="qUf-BJ-XyQ"/>
                                 <exclude reference="3d6-Th-1Vu"/>
                                 <exclude reference="S0C-0x-Ul5"/>
                                 <exclude reference="bjx-CH-jY3"/>
                                 <exclude reference="iE7-gu-2uA"/>
                                 <exclude reference="o1z-bh-8HF"/>
+                                <exclude reference="qUf-BJ-XyQ"/>
                                 <exclude reference="4ZF-rf-VFh"/>
                                 <exclude reference="JST-yS-PrZ"/>
                                 <exclude reference="JvA-hZ-qKx"/>
@@ -637,11 +633,15 @@
                                 <exclude reference="UkK-Ag-pPf"/>
                                 <exclude reference="cZx-dL-MQ2"/>
                                 <exclude reference="geR-C2-3Ph"/>
+                                <exclude reference="KaX-w0-euV"/>
                                 <exclude reference="Bdp-YL-cAt"/>
                                 <exclude reference="Kz4-qS-7FB"/>
                                 <exclude reference="VEa-v7-P2n"/>
                                 <exclude reference="lVK-BQ-w9H"/>
-                                <exclude reference="KaX-w0-euV"/>
+                                <exclude reference="28s-Kp-aLa"/>
+                                <exclude reference="Qzq-rB-Ohs"/>
+                                <exclude reference="yt1-jA-BAV"/>
+                                <exclude reference="zxH-lm-wU2"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -649,12 +649,12 @@
                                 <exclude reference="QfP-pj-ZRl"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="RAy-3c-I9e"/>
-                                <include reference="qUf-BJ-XyQ"/>
                                 <include reference="3d6-Th-1Vu"/>
                                 <exclude reference="S0C-0x-Ul5"/>
                                 <exclude reference="bjx-CH-jY3"/>
                                 <exclude reference="o1z-bh-8HF"/>
+                                <exclude reference="RAy-3c-I9e"/>
+                                <include reference="qUf-BJ-XyQ"/>
                                 <include reference="4ZF-rf-VFh"/>
                                 <exclude reference="C5K-sj-Jw3"/>
                                 <exclude reference="Ewh-iL-CG8"/>
@@ -675,6 +675,7 @@
                                 <include reference="UkK-Ag-pPf"/>
                                 <exclude reference="Ur3-O5-cXy"/>
                                 <exclude reference="geR-C2-3Ph"/>
+                                <include reference="KaX-w0-euV"/>
                                 <exclude reference="2SR-k7-7DH"/>
                                 <exclude reference="Bdp-YL-cAt"/>
                                 <include reference="Kz4-qS-7FB"/>
@@ -683,7 +684,6 @@
                                 <exclude reference="uRN-d1-ftF"/>
                                 <exclude reference="vJg-N5-3H5"/>
                                 <exclude reference="xdr-Th-R4Y"/>
-                                <include reference="KaX-w0-euV"/>
                                 <exclude reference="Bzy-pL-lae"/>
                             </mask>
                         </variation>
@@ -720,14 +720,14 @@
                                 <include reference="iO5-Oe-zUh"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="28s-Kp-aLa"/>
-                                <include reference="Qzq-rB-Ohs"/>
-                                <include reference="yt1-jA-BAV"/>
-                                <include reference="zxH-lm-wU2"/>
                                 <exclude reference="C5K-sj-Jw3"/>
                                 <exclude reference="Ewh-iL-CG8"/>
                                 <exclude reference="WTg-CP-WWi"/>
                                 <exclude reference="hr2-lE-i5a"/>
+                                <include reference="28s-Kp-aLa"/>
+                                <include reference="Qzq-rB-Ohs"/>
+                                <include reference="yt1-jA-BAV"/>
+                                <include reference="zxH-lm-wU2"/>
                             </mask>
                         </variation>
                     </view>
@@ -736,26 +736,6 @@
                         <outlet property="movesLabel" destination="gra-KJ-btG" id="ygb-s4-F1M"/>
                         <outlet property="playButton" destination="LZC-hN-DO9" id="Ki0-LF-g6d"/>
                         <outlet property="timerLabel" destination="Euc-CF-3pN" id="qWJ-qQ-Saj"/>
-                        <outletCollection property="viewBottomConstraints" destination="wII-1h-2J6" collectionClass="NSMutableArray" id="Kj1-EV-kv0"/>
-                        <outletCollection property="viewBottomConstraints" destination="DQX-2o-ipu" collectionClass="NSMutableArray" id="VRH-cr-aZT"/>
-                        <outletCollection property="viewBottomConstraints" destination="dEd-CL-Yls" collectionClass="NSMutableArray" id="6tB-0s-O9q"/>
-                        <outletCollection property="viewBottomConstraints" destination="ywP-t6-EIH" collectionClass="NSMutableArray" id="RGe-zh-CLH"/>
-                        <outletCollection property="viewBottomConstraints" destination="oro-lg-77y" collectionClass="NSMutableArray" id="yYP-ba-aLD"/>
-                        <outletCollection property="viewBottomConstraints" destination="wtA-eD-TMt" collectionClass="NSMutableArray" id="v7k-G3-cMp"/>
-                        <outletCollection property="viewBottomConstraints" destination="HTY-dl-f07" collectionClass="NSMutableArray" id="9Ac-hA-slO"/>
-                        <outletCollection property="viewBottomConstraints" destination="xfd-gf-cfa" collectionClass="NSMutableArray" id="2XI-Mo-v7h"/>
-                        <outletCollection property="viewBottomConstraints" destination="g3J-Fw-maW" collectionClass="NSMutableArray" id="z3y-hK-iQJ"/>
-                        <outletCollection property="viewBottomConstraints" destination="qco-Uf-eT0" collectionClass="NSMutableArray" id="1tc-fe-bWf"/>
-                        <outletCollection property="viewBottomConstraints" destination="fZA-uQ-w3N" collectionClass="NSMutableArray" id="UT0-Ke-Gye"/>
-                        <outletCollection property="viewBottomConstraints" destination="lJg-nr-q0D" collectionClass="NSMutableArray" id="yW5-RS-0qJ"/>
-                        <outletCollection property="viewBottomConstraints" destination="5FZ-t2-XLP" collectionClass="NSMutableArray" id="z8c-XC-eSS"/>
-                        <outletCollection property="viewBottomConstraints" destination="EKN-rz-9sf" collectionClass="NSMutableArray" id="WoL-4G-8sy"/>
-                        <outletCollection property="viewBottomConstraints" destination="u6w-Hf-oaV" collectionClass="NSMutableArray" id="t4N-yG-CCP"/>
-                        <outletCollection property="viewBottomConstraints" destination="QmB-Ys-3Es" collectionClass="NSMutableArray" id="aqt-qA-FAQ"/>
-                        <outletCollection property="viewBottomConstraints" destination="ebg-pN-u4s" collectionClass="NSMutableArray" id="irT-HC-Hp5"/>
-                        <outletCollection property="viewBottomConstraints" destination="Gj0-s5-IU7" collectionClass="NSMutableArray" id="sv3-3k-cUx"/>
-                        <outletCollection property="viewBottomConstraints" destination="z4a-77-Pa1" collectionClass="NSMutableArray" id="w3n-Ag-9Ik"/>
-                        <outletCollection property="viewBottomConstraints" destination="4IS-zu-JOK" collectionClass="NSMutableArray" id="CN2-Oe-1KJ"/>
                         <outletCollection property="cardCollection" destination="jn1-ia-32M" collectionClass="NSMutableArray" id="cW6-OD-gJ7"/>
                         <outletCollection property="cardCollection" destination="iZR-2W-mYP" collectionClass="NSMutableArray" id="Uik-c8-mDf"/>
                         <outletCollection property="cardCollection" destination="v25-L8-Mgi" collectionClass="NSMutableArray" id="hQ7-3P-dte"/>

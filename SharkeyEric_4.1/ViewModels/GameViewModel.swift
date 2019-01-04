@@ -20,34 +20,18 @@ class GameViewModel{
     
     // TODO: Function to accept the number of cards needed assign the values and return an array of cards.
     
-    // Computed property to return the numImages based on device type.
-    var numImages: Int? {
-        // Checking the current device and setting the numImages variable accordingly.
-        var numImages: Int?
-        
+    
+    // Property to return an array of Cards.
+    var imageArray: [UIImage]? {
+        // TOOD: Works setting the images of the cards from here need to add collection of cards and retain it.
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
-            numImages = 19
+            return iPhoneImages.shuffled()
         case .pad:
-            numImages = 29
+            return iPadImages.shuffled()
         default:
             print("Device Unsepecified.")
-        }
-        return numImages
-    }
-    
-    
-    // Function to return an array of Cards.
-    func intialSetUp(cards: [Card]){
-        
-        if var num = numImages {
-            
-            while num >= 0 {
-            
-                
-                
-                num -= 1
-            }
+            return nil
         }
     }
 }
