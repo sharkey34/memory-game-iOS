@@ -34,4 +34,7 @@ class GameViewModel{
             return nil
         }
     }
+    
+    // Function to flip all cards and then flip them back.
+    
 }

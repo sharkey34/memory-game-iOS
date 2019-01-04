@@ -57,73 +57,117 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         super.didReceiveMemoryWarning()
     }
     
-//    // Getting and setting the images for the cards.
-//    if let imageArray = viewModel.imageArray{
-//
-//        for (index, card) in cardCollection.enumerated() {
-//
-//            card.cardImage = imageArray[index]
-//            card.setImage(card.cardImage, for: .normal)
-//        }
-//    }
+    
     
     func setUp(){
-        
+    
         animateCards()
         
         // Setting up labels.
         playButton.titleLabel?.adjustsFontSizeToFitWidth = true
         movesLabel.text = nil
         timerLabel.text = nil
+        
+        // Getting images and setting the cardImage for the cards.
+        if let imageArray = viewModel.imageArray{
+            
+            for (index, card) in cardCollection.enumerated() {
+                card.cardImage = imageArray[index]
+            }
+        }
     }
     
     func animateCards(){
-    
         // animating card display with incrementing delay.
-        var delay = 0.3
+        var delay = 0.2
            for card in self.cardCollection{
-        UIView.animate(withDuration: 1.0, delay: delay, options: .curveLinear, animations: {
+        UIView.animate(withDuration: 0.5, delay: delay, options: .curveLinear, animations: {
         
                 var frame = card.frame
                 frame.origin.y += UIScreen.main.bounds.height
-            
                 card.frame = frame
             
         }, completion: nil)
             delay += 0.3
         }
     }
+    @IBAction func playButtonSelected(_ sender: UIButton) {
+        
+        if sender.titleLabel?.text == "Play" {
+            playButton.setTitle("Stop", for: .normal)
+            
+            flipFront()
+            
+            
+        } else if sender.titleLabel?.text == "Stop"{
+            playButton.setTitle("Play", for: .normal)
+            
+        }
+        
+    }
     
-//    func setupViewDidLoad(){
-//        // Checking the current device and setting the numImages variable accordingly.
-//        switch UIDevice.current.userInterfaceIdiom {
-//        case .phone:
-//            numImages = 19
-//        case .pad:
-//            numImages = 29
-//        default:
-//            print("Device Unsepecified.")
-//        }
-//
-//        playButton.titleLabel?.adjustsFontSizeToFitWidth = true
-//        // Setting all the labels to nil.
-//        movesLabel.text = nil
-//        timerLabel.text = nil
-//
-//        for view in viewCollection[...numImages]{
-//            view.layer.cornerRadius = 10
-//        }
-//
-//        // Looping through the imageView collection and setting the background color and the cornerRadius, and adding a tap gesture to the image views
-//        for image in imageViewCollection[...numImages]{
-//            let tap = UITapGestureRecognizer(target: self, action: #selector(GameViewController.imageTapped(sender:)))
-//            image.addGestureRecognizer(tap)
-//            image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
-//            image.layer.cornerRadius = 10
-//        }
-//    }
-//
-//
+    // Card flips
+    func flipFront(){
+        playAudio(resource: "countdown", type: "mp3")
+        
+        for card in cardCollection{
+            card.setImage(card.cardImage, for: .normal)
+            UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromLeft, animations: nil)
+        }
+    }
+    
+    func flipBack(card: Card){
+        
+        card.setImage(card.backImage, for: .normal)
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
+    }
+    
+    // Audio CallBacks
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        // TODO Flip cards back.
+        for card in cardCollection {
+            flipBack(card: card)
+        }
+        
+        // If the timer is not already valid then creating the new timer.
+        if timer.isValid == false{
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        }
+        
+    }
+    
+        // Recieving the passed in strings getting teh path to the audio creating url passing the url to the audio player.
+        func playAudio(resource: String, type: String){
+            if let path = Bundle.main.path(forResource: resource, ofType: type){
+                do{
+                    let url = URL(fileURLWithPath: path)
+                    player = try AVAudioPlayer(contentsOf: url)
+    
+                    // If the resource countdown assigning the delegate to the player.
+                    if resource == "countdown"{
+                        player.delegate = self
+                    }
+                    // Preparing the player to play
+                    player.prepareToPlay()
+                } catch{
+                    print(error.localizedDescription)
+                }
+                // Playing the player.
+                player.play()
+            }
+        }
+    
+    // Function to keep track of the time that has passed counter the interval each time it is fired and displaying the time in the label.
+    @objc func updateTimer(){
+        time += Int(timer.timeInterval)
+        
+        timeMinutes = time / 60 % 60
+        timeSeconds = time % 60
+        
+        timerLabel.text = String(format:"%02i:%02i", timeMinutes, timeSeconds)
+    }
+
+    
 //    // Function to run when image is tapped.
 //    @objc func imageTapped(sender: UITapGestureRecognizer){
 //        // Checking that the sender is an imageView.

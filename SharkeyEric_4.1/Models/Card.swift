@@ -21,11 +21,4 @@ class Card: UIButton {
 
         self.setImage(backImage, for: .normal)
     }
-    
-    // Function to perform all the flip logic on each card.
-    func flipCard (){
-        
-        
-        
-    }
 }
