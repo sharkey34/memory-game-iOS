@@ -16,12 +16,12 @@ class GameViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet var cardCollection: [Card]!
     @IBOutlet var iPhoneCards: [Card]!
     
     // Member Variables
     private var viewModel = GameViewModel()
     private var selectedCard: Card?
+    private var gameCards: [Card] = []
     
     // Core Data variables.
     private var managedContext: NSManagedObjectContext!
@@ -58,17 +58,28 @@ class GameViewController: UIViewController {
     }
     
     func setUp(){
-        animateCards()
-        
-        // Setting up buttons and labels.
-        playButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        movesLabel.text = nil
-        timerLabel.text = nil
         
         // Getting images and setting the cardImage for the cards.
         if let imageArray = viewModel.imageArray{
             
-            for (index, card) in iPhoneCards.enumerated() {
+            switch imageArray.count {
+            case 20:
+            gameCards = iPhoneCards
+            case 30:
+            // TODO: == iPad cards
+                print("iPad")
+            default:
+                print("Incrrect number of cards")
+            }
+            
+            animateCards()
+            
+            // Setting up buttons and labels.
+            playButton.titleLabel?.adjustsFontSizeToFitWidth = true
+            movesLabel.text = nil
+            timerLabel.text = nil
+            
+            for (index, card) in gameCards.enumerated() {
                 card.cardImage = imageArray[index]
             }
         }
@@ -78,7 +89,7 @@ class GameViewController: UIViewController {
     func animateCards(){
         // animating card display with incrementing delay.
         var delay = 0.2
-           for card in self.iPhoneCards{
+           for card in self.gameCards{
         UIView.animate(withDuration: 0.3, delay: delay, options: .curveLinear, animations: {
         
                 var frame = card.frame
@@ -96,7 +107,7 @@ class GameViewController: UIViewController {
         if sender.titleLabel?.text == "Play" {
             playButton.setTitle("Stop", for: .normal)
             
-            for card in iPhoneCards{
+            for card in gameCards{
                 card.isUserInteractionEnabled = true
                 playAudio(resource: "countdown", type: "mp3")
                 flipFront(card: card)
@@ -104,7 +115,7 @@ class GameViewController: UIViewController {
         } else if sender.titleLabel?.text == "Stop"{
             playButton.setTitle("Play", for: .normal)
             
-            for card in iPhoneCards{
+            for card in gameCards{
                 card.isUserInteractionEnabled = false
                 
                 if card.currentImage == card.cardImage {
@@ -141,7 +152,7 @@ class GameViewController: UIViewController {
     // function to stop the the player and reset labels and counters.
     func reset(){
         // Re-setting
-        for card in iPhoneCards{
+        for card in gameCards{
             if card.isHidden == true {
                 card.isHidden = false
             }
@@ -181,7 +192,14 @@ class GameViewController: UIViewController {
                         cardSelected.isHidden = true
                         card.isHidden = true
                         self.selectedCard = nil
+                        
                         // TODO: Check if they are a the last two matches.
+                        for cards in self.gameCards {
+                            if cards.isHidden == false{
+                                return
+                            }
+                        }
+                        self.alert()
                         
                     } else {
                         self.playAudio(resource: "incorrect", type: "wav")
@@ -207,91 +225,77 @@ class GameViewController: UIViewController {
     }
     
 
-//
-//    // Alert function
-//    func alert(){
-//
-//        // Creating a counter variable, looping through the iphoneCollection and counting to see how many imageviews are black.
-//        var counter = -1
-//        for image in imageViewCollection[...numImages]{
-//            if image.backgroundColor == UIColor.init(displayP3Red: 1.00, green:1.00, blue:0.92, alpha:1.0) {
-//                counter += 1
-//            }
-//        }
-//
-//        // If the number of black views is as many as the number of images for the device then resetting variabels and labels and displaying the win labels.
-//        var alert = UIAlertController()
-//        if counter == numImages {
-//            timer.invalidate()
-//
-//            // Creating alert
-//            if timeMinutes > 0{
-//                alert = UIAlertController.init(title: "You Win!!", message: "You finished in \(moves) moves with a time of \(timeMinutes) minute(s) \(timeSeconds) seconds!\n\n To save your score enter your user name or initials below!", preferredStyle: .alert)
-//            } else {
-//                  alert = UIAlertController.init(title: "You Win!!", message: "You finished in \(moves) moves with a time of \(timeSeconds) seconds!\n To save your score enter your user name or initials below!", preferredStyle: .alert)
-//            }
-//
-//            // Adding textfield.
-//            alert.addTextField(configurationHandler: nil)
-//            // Creating an alert action with completion handler to run when ok is selected.
-//            let ok = UIAlertAction.init(title: "OK", style: .default, handler:{ [weak alert] (_) in
-//                if let textField = alert?.textFields![0]{
-//                    if let text =  textField.text{
-//                            self.name = text
-//                    }
-//                }
-//                // Calling the save function when ok is selected.
-//                self.save()
-//            })
-//
-//            // Adding alertAction and presenting alertController.
-//            alert.addAction(ok)
-//            present(alert, animated: true, completion: nil)
-//        }
-//    }
-//
-//
-//    // Function to save CoreData.
-//    func save(){
-//        if name.isEmpty{
-//            name = "N/A"
-//        }
-//
-//        // Setting values.
-//        leaderBoardData = NSManagedObject(entity: entityDescription, insertInto: managedContext)
-//        leaderBoardData.setValue(moves, forKey: "moves")
-//        leaderBoardData.setValue(time, forKey: "time")
-//        leaderBoardData.setValue(Date(), forKey: "date")
-//        leaderBoardData.setValue(name, forKey: "userName")
-//
-//        // Saving
-//        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-//
-//        // Resetting variables
-//        playButton.setTitle("Play", for: .normal)
-//        moves = 0
-//        selectedImage = []
-//        imageArray = []
-//        movesLabel.text = nil
-//
-//        for image in imageViewCollection[...numImages]{
-//            image.backgroundColor = UIColor.init(displayP3Red: 0.63, green:0.86, blue:1.00, alpha:1.0)
-//            image.layer.cornerRadius = 10
-//        }
-//
-//        timeSeconds = 0
-//        timeMinutes = 0
-//        time = 0
-//        timerLabel.text = nil
-//    }
-//
-//    // Passing the context and leaderBoardData to the leaderBoardViewController.
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//         let sTC = segue.destination as! ScoresTableViewController
-//
-//        sTC.managedContext = managedContext
-//        sTC.leaderBoardData = leaderBoardData
-//    }
+
+    // Alert function
+    func alert(){
+
+        // If the number of black views is as many as the number of images for the device then resetting variabels and labels and displaying the win labels.
+        var alert = UIAlertController()
+        
+            timer.invalidate()
+            // Creating alert
+            if timeMinutes > 0{
+                alert = UIAlertController.init(title: "You Win!!", message: "You finished in \(moves) moves with a time of \(timeMinutes) minute(s) \(timeSeconds) seconds!\n\n To save your score enter your user name or initials below!", preferredStyle: .alert)
+            } else {
+                  alert = UIAlertController.init(title: "You Win!!", message: "You finished in \(moves) moves with a time of \(timeSeconds) seconds!\n To save your score enter your user name or initials below!", preferredStyle: .alert)
+            }
+
+            // Adding textfield.
+            alert.addTextField(configurationHandler: nil)
+            // Creating an alert action with completion handler to run when ok is selected.
+            let ok = UIAlertAction.init(title: "OK", style: .default, handler:{ [weak alert] (_) in
+                if let textField = alert?.textFields![0]{
+                    if let text =  textField.text{
+                            self.name = text
+                    }
+                }
+                // Calling the save function when ok is selected.
+                self.save()
+            })
+
+            // Adding alertAction and presenting alertController.
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
+    }
+
+
+    // Function to save CoreData.
+    func save(){
+        
+       reset()
+        
+        if name.isEmpty{
+            name = "N/A"
+        }
+
+        // Setting values.
+        leaderBoardData = NSManagedObject(entity: entityDescription, insertInto: managedContext)
+        leaderBoardData.setValue(moves, forKey: "moves")
+        leaderBoardData.setValue(time, forKey: "time")
+        leaderBoardData.setValue(Date(), forKey: "date")
+        leaderBoardData.setValue(name, forKey: "userName")
+
+        // Saving
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+
+        // Resetting variables
+        playButton.setTitle("Play", for: .normal)
+        moves = 0
+        movesLabel.text = nil
+
+        timeSeconds = 0
+        timeMinutes = 0
+        time = 0
+        timerLabel.text = nil
+    }
+
+    // Passing the context and leaderBoardData to the leaderBoardViewController.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         let sTC = segue.destination as! ScoresTableViewController
+
+        sTC.managedContext = managedContext
+        sTC.leaderBoardData = leaderBoardData
+    }
 }
 
 extension GameViewController: AVAudioPlayerDelegate {
@@ -299,7 +303,7 @@ extension GameViewController: AVAudioPlayerDelegate {
     // Audio CallBacks
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         
-        for card in iPhoneCards {
+        for card in gameCards {
             flipBack(card: card)
         }
         
