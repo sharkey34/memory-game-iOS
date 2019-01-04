@@ -191,6 +191,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES" image="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v1d-XR-SbC"/>
+                                        </connections>
                                     </view>
                                     <view tag="2" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="v25-L8-Mgi" userLabel="View2" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="182" y="0.0" width="83" height="88.333333333333329"/>
@@ -198,6 +201,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TqX-cR-ZBH"/>
+                                        </connections>
                                     </view>
                                     <view tag="3" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Mva-V2-u5W" userLabel="View3" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="273" y="0.0" width="83" height="88.333333333333329"/>
@@ -205,6 +211,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l7e-bc-zzZ"/>
+                                        </connections>
                                     </view>
                                     <view tag="1" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="iZR-2W-mYP" userLabel="View1" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="90.666666666666686" y="0.0" width="83.333333333333314" height="88.333333333333329"/>
@@ -212,6 +221,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Km1-uK-9Q8"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -247,6 +259,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3g4-SJ-nNX"/>
+                                        </connections>
                                     </view>
                                     <view tag="5" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="pIa-VR-9bI" userLabel="View5" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="90.666666666666686" y="0.0" width="83.333333333333314" height="88.333333333333329"/>
@@ -254,6 +269,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F57-sd-kpS"/>
+                                        </connections>
                                     </view>
                                     <view tag="7" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oTV-aH-8Yx" userLabel="View7" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="273" y="0.0" width="83" height="88.333333333333329"/>
@@ -261,6 +279,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JSm-AE-yDF"/>
+                                        </connections>
                                     </view>
                                     <view tag="6" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="9me-MO-mIc" userLabel="View6" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="182" y="0.0" width="83" height="88.333333333333329"/>
@@ -268,6 +289,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jxs-LS-1ZN"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -303,6 +327,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wq1-ha-hCg"/>
+                                        </connections>
                                     </view>
                                     <view tag="9" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0sa-ZE-c1X" userLabel="View9" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="90.666666666666686" y="0.0" width="83.333333333333314" height="88"/>
@@ -310,6 +337,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EoV-gh-h8g"/>
+                                        </connections>
                                     </view>
                                     <view tag="8" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="W27-xg-aPU" userLabel="View8" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="-0.3333333333333286" y="0.0" width="83" height="88"/>
@@ -317,6 +347,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kuz-9w-2Sv"/>
+                                        </connections>
                                     </view>
                                     <view tag="11" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aeO-Pm-ht3" userLabel="View11" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="273" y="0.0" width="83" height="88"/>
@@ -324,6 +357,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J5u-IW-gmZ"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -359,6 +395,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Bl-UP-5d8"/>
+                                        </connections>
                                     </view>
                                     <view tag="15" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="h1e-xY-xVD" userLabel="View15" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="273" y="0.0" width="83" height="88.333333333333329"/>
@@ -366,6 +405,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mbM-gr-z66"/>
+                                        </connections>
                                     </view>
                                     <view tag="13" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="gdr-0l-i3q" userLabel="View13" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="90.666666666666686" y="0.0" width="83.333333333333314" height="88.333333333333329"/>
@@ -373,6 +415,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PfR-gD-FDn"/>
+                                        </connections>
                                     </view>
                                     <view tag="14" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oNf-1c-LM2" userLabel="View14" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="182" y="0.0" width="83" height="88.333333333333329"/>
@@ -380,6 +425,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tlE-k6-P4p"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -415,6 +463,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bmg-fO-YMK"/>
+                                        </connections>
                                     </view>
                                     <view tag="18" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Tzk-Z9-MK3" userLabel="View18" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="182" y="0.0" width="83" height="88.333333333333329"/>
@@ -422,6 +473,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kjv-bV-hs9"/>
+                                        </connections>
                                     </view>
                                     <view tag="17" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="W2F-91-TUN" userLabel="View17" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="90.666666666666686" y="0.0" width="83.333333333333314" height="88.333333333333329"/>
@@ -429,6 +483,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zv8-1w-Saq"/>
+                                        </connections>
                                     </view>
                                     <view tag="16" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0Bl-jT-phB" userLabel="View16" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="-0.3333333333333286" y="0.0" width="83" height="88.333333333333329"/>
@@ -436,6 +493,9 @@
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OrJ-EB-ylk"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
