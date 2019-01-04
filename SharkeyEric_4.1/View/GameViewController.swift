@@ -10,22 +10,23 @@ import UIKit
 import AVFoundation
 import CoreData
 
-class GameViewController: UIViewController, AVAudioPlayerDelegate {
+class GameViewController: UIViewController {
     
-    // Creating outlets to access the needed UI elements.
-    
-    // New and Improved
+    // Outlets
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var cardCollection: [Card]!
     
-    // New Member Variables
+    // Member Variables
     private var viewModel = GameViewModel()
     private var cards: [Card]?
     private var imageArray: [UIImage] = []
     
-//    @IBOutlet var imageViewCollection: [UIImageView]!
+    // Core Data variables.
+    private var managedContext: NSManagedObjectContext!
+    private var entityDescription: NSEntityDescription!
+    
     // Creating variables for the audioPlayer, to hold the images for each device, number of moves, and other information needed in the application.
     private var player = AVAudioPlayer()
     private var selectedImage: [Int] = []
@@ -37,10 +38,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     private var time = 0
     private var name = ""
     private var leaderBoardData: NSManagedObject!
-    
-    // Core Data variables.
-    private var managedContext: NSManagedObjectContext!
-    private var entityDescription: NSEntityDescription!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,10 +58,9 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     func setUp(){
-    
         animateCards()
         
-        // Setting up labels.
+        // Setting up buttons and labels.
         playButton.titleLabel?.adjustsFontSizeToFitWidth = true
         movesLabel.text = nil
         timerLabel.text = nil
@@ -77,6 +74,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    // Function to animate all the cards falling into place at the start of the game.
     func animateCards(){
         // animating card display with incrementing delay.
         var delay = 0.2
@@ -91,19 +89,33 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
             delay += 0.3
         }
     }
+    
+    // Function for when the PlayButton is selected.
     @IBAction func playButtonSelected(_ sender: UIButton) {
         
         if sender.titleLabel?.text == "Play" {
             playButton.setTitle("Stop", for: .normal)
             
             flipFront()
+        
+            for card in cardCollection{
+                card.isUserInteractionEnabled = true
+            }
             
             
         } else if sender.titleLabel?.text == "Stop"{
             playButton.setTitle("Play", for: .normal)
             
+            for card in cardCollection{
+                card.isUserInteractionEnabled = false
+                
+                if card.currentImage == card.cardImage {
+                    flipBack(card: card)
+                }
+            }
+            sender.setTitle("Play", for: .normal)
+         reset()
         }
-        
     }
     
     // Card flips
@@ -117,45 +129,10 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func flipBack(card: Card){
-        
         card.setImage(card.backImage, for: .normal)
         UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
     }
     
-    // Audio CallBacks
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        // TODO Flip cards back.
-        for card in cardCollection {
-            flipBack(card: card)
-        }
-        
-        // If the timer is not already valid then creating the new timer.
-        if timer.isValid == false{
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        }
-        
-    }
-    
-        // Recieving the passed in strings getting teh path to the audio creating url passing the url to the audio player.
-        func playAudio(resource: String, type: String){
-            if let path = Bundle.main.path(forResource: resource, ofType: type){
-                do{
-                    let url = URL(fileURLWithPath: path)
-                    player = try AVAudioPlayer(contentsOf: url)
-    
-                    // If the resource countdown assigning the delegate to the player.
-                    if resource == "countdown"{
-                        player.delegate = self
-                    }
-                    // Preparing the player to play
-                    player.prepareToPlay()
-                } catch{
-                    print(error.localizedDescription)
-                }
-                // Playing the player.
-                player.play()
-            }
-        }
     
     // Function to keep track of the time that has passed counter the interval each time it is fired and displaying the time in the label.
     @objc func updateTimer(){
@@ -165,6 +142,18 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         timeSeconds = time % 60
         
         timerLabel.text = String(format:"%02i:%02i", timeMinutes, timeSeconds)
+    }
+    
+    func reset(){
+        // Re-setting
+        player.stop()
+        timer.invalidate()
+        timeSeconds = 0
+        timeMinutes = 0
+        time = 0
+        moves = 0
+        movesLabel.text = nil
+        timerLabel.text = nil
     }
 
     
@@ -408,5 +397,43 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
 //        sTC.managedContext = managedContext
 //        sTC.leaderBoardData = leaderBoardData
 //    }
+}
+
+extension GameViewController: AVAudioPlayerDelegate {
+    
+    // Audio CallBacks
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        // TODO Flip cards back.
+        for card in cardCollection {
+            flipBack(card: card)
+        }
+        
+        // If the timer is not already valid then creating the new timer.
+        if timer.isValid == false{
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        }
+        
+    }
+    
+    // Recieving the passed in strings getting teh path to the audio creating url passing the url to the audio player.
+    func playAudio(resource: String, type: String){
+        if let path = Bundle.main.path(forResource: resource, ofType: type){
+            do{
+                let url = URL(fileURLWithPath: path)
+                player = try AVAudioPlayer(contentsOf: url)
+                
+                // If the resource countdown assigning the delegate to the player.
+                if resource == "countdown"{
+                    player.delegate = self
+                }
+                // Preparing the player to play
+                player.prepareToPlay()
+            } catch{
+                print(error.localizedDescription)
+            }
+            // Playing the player.
+            player.play()
+        }
+    }
 }
 

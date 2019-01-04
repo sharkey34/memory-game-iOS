@@ -68,32 +68,32 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
-		4A8877F021DC11BF009500D2 /* Models */ = {
+		4A8877F021DC11BF009500D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				4A15680721CC5FCA00A686E9 /* Card.swift */,
 				4ABD1AA4212B47F90063AC74 /* ScoresTableViewCell.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		4A8877F121DC120E009500D2 /* ViewModels */ = {
+		4A8877F121DC120E009500D2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				4A8877F321DC2F6D009500D2 /* GameViewModel.swift */,
 				4A8877F521DC2FDB009500D2 /* ScoresViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		4A8877F221DC1217009500D2 /* Views */ = {
+		4A8877F221DC1217009500D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				4A3DC79021D8393C00D2321F /* StartViewController.swift */,
 				4AB8267B2116946B0035F7E6 /* GameViewController.swift */,
 				4ABD1AA2212B47AC0063AC74 /* ScoresTableViewController.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		4AB8266D2116946B0035F7E6 = {
@@ -115,12 +115,12 @@
 		4AB826782116946B0035F7E6 /* SharkeyEric_4.1 */ = {
 			isa = PBXGroup;
 			children = (
-				4A8877F221DC1217009500D2 /* Views */,
-				4A8877F121DC120E009500D2 /* ViewModels */,
+				4A8877F221DC1217009500D2 /* View */,
+				4A8877F121DC120E009500D2 /* ViewModel */,
 				4AB826792116946B0035F7E6 /* AppDelegate.swift */,
 				4AB8267D2116946B0035F7E6 /* Main.storyboard */,
 				4AB826852116946C0035F7E6 /* Info.plist */,
-				4A8877F021DC11BF009500D2 /* Models */,
+				4A8877F021DC11BF009500D2 /* Model */,
 				4A15683721CDEFDC00A686E9 /* Audio */,
 				4AB826802116946C0035F7E6 /* Assets.xcassets */,
 				4AB826822116946C0035F7E6 /* LaunchScreen.storyboard */,
