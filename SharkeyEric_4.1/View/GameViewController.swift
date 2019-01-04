@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var cardCollection: [Card]!
+    @IBOutlet var iPhoneCards: [Card]!
     
     // Member Variables
     private var viewModel = GameViewModel()
@@ -67,7 +68,7 @@ class GameViewController: UIViewController {
         // Getting images and setting the cardImage for the cards.
         if let imageArray = viewModel.imageArray{
             
-            for (index, card) in cardCollection.enumerated() {
+            for (index, card) in iPhoneCards.enumerated() {
                 card.cardImage = imageArray[index]
             }
         }
@@ -77,15 +78,15 @@ class GameViewController: UIViewController {
     func animateCards(){
         // animating card display with incrementing delay.
         var delay = 0.2
-           for card in self.cardCollection{
-        UIView.animate(withDuration: 0.5, delay: delay, options: .curveLinear, animations: {
+           for card in self.iPhoneCards{
+        UIView.animate(withDuration: 0.3, delay: delay, options: .curveLinear, animations: {
         
                 var frame = card.frame
                 frame.origin.y += UIScreen.main.bounds.height
                 card.frame = frame
             
         }, completion: nil)
-            delay += 0.3
+            delay += 0.2
         }
     }
     
@@ -95,14 +96,15 @@ class GameViewController: UIViewController {
         if sender.titleLabel?.text == "Play" {
             playButton.setTitle("Stop", for: .normal)
             
-            for card in cardCollection{
+            for card in iPhoneCards{
                 card.isUserInteractionEnabled = true
+                playAudio(resource: "countdown", type: "mp3")
                 flipFront(card: card)
             }
         } else if sender.titleLabel?.text == "Stop"{
             playButton.setTitle("Play", for: .normal)
             
-            for card in cardCollection{
+            for card in iPhoneCards{
                 card.isUserInteractionEnabled = false
                 
                 if card.currentImage == card.cardImage {
@@ -116,8 +118,6 @@ class GameViewController: UIViewController {
     
     // Card flips
     func flipFront(card: Card){
-        playAudio(resource: "countdown", type: "mp3")
-        
             card.setImage(card.cardImage, for: .normal)
             UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromLeft, animations: nil)
     }
@@ -141,7 +141,7 @@ class GameViewController: UIViewController {
     // function to stop the the player and reset labels and counters.
     func reset(){
         // Re-setting
-        for card in cardCollection{
+        for card in iPhoneCards{
             if card.isHidden == true {
                 card.isHidden = false
             }
@@ -163,6 +163,7 @@ class GameViewController: UIViewController {
         guard let card = sender as? Card else {return}
         
         if card.currentImage == card.backImage {
+            playAudio(resource: "tap", type: "mp3")
             
             if let cardSelected = selectedCard {
                // There is already a card selected
@@ -298,7 +299,7 @@ extension GameViewController: AVAudioPlayerDelegate {
     // Audio CallBacks
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         
-        for card in cardCollection {
+        for card in iPhoneCards {
             flipBack(card: card)
         }
         
