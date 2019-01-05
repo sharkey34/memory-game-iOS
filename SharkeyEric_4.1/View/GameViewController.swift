@@ -88,18 +88,37 @@ class GameViewController: UIViewController {
     // Function to animate all the cards falling into place at the start of the game.
     func animateCards(){
         // animating card display with incrementing delay.
-        var delay = 0.2
+        var delay = 0.1
+        var counter = 0
            for card in self.gameCards{
-        UIView.animate(withDuration: 0.3, delay: delay, options: .curveLinear, animations: {
+        UIView.animate(withDuration: 0.1, delay: delay, options: .curveLinear, animations: {
         
                 var frame = card.frame
-                frame.origin.y += UIScreen.main.bounds.height
-                card.frame = frame
             
+            switch counter {
+            case 0:
+                frame.origin.y -= UIScreen.main.bounds.height
+                counter += 1
+            case 1:
+                frame.origin.x += UIScreen.main.bounds.width
+                counter += 1
+            case 2:
+                frame.origin.y += UIScreen.main.bounds.height
+                counter += 1
+            case 3:
+                frame.origin.x -= UIScreen.main.bounds.width
+                counter = 0
+            default:
+                print("Whoops")
+            }
+            
+                card.frame = frame
+    
         }, completion: nil)
-            delay += 0.2
+            delay += 0.1
         }
         playButton.isEnabled = true
+
     }
     
     // Function for when the PlayButton is selected.
