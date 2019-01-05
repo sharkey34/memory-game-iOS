@@ -21,7 +21,7 @@ class GameViewController: UIViewController {
     
     // Member Variables
     private var viewModel = GameViewModel()
-    private var selectedCard: Card?
+    private var selectedCards: [Card] = []
     private var gameCards: [Card] = []
     
     // Core Data variables.
@@ -91,6 +91,8 @@ class GameViewController: UIViewController {
         var delay = 0.1
         var counter = 0
            for card in self.gameCards{
+            
+            card.isUserInteractionEnabled = false
         UIView.animate(withDuration: 0.1, delay: delay, options: .curveLinear, animations: {
         
                 var frame = card.frame
@@ -210,25 +212,37 @@ class GameViewController: UIViewController {
         guard let card = sender as? Card else {return}
         
         if card.currentImage == card.backImage {
-            playAudio(resource: "tap", type: "mp3")
             
-            if let cardSelected = selectedCard {
-               // There is already a card selected
+            // TODO: Check if there is more than one card selected.
+            
+            switch selectedCards.count {
+            case 0:
+                // There is no card previously selected
+                playAudio(resource: "tap", type: "mp3")
+                flipFront(card: card)
+                
+                selectedCards.append(card)
+                card.isUserInteractionEnabled = false
+            case 1:
+                playAudio(resource: "tap", type: "mp3")
+                
+                selectedCards.append(card)
+                
+                // There is already a card selected
                 flipFront(card: card)
                 card.isUserInteractionEnabled = false
                 moves += 1
                 movesLabel.text = "Moves: \(moves)"
                 
                 DispatchQueue.main.asyncAfter(wallDeadline: .now() + 0.5) {
-                   
-                    if card.currentImage == cardSelected.cardImage {
+                    
+                    if card.currentImage == self.selectedCards[0].cardImage {
                         self.playAudio(resource: "correct", type: "wav")
                         
                         card.isUserInteractionEnabled = true
-                        cardSelected.isHidden = true
+                        self.selectedCards[0].isHidden = true
                         card.isHidden = true
-                        self.selectedCard = nil
-                        
+                        self.selectedCards = []
                         // TODO: Check if they are a the last two matches.
                         for cards in self.gameCards {
                             if cards.isHidden == false{
@@ -236,24 +250,18 @@ class GameViewController: UIViewController {
                             }
                         }
                         self.alert()
-                        
                     } else {
                         self.playAudio(resource: "incorrect", type: "wav")
-
-                        cardSelected.isUserInteractionEnabled = true
+                        
+                        self.selectedCards[0].isUserInteractionEnabled = true
                         card.isUserInteractionEnabled = true
-                        self.selectedCard = nil
-                        self.flipBack(card: cardSelected)
+                        self.flipBack(card: self.selectedCards[0])
                         self.flipBack(card: card)
+                        self.selectedCards = []
                     }
                 }
-            } else {
-                // There is no card previously selected
-                playAudio(resource: "tap", type: "mp3")
-                flipFront(card: card)
-
-                selectedCard = card
-                card.isUserInteractionEnabled = false
+            default:
+                print("Two cards already flipped.")
             }
         } else {
             print("Card is already flipped.")
