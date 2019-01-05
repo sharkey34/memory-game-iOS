@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zty-iN-Cq4">
-    <device id="ipad12_9" orientation="portrait">
+    <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,23 +15,23 @@
             <objects>
                 <viewController id="Zty-iN-Cq4" customClass="StartViewController" customModule="SharkeyEric_4_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="shk-2z-44W">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matchy Matchy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo7-3o-MGn">
-                                <rect key="frame" x="0.0" y="124" width="1024" height="72"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matchy Matchy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Mo7-3o-MGn">
+                                <rect key="frame" x="83.5" y="146.5" width="667" height="160"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="100"/>
                                 <color key="textColor" red="0.80000000000000004" green="0.24705882352941178" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click To Play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9K-Ai-j8p">
-                                <rect key="frame" x="465" y="242" width="94" height="28"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click To Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="f9K-Ai-j8p">
+                                <rect key="frame" x="313" y="485.5" width="208.5" height="48"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
                                 <color key="textColor" red="0.44570845365524292" green="0.74466651678085327" blue="0.7686430811882019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0h-Fk-Lfe">
-                                <rect key="frame" x="307" y="320" width="410" height="273"/>
+                                <rect key="frame" x="292" y="568" width="250" height="222.5"/>
                                 <state key="normal" image="play"/>
                                 <connections>
                                     <segue destination="c7x-HM-tqK" kind="show" id="TmT-OG-eZP"/>
@@ -40,17 +40,34 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Mo7-3o-MGn" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" id="47n-Ri-oP9"/>
-                            <constraint firstItem="f9K-Ai-j8p" firstAttribute="top" secondItem="Mo7-3o-MGn" secondAttribute="bottom" constant="46" id="5om-so-J4s"/>
                             <constraint firstItem="A0h-Fk-Lfe" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" multiplier="0.4" id="6Sh-4K-D1D"/>
-                            <constraint firstItem="Mo7-3o-MGn" firstAttribute="top" secondItem="TsX-Ly-eeo" secondAttribute="top" constant="104" id="8aP-eD-jWH"/>
+                            <constraint firstItem="f9K-Ai-j8p" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" multiplier="0.25" id="CAa-AI-KGK"/>
+                            <constraint firstItem="f9K-Ai-j8p" firstAttribute="centerY" secondItem="TsX-Ly-eeo" secondAttribute="centerY" multiplier="0.9" id="LO1-g4-JkX"/>
                             <constraint firstItem="A0h-Fk-Lfe" firstAttribute="height" secondItem="shk-2z-44W" secondAttribute="height" multiplier="0.2" id="NbX-US-9TZ"/>
-                            <constraint firstItem="f9K-Ai-j8p" firstAttribute="centerX" secondItem="TsX-Ly-eeo" secondAttribute="centerX" id="Pft-iF-8Ig"/>
-                            <constraint firstItem="A0h-Fk-Lfe" firstAttribute="top" secondItem="f9K-Ai-j8p" secondAttribute="bottom" constant="50" id="bNS-hf-rfu"/>
-                            <constraint firstItem="A0h-Fk-Lfe" firstAttribute="centerX" secondItem="f9K-Ai-j8p" secondAttribute="centerX" id="hBq-Vh-vt2"/>
-                            <constraint firstItem="Mo7-3o-MGn" firstAttribute="centerX" secondItem="TsX-Ly-eeo" secondAttribute="centerX" id="wXf-Xm-dDU"/>
+                            <constraint firstItem="Mo7-3o-MGn" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" multiplier="0.8" id="SfG-5U-ahL"/>
+                            <constraint firstItem="Mo7-3o-MGn" firstAttribute="centerX" secondItem="TsX-Ly-eeo" secondAttribute="centerX" id="VzR-NO-Ou5"/>
+                            <constraint firstItem="A0h-Fk-Lfe" firstAttribute="height" secondItem="shk-2z-44W" secondAttribute="height" multiplier="0.2" id="WTL-Wh-Pb2"/>
+                            <constraint firstItem="A0h-Fk-Lfe" firstAttribute="centerY" secondItem="TsX-Ly-eeo" secondAttribute="centerY" multiplier="1.2" id="ar7-N8-Ewt"/>
+                            <constraint firstItem="A0h-Fk-Lfe" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" multiplier="0.3" id="gmu-o5-t1w"/>
+                            <constraint firstItem="A0h-Fk-Lfe" firstAttribute="centerX" secondItem="TsX-Ly-eeo" secondAttribute="centerX" id="hlh-bu-kZM"/>
+                            <constraint firstItem="Mo7-3o-MGn" firstAttribute="centerY" secondItem="TsX-Ly-eeo" secondAttribute="centerY" multiplier="0.4" id="l4j-d6-R06"/>
+                            <constraint firstItem="f9K-Ai-j8p" firstAttribute="centerX" secondItem="TsX-Ly-eeo" secondAttribute="centerX" id="zFO-nd-h0D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TsX-Ly-eeo"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WTL-Wh-Pb2"/>
+                                <exclude reference="gmu-o5-t1w"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="6Sh-4K-D1D"/>
+                                <exclude reference="NbX-US-9TZ"/>
+                                <include reference="WTL-Wh-Pb2"/>
+                                <include reference="gmu-o5-t1w"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="2us-6R-aCv"/>
                 </viewController>
@@ -63,7 +80,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="SharkeyEric_4_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfP-pj-ZRl">
@@ -72,10 +89,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5i-C1-Rhn" userLabel="bottomView">
-                                <rect key="frame" x="0.0" y="1229.5" width="1024" height="136.5"/>
+                                <rect key="frame" x="0.0" y="1001" width="834" height="111"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZC-hN-DO9">
-                                        <rect key="frame" x="435" y="50" width="154" height="36"/>
+                                        <rect key="frame" x="354.5" y="37.5" width="125" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Play">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,7 +102,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUT-Om-muB">
-                                        <rect key="frame" x="768" y="0.0" width="205" height="136.5"/>
+                                        <rect key="frame" x="625.5" y="0.0" width="167" height="111"/>
                                         <state key="normal" image="leaderBoard"/>
                                         <connections>
                                             <segue destination="Pme-jp-ydI" kind="show" id="RYd-5r-dv5"/>
@@ -138,10 +155,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVr-mL-bqM" userLabel="topView">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="205"/>
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="167"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="RBU-xJ-yr7">
-                                        <rect key="frame" x="307" y="54.5" width="410" height="96"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matchy Matchy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="RBU-xJ-yr7">
+                                        <rect key="frame" x="250" y="35.5" width="334" height="96"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="60"/>
                                         <nil key="textColor"/>
                                         <color key="highlightedColor" red="1" green="0.38947337298389539" blue="0.36177995331788126" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -169,24 +186,24 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Hd-Gd-SVQ" userLabel="dividerView">
-                                <rect key="frame" x="206.66666666666666" y="179.33333333333334" width="0.66666666666665719" height="441.33333333333326"/>
+                                <rect key="frame" x="160" y="128" width="0.0" height="288"/>
                                 <color key="backgroundColor" red="0.92156862750000001" green="1" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Euc-CF-3pN">
-                                <rect key="frame" x="0.0" y="1205.5" width="307" height="24"/>
+                                <rect key="frame" x="0.0" y="977" width="250" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="gra-KJ-btG">
-                                <rect key="frame" x="717" y="1209.5" width="307" height="20"/>
+                                <rect key="frame" x="584" y="981" width="250" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGL-gC-ZfH" userLabel="constraintView4">
-                                <rect key="frame" x="71.5" y="253" width="881" height="136.5"/>
+                                <rect key="frame" x="58.5" y="208.5" width="717" height="111"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jn1-ia-32M" userLabel="View0" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="-12" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES" image="YES"/>
@@ -196,7 +213,7 @@
                                         </connections>
                                     </view>
                                     <view tag="2" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="v25-L8-Mgi" userLabel="View2" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="358.5" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="286" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -206,7 +223,7 @@
                                         </connections>
                                     </view>
                                     <view tag="1" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="iZR-2W-mYP" userLabel="View1" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="179.5" y="0.0" width="163" height="136.5"/>
+                                        <rect key="frame" x="137" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -216,11 +233,14 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttq-3v-Ft3" userLabel="View20" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="717.5" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="584" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VLZ-F6-165"/>
+                                        </connections>
                                     </view>
                                     <view tag="3" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Mva-V2-u5W" userLabel="View3" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="538" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="435" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -352,10 +372,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byZ-7g-2eY" userLabel="constriantView3">
-                                <rect key="frame" x="71.5" y="397.5" width="881" height="136.5"/>
+                                <rect key="frame" x="58.5" y="327.5" width="717" height="111.5"/>
                                 <subviews>
                                     <view tag="4" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-mK-cGV" userLabel="View4" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="-12" y="0.0" width="133" height="111.5"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -365,7 +385,7 @@
                                         </connections>
                                     </view>
                                     <view tag="5" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="pIa-VR-9bI" userLabel="View5" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="179.5" y="0.0" width="163" height="136.5"/>
+                                        <rect key="frame" x="137" y="0.0" width="133" height="111.5"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -375,7 +395,7 @@
                                         </connections>
                                     </view>
                                     <view tag="6" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="9me-MO-mIc" userLabel="View6" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="358.5" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="286" y="0.0" width="133" height="111.5"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -385,11 +405,14 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQO-j6-e3C" userLabel="View21" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="717.5" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="584" y="0.0" width="133" height="111.5"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wPZ-K3-bNH"/>
+                                        </connections>
                                     </view>
                                     <view tag="7" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oTV-aH-8Yx" userLabel="View7" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="538" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="435" y="0.0" width="133" height="111.5"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -521,10 +544,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLL-Vv-Cjo" userLabel="constraintView2">
-                                <rect key="frame" x="71.5" y="542" width="881" height="136.5"/>
+                                <rect key="frame" x="58.5" y="447" width="717" height="111"/>
                                 <subviews>
                                     <view tag="10" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="o2v-XA-2hy" userLabel="View10" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="358.5" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="286" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -534,7 +557,7 @@
                                         </connections>
                                     </view>
                                     <view tag="9" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0sa-ZE-c1X" userLabel="View9" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="179.5" y="0.0" width="163" height="136.5"/>
+                                        <rect key="frame" x="137" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -544,7 +567,7 @@
                                         </connections>
                                     </view>
                                     <view tag="8" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="W27-xg-aPU" userLabel="View8" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="-12" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -554,7 +577,7 @@
                                         </connections>
                                     </view>
                                     <view tag="11" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aeO-Pm-ht3" userLabel="View11" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="538" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="435" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -564,8 +587,11 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5A0-nN-uKF" userLabel="View22" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="717.5" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="584" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K1i-pI-5Jk"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -690,10 +716,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDq-Wa-DNL" userLabel="constraintView1">
-                                <rect key="frame" x="71.5" y="686.5" width="881" height="136.5"/>
+                                <rect key="frame" x="58.5" y="566" width="717" height="111"/>
                                 <subviews>
                                     <view tag="12" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="4r6-2B-ifq" userLabel="View12" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="-12" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -703,7 +729,7 @@
                                         </connections>
                                     </view>
                                     <view tag="13" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="gdr-0l-i3q" userLabel="View13" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="179.5" y="0.0" width="163" height="136.5"/>
+                                        <rect key="frame" x="137" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -713,7 +739,7 @@
                                         </connections>
                                     </view>
                                     <view tag="14" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oNf-1c-LM2" userLabel="View14" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="358.5" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="286" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -723,11 +749,14 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ar-Of-9qj" userLabel="View23" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="717.5" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="584" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hj7-ZV-5Ij"/>
+                                        </connections>
                                     </view>
                                     <view tag="15" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="h1e-xY-xVD" userLabel="View15" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="538" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="435" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -859,10 +888,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3Y-jq-77n" userLabel="constriantView0">
-                                <rect key="frame" x="71.5" y="831" width="881" height="137"/>
+                                <rect key="frame" x="58.5" y="685" width="717" height="111.5"/>
                                 <subviews>
                                     <view tag="18" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Tzk-Z9-MK3" userLabel="View18" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="358.5" y="0.0" width="163.5" height="137"/>
+                                        <rect key="frame" x="286" y="0.0" width="133" height="111.5"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -872,7 +901,7 @@
                                         </connections>
                                     </view>
                                     <view tag="17" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="W2F-91-TUN" userLabel="View17" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="179.5" y="0.0" width="163" height="137"/>
+                                        <rect key="frame" x="137" y="0.0" width="133" height="111.5"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -882,7 +911,7 @@
                                         </connections>
                                     </view>
                                     <view tag="16" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0Bl-jT-phB" userLabel="View16" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="137"/>
+                                        <rect key="frame" x="-12" y="0.0" width="133" height="111.5"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -892,11 +921,14 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATw-Yr-bty" userLabel="View24" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="717.5" y="0.0" width="163.5" height="137"/>
+                                        <rect key="frame" x="584" y="0.0" width="133" height="111.5"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t8g-Zw-5CK"/>
+                                        </connections>
                                     </view>
                                     <view tag="19" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-Pr-Jix" userLabel="View19" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="538" y="0.0" width="163.5" height="137"/>
+                                        <rect key="frame" x="435" y="0.0" width="133" height="111.5"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -1032,30 +1064,36 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CW-ht-FBG" userLabel=" middleDividerView">
-                                <rect key="frame" x="51" y="717.5" width="922" height="1"/>
+                                <rect key="frame" x="41.5" y="590.5" width="751" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qff-pU-qeI" userLabel="constraintViewiPad">
-                                <rect key="frame" x="71.5" y="976" width="881" height="136.5"/>
+                                <rect key="frame" x="58.5" y="804.5" width="717" height="111"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNS-Fm-24f" userLabel="View25" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="717.5" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="584" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IUD-oX-cgy"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5n-JM-wXa" userLabel="View26">
-                                        <rect key="frame" x="538" y="0.0" width="163.5" height="136.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5n-JM-wXa" userLabel="View26" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
+                                        <rect key="frame" x="435" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SMc-ct-QEv"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNi-t0-KAF" userLabel="View27" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="358.5" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="286" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfB-x9-SJp" userLabel="View28" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="179.5" y="0.0" width="163" height="136.5"/>
+                                        <rect key="frame" x="137" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iO5-Oe-zUh" userLabel="View29" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="136.5"/>
+                                        <rect key="frame" x="-12" y="0.0" width="133" height="111"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.2470588235" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
@@ -1386,6 +1424,36 @@
                         <outletCollection property="iPhoneCards" destination="v25-L8-Mgi" collectionClass="NSMutableArray" id="jPP-n4-MFk"/>
                         <outletCollection property="iPhoneCards" destination="iZR-2W-mYP" collectionClass="NSMutableArray" id="5mM-fz-uzY"/>
                         <outletCollection property="iPhoneCards" destination="jn1-ia-32M" collectionClass="NSMutableArray" id="PPU-vi-xOf"/>
+                        <outletCollection property="iPadCards" destination="rNS-Fm-24f" collectionClass="NSMutableArray" id="VT3-jd-GiH"/>
+                        <outletCollection property="iPadCards" destination="t5n-JM-wXa" collectionClass="NSMutableArray" id="j1T-pu-rCC"/>
+                        <outletCollection property="iPadCards" destination="bNi-t0-KAF" collectionClass="NSMutableArray" id="uYu-fV-PyO"/>
+                        <outletCollection property="iPadCards" destination="qfB-x9-SJp" collectionClass="NSMutableArray" id="Sfh-GQ-YQd"/>
+                        <outletCollection property="iPadCards" destination="iO5-Oe-zUh" collectionClass="NSMutableArray" id="LB3-Nm-ALN"/>
+                        <outletCollection property="iPadCards" destination="0Bl-jT-phB" collectionClass="NSMutableArray" id="aWt-SJ-wor"/>
+                        <outletCollection property="iPadCards" destination="W2F-91-TUN" collectionClass="NSMutableArray" id="e0U-pw-HXi"/>
+                        <outletCollection property="iPadCards" destination="Tzk-Z9-MK3" collectionClass="NSMutableArray" id="qaI-LH-PMY"/>
+                        <outletCollection property="iPadCards" destination="EwV-Pr-Jix" collectionClass="NSMutableArray" id="he7-QU-1CW"/>
+                        <outletCollection property="iPadCards" destination="ATw-Yr-bty" collectionClass="NSMutableArray" id="Z8B-Dl-5eo"/>
+                        <outletCollection property="iPadCards" destination="1ar-Of-9qj" collectionClass="NSMutableArray" id="NLA-Pg-mMZ"/>
+                        <outletCollection property="iPadCards" destination="h1e-xY-xVD" collectionClass="NSMutableArray" id="pdZ-cX-fTE"/>
+                        <outletCollection property="iPadCards" destination="oNf-1c-LM2" collectionClass="NSMutableArray" id="aDU-lR-eps"/>
+                        <outletCollection property="iPadCards" destination="gdr-0l-i3q" collectionClass="NSMutableArray" id="OM7-Wg-aXh"/>
+                        <outletCollection property="iPadCards" destination="4r6-2B-ifq" collectionClass="NSMutableArray" id="X1R-Wd-Rys"/>
+                        <outletCollection property="iPadCards" destination="W27-xg-aPU" collectionClass="NSMutableArray" id="zfY-WW-p9x"/>
+                        <outletCollection property="iPadCards" destination="0sa-ZE-c1X" collectionClass="NSMutableArray" id="Nwr-o5-Yb5"/>
+                        <outletCollection property="iPadCards" destination="o2v-XA-2hy" collectionClass="NSMutableArray" id="Snh-3W-7y4"/>
+                        <outletCollection property="iPadCards" destination="aeO-Pm-ht3" collectionClass="NSMutableArray" id="RxJ-nM-taS"/>
+                        <outletCollection property="iPadCards" destination="5A0-nN-uKF" collectionClass="NSMutableArray" id="6yr-H9-6Jb"/>
+                        <outletCollection property="iPadCards" destination="SQO-j6-e3C" collectionClass="NSMutableArray" id="o2R-yB-UkG"/>
+                        <outletCollection property="iPadCards" destination="oTV-aH-8Yx" collectionClass="NSMutableArray" id="pMw-uk-6vk"/>
+                        <outletCollection property="iPadCards" destination="9me-MO-mIc" collectionClass="NSMutableArray" id="GGD-Ht-rSh"/>
+                        <outletCollection property="iPadCards" destination="pIa-VR-9bI" collectionClass="NSMutableArray" id="D3J-gw-y0d"/>
+                        <outletCollection property="iPadCards" destination="5gF-mK-cGV" collectionClass="NSMutableArray" id="Af9-uh-ard"/>
+                        <outletCollection property="iPadCards" destination="jn1-ia-32M" collectionClass="NSMutableArray" id="i2Q-lk-vYk"/>
+                        <outletCollection property="iPadCards" destination="iZR-2W-mYP" collectionClass="NSMutableArray" id="OVL-e1-eSy"/>
+                        <outletCollection property="iPadCards" destination="v25-L8-Mgi" collectionClass="NSMutableArray" id="6J9-a9-s3x"/>
+                        <outletCollection property="iPadCards" destination="Mva-V2-u5W" collectionClass="NSMutableArray" id="KSF-jY-eLg"/>
+                        <outletCollection property="iPadCards" destination="Ttq-3v-Ft3" collectionClass="NSMutableArray" id="A51-WO-hZQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1397,68 +1465,68 @@
             <objects>
                 <tableViewController id="Pme-jp-ydI" customClass="ScoresTableViewController" customModule="SharkeyEric_4_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LbU-1Z-kYH">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreCell" rowHeight="106" id="dCf-sM-BBt" customClass="ScoresTableViewCell" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="1024" height="106"/>
+                                <rect key="frame" x="0.0" y="28" width="834" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dCf-sM-BBt" id="wiZ-FQ-jed">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="105.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="834" height="105.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65m-27-Kny">
-                                            <rect key="frame" x="20" y="0.0" width="153.5" height="105.5"/>
+                                            <rect key="frame" x="20" y="0.0" width="125" height="105.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-Iw-hSM">
-                                            <rect key="frame" x="193.5" y="4" width="50" height="21"/>
+                                            <rect key="frame" x="165" y="4" width="50" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tAI-4w-JeR">
-                                            <rect key="frame" x="263.5" y="54" width="614.5" height="21"/>
+                                            <rect key="frame" x="235" y="54" width="500.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="CSC-15-ROH">
-                                            <rect key="frame" x="193.5" y="54" width="55" height="21"/>
+                                            <rect key="frame" x="165" y="54" width="55" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0uu-vO-I5M">
-                                            <rect key="frame" x="263.5" y="79" width="614.5" height="20.5"/>
+                                            <rect key="frame" x="235" y="79" width="500.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="hkA-rN-PvE">
-                                            <rect key="frame" x="193.5" y="79" width="41" height="21"/>
+                                            <rect key="frame" x="165" y="79" width="41" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Egc-OO-KLh">
-                                            <rect key="frame" x="263.5" y="29" width="614.5" height="21"/>
+                                            <rect key="frame" x="235" y="29" width="500.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="a9b-vC-PEC">
-                                            <rect key="frame" x="193.5" y="29" width="43" height="21"/>
+                                            <rect key="frame" x="165" y="29" width="43" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hEx-YK-4b3">
-                                            <rect key="frame" x="263.5" y="4" width="614.5" height="21"/>
+                                            <rect key="frame" x="235" y="4" width="500.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1521,7 +1589,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c7x-HM-tqK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tJf-D9-78r">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="834" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

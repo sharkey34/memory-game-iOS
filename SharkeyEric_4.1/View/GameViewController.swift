@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var iPhoneCards: [Card]!
+    @IBOutlet var iPadCards: [Card]!
     
     // Member Variables
     private var viewModel = GameViewModel()
@@ -58,6 +59,7 @@ class GameViewController: UIViewController {
     }
     
     func setUp(){
+        playButton.isEnabled = false
         
         // Getting images and setting the cardImage for the cards.
         if let imageArray = viewModel.imageArray{
@@ -66,12 +68,10 @@ class GameViewController: UIViewController {
             case 20:
             gameCards = iPhoneCards
             case 30:
-            // TODO: == iPad cards
-                print("iPad")
+            gameCards = iPadCards
             default:
-                print("Incrrect number of cards")
+                print("Incorrect number of cards")
             }
-            
             animateCards()
             
             // Setting up buttons and labels.
@@ -99,6 +99,7 @@ class GameViewController: UIViewController {
         }, completion: nil)
             delay += 0.2
         }
+        playButton.isEnabled = true
     }
     
     // Function for when the PlayButton is selected.
@@ -113,16 +114,6 @@ class GameViewController: UIViewController {
                 flipFront(card: card)
             }
         } else if sender.titleLabel?.text == "Stop"{
-            playButton.setTitle("Play", for: .normal)
-            
-            for card in gameCards{
-                card.isUserInteractionEnabled = false
-                
-                if card.currentImage == card.cardImage {
-                    flipBack(card: card)
-                }
-            }
-            sender.setTitle("Play", for: .normal)
          reset()
         }
     }
@@ -158,6 +149,32 @@ class GameViewController: UIViewController {
             }
         }
         
+        for card in gameCards{
+            card.isUserInteractionEnabled = false
+            
+            if card.currentImage == card.cardImage {
+                flipBack(card: card)
+            }
+        }
+        
+        // Getting images and setting the cardImage for the cards.
+        if let imageArray = viewModel.imageArray{
+            
+            switch imageArray.count {
+            case 20:
+                gameCards = iPhoneCards
+            case 30:
+                gameCards = iPadCards
+            default:
+                print("Incorrect number of cards")
+            }
+            
+            for (index, card) in gameCards.enumerated() {
+                card.cardImage = imageArray[index]
+            }
+        }
+        
+        self.playButton.setTitle("Play", for: .normal)
         player.stop()
         timer.invalidate()
         timeSeconds = 0
@@ -250,6 +267,7 @@ class GameViewController: UIViewController {
                     }
                 }
                 // Calling the save function when ok is selected.
+                self.reset()
                 self.save()
             })
 
@@ -261,8 +279,6 @@ class GameViewController: UIViewController {
 
     // Function to save CoreData.
     func save(){
-        
-       reset()
         
         if name.isEmpty{
             name = "N/A"
@@ -277,16 +293,6 @@ class GameViewController: UIViewController {
 
         // Saving
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-
-        // Resetting variables
-        playButton.setTitle("Play", for: .normal)
-        moves = 0
-        movesLabel.text = nil
-
-        timeSeconds = 0
-        timeMinutes = 0
-        time = 0
-        timerLabel.text = nil
     }
 
     // Passing the context and leaderBoardData to the leaderBoardViewController.
