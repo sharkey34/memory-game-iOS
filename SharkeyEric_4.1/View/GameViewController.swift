@@ -212,9 +212,7 @@ class GameViewController: UIViewController {
         guard let card = sender as? Card else {return}
         
         if card.currentImage == card.backImage {
-            
-            // TODO: Check if there is more than one card selected.
-            
+                        
             switch selectedCards.count {
             case 0:
                 // There is no card previously selected
@@ -243,7 +241,7 @@ class GameViewController: UIViewController {
                         self.selectedCards[0].isHidden = true
                         card.isHidden = true
                         self.selectedCards = []
-                        // TODO: Check if they are a the last two matches.
+                        // Check if they are the last two matches.
                         for cards in self.gameCards {
                             if cards.isHidden == false{
                                 return
@@ -294,8 +292,8 @@ class GameViewController: UIViewController {
                     }
                 }
                 // Calling the save function when ok is selected.
-                self.reset()
                 self.save()
+                self.reset()
             })
 
             // Adding alertAction and presenting alertController.
