@@ -141,13 +141,16 @@ class GameViewController: UIViewController {
     
     // Card flips
     func flipFront(card: Card){
-            card.setImage(card.cardImage, for: .normal)
-            UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromLeft, animations: nil)
+
+        card.setImage(card.cardImage, for: .normal)
+        card.imageView?.contentMode = .scaleAspectFit
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromLeft, animations: nil)
     }
     
     // Functio to flip card back
     func flipBack(card: Card){
         card.setImage(card.backImage, for: .normal)
+        card.imageView?.contentMode = .scaleToFill
         UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: nil, completion: nil)
     }
     

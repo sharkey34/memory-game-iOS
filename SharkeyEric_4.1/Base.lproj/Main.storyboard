@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0h-Fk-Lfe">
-                                <rect key="frame" x="124.33333333333331" y="380" width="165.33333333333337" height="147.33333333333337"/>
+                                <rect key="frame" x="124.33333333333333" y="380" width="165.33333333333337" height="147.33333333333337"/>
                                 <state key="normal" image="play"/>
                                 <connections>
                                     <segue destination="c7x-HM-tqK" kind="show" id="TmT-OG-eZP"/>
@@ -40,10 +40,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="A0h-Fk-Lfe" firstAttribute="height" secondItem="shk-2z-44W" secondAttribute="height" multiplier="0.3" id="5lN-Yt-3i3"/>
                             <constraint firstItem="A0h-Fk-Lfe" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" multiplier="0.4" id="6Sh-4K-D1D"/>
                             <constraint firstItem="f9K-Ai-j8p" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" multiplier="0.25" id="CAa-AI-KGK"/>
+                            <constraint firstItem="A0h-Fk-Lfe" firstAttribute="centerY" secondItem="TsX-Ly-eeo" secondAttribute="centerY" multiplier="1.5" id="L6g-SE-60h"/>
                             <constraint firstItem="f9K-Ai-j8p" firstAttribute="centerY" secondItem="TsX-Ly-eeo" secondAttribute="centerY" multiplier="0.9" id="LO1-g4-JkX"/>
                             <constraint firstItem="A0h-Fk-Lfe" firstAttribute="height" secondItem="shk-2z-44W" secondAttribute="height" multiplier="0.2" id="NbX-US-9TZ"/>
+                            <constraint firstItem="A0h-Fk-Lfe" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" multiplier="0.2" id="P93-G7-o6y"/>
                             <constraint firstItem="Mo7-3o-MGn" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" multiplier="0.8" id="SfG-5U-ahL"/>
                             <constraint firstItem="Mo7-3o-MGn" firstAttribute="centerX" secondItem="TsX-Ly-eeo" secondAttribute="centerX" id="VzR-NO-Ou5"/>
                             <constraint firstItem="A0h-Fk-Lfe" firstAttribute="height" secondItem="shk-2z-44W" secondAttribute="height" multiplier="0.2" id="WTL-Wh-Pb2"/>
@@ -51,13 +54,30 @@
                             <constraint firstItem="A0h-Fk-Lfe" firstAttribute="width" secondItem="shk-2z-44W" secondAttribute="width" multiplier="0.3" id="gmu-o5-t1w"/>
                             <constraint firstItem="A0h-Fk-Lfe" firstAttribute="centerX" secondItem="TsX-Ly-eeo" secondAttribute="centerX" id="hlh-bu-kZM"/>
                             <constraint firstItem="Mo7-3o-MGn" firstAttribute="centerY" secondItem="TsX-Ly-eeo" secondAttribute="centerY" multiplier="0.4" id="l4j-d6-R06"/>
+                            <constraint firstItem="f9K-Ai-j8p" firstAttribute="centerY" secondItem="TsX-Ly-eeo" secondAttribute="centerY" id="vvE-ur-DKa"/>
                             <constraint firstItem="f9K-Ai-j8p" firstAttribute="centerX" secondItem="TsX-Ly-eeo" secondAttribute="centerX" id="zFO-nd-h0D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TsX-Ly-eeo"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="vvE-ur-DKa"/>
+                                <exclude reference="5lN-Yt-3i3"/>
+                                <exclude reference="L6g-SE-60h"/>
+                                <exclude reference="P93-G7-o6y"/>
                                 <exclude reference="WTL-Wh-Pb2"/>
                                 <exclude reference="gmu-o5-t1w"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="LO1-g4-JkX"/>
+                                <include reference="vvE-ur-DKa"/>
+                                <include reference="5lN-Yt-3i3"/>
+                                <exclude reference="6Sh-4K-D1D"/>
+                                <include reference="L6g-SE-60h"/>
+                                <exclude reference="NbX-US-9TZ"/>
+                                <include reference="P93-G7-o6y"/>
+                                <exclude reference="ar7-N8-Ewt"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -78,6 +98,7 @@
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="SharkeyEric_4_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
@@ -204,7 +225,7 @@
                                 <subviews>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jn1-ia-32M" userLabel="View0" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="-4.6666666666666643" y="0.0" width="67.666666666666671" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES" image="YES"/>
                                         </accessibility>
@@ -214,7 +235,7 @@
                                     </view>
                                     <view tag="2" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="v25-L8-Mgi" userLabel="View2" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="146.66666666666666" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -224,7 +245,7 @@
                                     </view>
                                     <view tag="1" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="iZR-2W-mYP" userLabel="View1" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="71" y="0.0" width="67.666666666666686" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -233,7 +254,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttq-3v-Ft3" userLabel="View20" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="407.5" y="0.0" width="92.5" height="111"/>
+                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83.5"/>
                                         <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VLZ-F6-165"/>
@@ -241,7 +262,7 @@
                                     </view>
                                     <view tag="3" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Mva-V2-u5W" userLabel="View3" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="222.33333333333329" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -376,7 +397,7 @@
                                 <subviews>
                                     <view tag="4" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-mK-cGV" userLabel="View4" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="-4.6666666666666643" y="0.0" width="67.666666666666671" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -386,7 +407,7 @@
                                     </view>
                                     <view tag="5" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="pIa-VR-9bI" userLabel="View5" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="71" y="0.0" width="67.666666666666686" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -396,7 +417,7 @@
                                     </view>
                                     <view tag="6" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="9me-MO-mIc" userLabel="View6" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="146.66666666666666" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -405,7 +426,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQO-j6-e3C" userLabel="View21" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="407.5" y="0.0" width="92.5" height="111.5"/>
+                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83.5"/>
                                         <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wPZ-K3-bNH"/>
@@ -413,7 +434,7 @@
                                     </view>
                                     <view tag="7" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oTV-aH-8Yx" userLabel="View7" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="222.33333333333329" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -471,12 +492,6 @@
                                         <exclude reference="SQO-j6-e3C"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="0gA-1A-80y"/>
-                                        <exclude reference="3db-1I-bqM"/>
-                                        <exclude reference="4gA-6g-pb6"/>
-                                        <exclude reference="6qE-NF-Ucf"/>
-                                        <exclude reference="FD1-8e-7rL"/>
-                                        <exclude reference="gpA-70-4Sx"/>
                                         <exclude reference="HCJ-sq-cnu"/>
                                         <exclude reference="UZF-xZ-jcu"/>
                                         <exclude reference="sI8-P0-5Mb"/>
@@ -488,6 +503,12 @@
                                         <exclude reference="GH4-wl-UzA"/>
                                         <exclude reference="aYE-H2-LLl"/>
                                         <exclude reference="tgA-pL-YBD"/>
+                                        <exclude reference="0gA-1A-80y"/>
+                                        <exclude reference="3db-1I-bqM"/>
+                                        <exclude reference="4gA-6g-pb6"/>
+                                        <exclude reference="6qE-NF-Ucf"/>
+                                        <exclude reference="FD1-8e-7rL"/>
+                                        <exclude reference="gpA-70-4Sx"/>
                                         <exclude reference="ABh-Ed-Adn"/>
                                         <exclude reference="EI4-h6-Ur8"/>
                                         <exclude reference="bHx-uM-j9l"/>
@@ -499,12 +520,6 @@
                                         <include reference="SQO-j6-e3C"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="0gA-1A-80y"/>
-                                        <include reference="3db-1I-bqM"/>
-                                        <include reference="4gA-6g-pb6"/>
-                                        <include reference="6qE-NF-Ucf"/>
-                                        <include reference="FD1-8e-7rL"/>
-                                        <include reference="gpA-70-4Sx"/>
                                         <exclude reference="3EA-sy-249"/>
                                         <exclude reference="6LY-M2-14S"/>
                                         <include reference="HCJ-sq-cnu"/>
@@ -530,6 +545,12 @@
                                         <include reference="aYE-H2-LLl"/>
                                         <exclude reference="s9O-2k-xXN"/>
                                         <include reference="tgA-pL-YBD"/>
+                                        <include reference="0gA-1A-80y"/>
+                                        <include reference="3db-1I-bqM"/>
+                                        <include reference="4gA-6g-pb6"/>
+                                        <include reference="6qE-NF-Ucf"/>
+                                        <include reference="FD1-8e-7rL"/>
+                                        <include reference="gpA-70-4Sx"/>
                                         <exclude reference="5FZ-t2-XLP"/>
                                         <include reference="ABh-Ed-Adn"/>
                                         <include reference="EI4-h6-Ur8"/>
@@ -548,7 +569,7 @@
                                 <subviews>
                                     <view tag="10" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="o2v-XA-2hy" userLabel="View10" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="146.66666666666666" y="0.0" width="67.666666666666657" height="88"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -558,7 +579,7 @@
                                     </view>
                                     <view tag="9" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0sa-ZE-c1X" userLabel="View9" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="71" y="0.0" width="67.666666666666686" height="88"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -568,7 +589,7 @@
                                     </view>
                                     <view tag="8" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="W27-xg-aPU" userLabel="View8" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="-4.6666666666666643" y="0.0" width="67.666666666666671" height="88"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -578,7 +599,7 @@
                                     </view>
                                     <view tag="11" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aeO-Pm-ht3" userLabel="View11" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="222.33333333333329" y="0.0" width="67.666666666666657" height="88"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -587,7 +608,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5A0-nN-uKF" userLabel="View22" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="407.5" y="0.0" width="92.5" height="111"/>
+                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83.5"/>
                                         <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K1i-pI-5Jk"/>
@@ -643,12 +664,6 @@
                                         <exclude reference="5A0-nN-uKF"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="BvH-6J-ubS"/>
-                                        <exclude reference="LCh-Dq-ok2"/>
-                                        <exclude reference="O1S-9v-l84"/>
-                                        <exclude reference="Ubc-JM-elU"/>
-                                        <exclude reference="aPu-1v-3MO"/>
-                                        <exclude reference="dP1-SR-THy"/>
                                         <exclude reference="dpN-gz-1G1"/>
                                         <exclude reference="hFl-1M-6eF"/>
                                         <exclude reference="hTK-QO-9yB"/>
@@ -664,6 +679,12 @@
                                         <exclude reference="5OG-4D-5vz"/>
                                         <exclude reference="DLW-K5-unQ"/>
                                         <exclude reference="m8d-jA-3kT"/>
+                                        <exclude reference="BvH-6J-ubS"/>
+                                        <exclude reference="LCh-Dq-ok2"/>
+                                        <exclude reference="O1S-9v-l84"/>
+                                        <exclude reference="Ubc-JM-elU"/>
+                                        <exclude reference="aPu-1v-3MO"/>
+                                        <exclude reference="dP1-SR-THy"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -671,12 +692,6 @@
                                         <include reference="5A0-nN-uKF"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="BvH-6J-ubS"/>
-                                        <include reference="LCh-Dq-ok2"/>
-                                        <include reference="O1S-9v-l84"/>
-                                        <include reference="Ubc-JM-elU"/>
-                                        <include reference="aPu-1v-3MO"/>
-                                        <include reference="dP1-SR-THy"/>
                                         <exclude reference="VC4-DW-eTp"/>
                                         <exclude reference="aaB-Nq-obB"/>
                                         <include reference="dpN-gz-1G1"/>
@@ -712,6 +727,12 @@
                                         <exclude reference="g3J-Fw-maW"/>
                                         <exclude reference="jSS-Au-vsk"/>
                                         <include reference="m8d-jA-3kT"/>
+                                        <include reference="BvH-6J-ubS"/>
+                                        <include reference="LCh-Dq-ok2"/>
+                                        <include reference="O1S-9v-l84"/>
+                                        <include reference="Ubc-JM-elU"/>
+                                        <include reference="aPu-1v-3MO"/>
+                                        <include reference="dP1-SR-THy"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -720,7 +741,7 @@
                                 <subviews>
                                     <view tag="13" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="gdr-0l-i3q" userLabel="View13" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="71" y="0.0" width="67.666666666666686" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -730,7 +751,7 @@
                                     </view>
                                     <view tag="14" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oNf-1c-LM2" userLabel="View14" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="146.66666666666666" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -739,7 +760,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ar-Of-9qj" userLabel="View23" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="407.5" y="0.0" width="92.5" height="111"/>
+                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83.5"/>
                                         <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hj7-ZV-5Ij"/>
@@ -747,7 +768,7 @@
                                     </view>
                                     <view tag="15" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="h1e-xY-xVD" userLabel="View15" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="222.33333333333329" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -796,12 +817,6 @@
                                         <exclude reference="1ar-Of-9qj"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="GKg-6h-2yO"/>
-                                        <exclude reference="XEV-Qq-AgA"/>
-                                        <exclude reference="b9V-CH-9xr"/>
-                                        <exclude reference="eeO-89-yVg"/>
-                                        <exclude reference="lh5-R6-pMD"/>
-                                        <exclude reference="twL-bX-mkx"/>
                                         <exclude reference="2oa-u4-06K"/>
                                         <exclude reference="4hJ-Qn-Q1C"/>
                                         <exclude reference="LuU-KC-750"/>
@@ -813,6 +828,12 @@
                                         <exclude reference="MDU-6I-pR1"/>
                                         <exclude reference="fpW-wQ-wPL"/>
                                         <exclude reference="jcZ-h1-rrv"/>
+                                        <exclude reference="GKg-6h-2yO"/>
+                                        <exclude reference="XEV-Qq-AgA"/>
+                                        <exclude reference="b9V-CH-9xr"/>
+                                        <exclude reference="eeO-89-yVg"/>
+                                        <exclude reference="lh5-R6-pMD"/>
+                                        <exclude reference="twL-bX-mkx"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -820,12 +841,6 @@
                                         <include reference="1ar-Of-9qj"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="GKg-6h-2yO"/>
-                                        <include reference="XEV-Qq-AgA"/>
-                                        <include reference="b9V-CH-9xr"/>
-                                        <include reference="eeO-89-yVg"/>
-                                        <include reference="lh5-R6-pMD"/>
-                                        <include reference="twL-bX-mkx"/>
                                         <include reference="2oa-u4-06K"/>
                                         <include reference="4hJ-Qn-Q1C"/>
                                         <exclude reference="C0X-zd-Ssn"/>
@@ -852,6 +867,12 @@
                                         <exclude reference="rhV-UQ-Jf7"/>
                                         <exclude reference="s3f-Te-1zD"/>
                                         <exclude reference="sx0-2A-UtH"/>
+                                        <include reference="GKg-6h-2yO"/>
+                                        <include reference="XEV-Qq-AgA"/>
+                                        <include reference="b9V-CH-9xr"/>
+                                        <include reference="eeO-89-yVg"/>
+                                        <include reference="lh5-R6-pMD"/>
+                                        <include reference="twL-bX-mkx"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -860,7 +881,7 @@
                                 <subviews>
                                     <view tag="18" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Tzk-Z9-MK3" userLabel="View18" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="146.66666666666666" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -870,7 +891,7 @@
                                     </view>
                                     <view tag="17" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="W2F-91-TUN" userLabel="View17" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="71" y="0.0" width="67.666666666666686" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -880,7 +901,7 @@
                                     </view>
                                     <view tag="16" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0Bl-jT-phB" userLabel="View16" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="-4.6666666666666643" y="0.0" width="67.666666666666671" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -889,7 +910,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATw-Yr-bty" userLabel="View24" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="407.5" y="0.0" width="92.5" height="111.5"/>
+                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83"/>
                                         <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t8g-Zw-5CK"/>
@@ -897,7 +918,7 @@
                                     </view>
                                     <view tag="19" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-Pr-Jix" userLabel="View19" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                         <rect key="frame" x="222.33333333333329" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -955,12 +976,6 @@
                                         <exclude reference="ATw-Yr-bty"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="8Xl-Bd-8vY"/>
-                                        <exclude reference="QYv-Wr-DUr"/>
-                                        <exclude reference="Zxz-xR-CoY"/>
-                                        <exclude reference="bSG-Oh-0LY"/>
-                                        <exclude reference="hI5-IP-cPF"/>
-                                        <exclude reference="kjX-w9-Hhb"/>
                                         <exclude reference="PSI-2l-wyO"/>
                                         <exclude reference="lb9-eI-hHJ"/>
                                         <exclude reference="wLi-Ll-9EA"/>
@@ -976,6 +991,12 @@
                                         <exclude reference="MDn-mM-OSs"/>
                                         <exclude reference="SkQ-TE-IM2"/>
                                         <exclude reference="ap3-g5-4qi"/>
+                                        <exclude reference="8Xl-Bd-8vY"/>
+                                        <exclude reference="QYv-Wr-DUr"/>
+                                        <exclude reference="Zxz-xR-CoY"/>
+                                        <exclude reference="bSG-Oh-0LY"/>
+                                        <exclude reference="hI5-IP-cPF"/>
+                                        <exclude reference="kjX-w9-Hhb"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -983,12 +1004,6 @@
                                         <include reference="ATw-Yr-bty"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="8Xl-Bd-8vY"/>
-                                        <include reference="QYv-Wr-DUr"/>
-                                        <include reference="Zxz-xR-CoY"/>
-                                        <include reference="bSG-Oh-0LY"/>
-                                        <include reference="hI5-IP-cPF"/>
-                                        <include reference="kjX-w9-Hhb"/>
                                         <include reference="PSI-2l-wyO"/>
                                         <exclude reference="Qd9-MX-f0N"/>
                                         <include reference="lb9-eI-hHJ"/>
@@ -1024,6 +1039,12 @@
                                         <include reference="ap3-g5-4qi"/>
                                         <exclude reference="s69-9a-hAC"/>
                                         <exclude reference="wII-1h-2J6"/>
+                                        <include reference="8Xl-Bd-8vY"/>
+                                        <include reference="QYv-Wr-DUr"/>
+                                        <include reference="Zxz-xR-CoY"/>
+                                        <include reference="bSG-Oh-0LY"/>
+                                        <include reference="hI5-IP-cPF"/>
+                                        <include reference="kjX-w9-Hhb"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1032,32 +1053,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qff-pU-qeI" userLabel="constraintViewiPad">
-                                <rect key="frame" x="167" y="804.5" width="500" height="111"/>
+                                <rect key="frame" x="222.5" y="616.5" width="667" height="83.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNS-Fm-24f" userLabel="View25" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="407.5" y="0.0" width="92.5" height="111"/>
+                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83.5"/>
                                         <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IUD-oX-cgy"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5n-JM-wXa" userLabel="View26" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="298.5" y="0.0" width="93" height="111"/>
+                                        <rect key="frame" x="403.5" y="0.0" width="124" height="83.5"/>
                                         <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SMc-ct-QEv"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNi-t0-KAF" userLabel="View27" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="189.5" y="0.0" width="93" height="111"/>
+                                        <rect key="frame" x="264" y="0.0" width="123.5" height="83.5"/>
                                         <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfB-x9-SJp" userLabel="View28" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="81" y="0.0" width="92.5" height="111"/>
+                                        <rect key="frame" x="124" y="0.0" width="124" height="83.5"/>
                                         <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iO5-Oe-zUh" userLabel="View29" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="-28" y="0.0" width="93" height="111"/>
+                                        <rect key="frame" x="-15.5" y="0.0" width="123.5" height="83.5"/>
                                         <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                 </subviews>
@@ -1152,7 +1173,7 @@
                             </view>
                             <view tag="12" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="4r6-2B-ifq" userLabel="View12" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
                                 <rect key="frame" x="57.333333333333336" y="432" width="67.666666666666657" height="88.333333333333371"/>
-                                <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
                                 </accessibility>
@@ -1168,7 +1189,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gra-KJ-btG" secondAttribute="bottom" id="3d6-Th-1Vu"/>
                             <constraint firstItem="I5i-C1-Rhn" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="4K2-Xe-4Rh"/>
                             <constraint firstItem="5Hd-Gd-SVQ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4ZF-rf-VFh"/>
-                            <constraint firstItem="JLL-Vv-Cjo" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.13" id="4k1-pi-CsO"/>
+                            <constraint firstItem="JLL-Vv-Cjo" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.145" id="4k1-pi-CsO"/>
                             <constraint firstItem="dDq-Wa-DNL" firstAttribute="centerX" secondItem="JLL-Vv-Cjo" secondAttribute="centerX" id="5BQ-2c-R5w"/>
                             <constraint firstItem="I5i-C1-Rhn" firstAttribute="top" secondItem="qVr-mL-bqM" secondAttribute="bottom" id="5EY-bc-iak"/>
                             <constraint firstItem="dDq-Wa-DNL" firstAttribute="top" secondItem="JLL-Vv-Cjo" secondAttribute="bottom" constant="8" id="5KO-9Q-UtQ"/>
@@ -1259,6 +1280,11 @@
                                 <exclude reference="bjx-CH-jY3"/>
                                 <exclude reference="iE7-gu-2uA"/>
                                 <exclude reference="o1z-bh-8HF"/>
+                                <exclude reference="qUf-BJ-XyQ"/>
+                                <exclude reference="4ZF-rf-VFh"/>
+                                <exclude reference="JST-yS-PrZ"/>
+                                <exclude reference="JvA-hZ-qKx"/>
+                                <exclude reference="bLg-8C-ZIe"/>
                                 <exclude reference="4k1-pi-CsO"/>
                                 <exclude reference="Bjb-wc-5iq"/>
                                 <exclude reference="D2Y-b9-20y"/>
@@ -1266,26 +1292,21 @@
                                 <exclude reference="quq-wA-MRY"/>
                                 <exclude reference="sDa-GZ-QJI"/>
                                 <exclude reference="Ulp-X0-kiy"/>
-                                <exclude reference="4ZF-rf-VFh"/>
-                                <exclude reference="JST-yS-PrZ"/>
-                                <exclude reference="JvA-hZ-qKx"/>
-                                <exclude reference="bLg-8C-ZIe"/>
                                 <exclude reference="Voj-Un-HxX"/>
                                 <exclude reference="dto-rn-wjQ"/>
                                 <exclude reference="jbm-xL-hZ3"/>
                                 <exclude reference="uCl-Ca-Yr5"/>
-                                <exclude reference="qUf-BJ-XyQ"/>
                                 <exclude reference="5EY-bc-iak"/>
                                 <exclude reference="K5l-QO-had"/>
                                 <exclude reference="KHe-wx-mxL"/>
                                 <exclude reference="UkK-Ag-pPf"/>
                                 <exclude reference="cZx-dL-MQ2"/>
                                 <exclude reference="geR-C2-3Ph"/>
+                                <exclude reference="KaX-w0-euV"/>
                                 <exclude reference="Bdp-YL-cAt"/>
                                 <exclude reference="Kz4-qS-7FB"/>
                                 <exclude reference="VEa-v7-P2n"/>
                                 <exclude reference="lVK-BQ-w9H"/>
-                                <exclude reference="KaX-w0-euV"/>
                                 <exclude reference="HXX-Fl-KMZ"/>
                                 <exclude reference="JRi-7A-y7O"/>
                                 <exclude reference="Lp7-HA-PSG"/>
@@ -1301,12 +1322,8 @@
                                 <exclude reference="S0C-0x-Ul5"/>
                                 <exclude reference="bjx-CH-jY3"/>
                                 <exclude reference="o1z-bh-8HF"/>
-                                <include reference="4k1-pi-CsO"/>
-                                <include reference="HKq-J9-4SB"/>
-                                <exclude reference="NXk-5M-MDn"/>
-                                <exclude reference="QT2-eD-ZFa"/>
-                                <exclude reference="VY4-Kk-jFh"/>
-                                <include reference="sDa-GZ-QJI"/>
+                                <exclude reference="RAy-3c-I9e"/>
+                                <include reference="qUf-BJ-XyQ"/>
                                 <include reference="4ZF-rf-VFh"/>
                                 <exclude reference="C5K-sj-Jw3"/>
                                 <exclude reference="Ewh-iL-CG8"/>
@@ -1315,13 +1332,17 @@
                                 <exclude reference="WTg-CP-WWi"/>
                                 <include reference="bLg-8C-ZIe"/>
                                 <exclude reference="hr2-lE-i5a"/>
+                                <include reference="4k1-pi-CsO"/>
+                                <include reference="HKq-J9-4SB"/>
+                                <exclude reference="NXk-5M-MDn"/>
+                                <exclude reference="QT2-eD-ZFa"/>
+                                <exclude reference="VY4-Kk-jFh"/>
+                                <include reference="sDa-GZ-QJI"/>
                                 <exclude reference="PZc-Ke-sEy"/>
                                 <include reference="Voj-Un-HxX"/>
                                 <include reference="dto-rn-wjQ"/>
                                 <include reference="jbm-xL-hZ3"/>
                                 <exclude reference="uCl-Ca-Yr5"/>
-                                <exclude reference="RAy-3c-I9e"/>
-                                <include reference="qUf-BJ-XyQ"/>
                                 <exclude reference="3H4-dU-4Wm"/>
                                 <exclude reference="4K2-Xe-4Rh"/>
                                 <include reference="5EY-bc-iak"/>
@@ -1329,6 +1350,7 @@
                                 <include reference="UkK-Ag-pPf"/>
                                 <exclude reference="Ur3-O5-cXy"/>
                                 <exclude reference="geR-C2-3Ph"/>
+                                <include reference="KaX-w0-euV"/>
                                 <exclude reference="2SR-k7-7DH"/>
                                 <exclude reference="Bdp-YL-cAt"/>
                                 <include reference="Kz4-qS-7FB"/>
@@ -1337,7 +1359,6 @@
                                 <exclude reference="uRN-d1-ftF"/>
                                 <exclude reference="vJg-N5-3H5"/>
                                 <exclude reference="xdr-Th-R4Y"/>
-                                <include reference="KaX-w0-euV"/>
                                 <exclude reference="Bzy-pL-lae"/>
                             </mask>
                         </variation>
@@ -1364,6 +1385,10 @@
                                 <include reference="qff-pU-qeI"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="C5K-sj-Jw3"/>
+                                <exclude reference="Ewh-iL-CG8"/>
+                                <exclude reference="WTg-CP-WWi"/>
+                                <exclude reference="hr2-lE-i5a"/>
                                 <include reference="Bjb-wc-5iq"/>
                                 <include reference="D2Y-b9-20y"/>
                                 <exclude reference="NXk-5M-MDn"/>
@@ -1372,10 +1397,6 @@
                                 <include reference="quq-wA-MRY"/>
                                 <exclude reference="Sor-im-ctQ"/>
                                 <include reference="Ulp-X0-kiy"/>
-                                <exclude reference="C5K-sj-Jw3"/>
-                                <exclude reference="Ewh-iL-CG8"/>
-                                <exclude reference="WTg-CP-WWi"/>
-                                <exclude reference="hr2-lE-i5a"/>
                                 <include reference="HXX-Fl-KMZ"/>
                                 <include reference="JRi-7A-y7O"/>
                                 <include reference="Lp7-HA-PSG"/>
@@ -1440,7 +1461,6 @@
                         <outletCollection property="iPadCards" destination="o2v-XA-2hy" collectionClass="NSMutableArray" id="Aiw-cg-V7w"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3999.6093749999995" y="102.34260614934114"/>
         </scene>

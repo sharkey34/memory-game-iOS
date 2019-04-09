@@ -18,7 +18,7 @@ class Card: UIButton {
         super.init(coder: aDecoder)
 
         backImage = UIImage(named: "cardBack")
-
+        
         self.setImage(backImage, for: .normal)
     }
 }
