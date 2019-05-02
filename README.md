@@ -2,6 +2,13 @@
 
 Matchey Matchey is a memory game, where users will match two of the same card. The goal of the game is to match all of the cards in the least amount of turns and in the shortest amount of time.
 
+## Demo iPhone 8 (20 Cards) ##
+![](Gifs/GamePlay.gif)
+![](Gifs/Leaderboard.gif)
+
+## Screenshot iPad (30 Cards) ##
+![Simulator Screen Shot - iPad (5th generation) - 2019-05-02 at 14 28 48](https://user-images.githubusercontent.com/40548365/57104692-077f0e80-6cf7-11e9-9b7a-bef1585e15a5.png)
+
 ## Built With
 
 * Xcode
