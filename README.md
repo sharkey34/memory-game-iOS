@@ -1,8 +1,8 @@
 # Matchy Matchy Memory Game
 
-Matchey Matchey is a memory game, where users will match two of the same card. The goal of the game is to match all of the cards in the least amount of turns and in the shortest amount of time.
+Matchy Matchy is a memory game, where users will match two of the same card. The goal of the game is to match all of the cards in the least amount of turns and in the shortest amount of time.
 
-## Demo iPhone 8 (20 Cards) ##
+## Demo iPhone (20 Cards) ##
 ![](Gifs/GamePlay.gif)
 ![](Gifs/Leaderboard.gif)
 
