@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zty-iN-Cq4">
-    <device id="retina5_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zty-iN-Cq4">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,23 +15,23 @@
             <objects>
                 <viewController id="Zty-iN-Cq4" customClass="StartViewController" customModule="SharkeyEric_4_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="shk-2z-44W">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matchy Matchy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Mo7-3o-MGn">
-                                <rect key="frame" x="41.333333333333343" y="71.333333333333314" width="331.33333333333326" height="160"/>
+                                <rect key="frame" x="77" y="129" width="614" height="160"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="100"/>
                                 <color key="textColor" red="0.80000000000000004" green="0.24705882352941178" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click To Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="f9K-Ai-j8p">
-                                <rect key="frame" x="155.33333333333334" y="316.33333333333331" width="103.33333333333334" height="48"/>
+                                <rect key="frame" x="288" y="446" width="192" height="48"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
                                 <color key="textColor" red="0.44570845365524292" green="0.74466651678085327" blue="0.7686430811882019" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0h-Fk-Lfe">
-                                <rect key="frame" x="124.33333333333333" y="380" width="165.33333333333337" height="147.33333333333337"/>
+                                <rect key="frame" x="269" y="524" width="230" height="205"/>
                                 <state key="normal" image="play"/>
                                 <connections>
                                     <segue destination="c7x-HM-tqK" kind="show" id="TmT-OG-eZP"/>
@@ -98,10 +98,9 @@
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="SharkeyEric_4_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfP-pj-ZRl">
@@ -110,10 +109,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5i-C1-Rhn" userLabel="bottomView">
-                                <rect key="frame" x="0.0" y="662.33333333333337" width="414" height="73.666666666666629"/>
+                                <rect key="frame" x="0.0" y="921.5" width="768" height="102.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZC-hN-DO9">
-                                        <rect key="frame" x="176" y="19" width="62" height="36"/>
+                                        <rect key="frame" x="326.5" y="33.5" width="115" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Play">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,7 +122,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUT-Om-muB">
-                                        <rect key="frame" x="310.66666666666669" y="0.0" width="82.666666666666686" height="73.666666666666671"/>
+                                        <rect key="frame" x="576" y="0.0" width="153.5" height="102.5"/>
                                         <state key="normal" image="leaderBoard"/>
                                         <connections>
                                             <segue destination="Pme-jp-ydI" kind="show" id="RYd-5r-dv5"/>
@@ -176,10 +175,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVr-mL-bqM" userLabel="topView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="110.33333333333333"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="153.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matchy Matchy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="RBU-xJ-yr7">
-                                        <rect key="frame" x="124.33333333333333" y="7.3333333333333357" width="165.33333333333337" height="96"/>
+                                        <rect key="frame" x="230.5" y="29" width="307" height="96"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="60"/>
                                         <nil key="textColor"/>
                                         <color key="highlightedColor" red="1" green="0.38947337298389539" blue="0.36177995331788126" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -206,25 +205,21 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Hd-Gd-SVQ" userLabel="dividerView">
-                                <rect key="frame" x="206.66666666666666" y="179.33333333333334" width="0.66666666666665719" height="441.33333333333326"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="1" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Euc-CF-3pN">
-                                <rect key="frame" x="0.0" y="638.33333333333337" width="124.33333333333333" height="24"/>
+                                <rect key="frame" x="0.0" y="897.5" width="230.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="gra-KJ-btG">
-                                <rect key="frame" x="289.66666666666669" y="642.33333333333337" width="124.33333333333331" height="20"/>
+                                <rect key="frame" x="537.5" y="901.5" width="230.5" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGL-gC-ZfH" userLabel="constraintView4">
-                                <rect key="frame" x="62" y="143.33333333333334" width="290" height="88.333333333333343"/>
+                                <rect key="frame" x="134.5" y="193" width="499" height="102.5"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="jn1-ia-32M" userLabel="View0" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="-4.6666666666666643" y="0.0" width="67.666666666666671" height="88.333333333333329"/>
+                                        <rect key="frame" x="1" y="0.0" width="86.5" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES" image="YES"/>
@@ -234,7 +229,7 @@
                                         </connections>
                                     </view>
                                     <view tag="2" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="v25-L8-Mgi" userLabel="View2" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="146.66666666666666" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
+                                        <rect key="frame" x="206.5" y="0.0" width="87" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -244,7 +239,7 @@
                                         </connections>
                                     </view>
                                     <view tag="1" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="iZR-2W-mYP" userLabel="View1" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="71" y="0.0" width="67.666666666666686" height="88.333333333333329"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="87" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -254,14 +249,14 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ttq-3v-Ft3" userLabel="View20" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83.5"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="412" y="0.0" width="87" height="102.5"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VLZ-F6-165"/>
                                         </connections>
                                     </view>
                                     <view tag="3" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Mva-V2-u5W" userLabel="View3" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="222.33333333333329" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
+                                        <rect key="frame" x="309.5" y="0.0" width="86.5" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -292,7 +287,7 @@
                                     <constraint firstItem="Ttq-3v-Ft3" firstAttribute="leading" secondItem="Mva-V2-u5W" secondAttribute="trailing" constant="16" id="Yi1-dF-gkU"/>
                                     <constraint firstItem="Mva-V2-u5W" firstAttribute="centerY" secondItem="TGL-gC-ZfH" secondAttribute="centerY" id="YvR-03-v4g"/>
                                     <constraint firstAttribute="trailing" secondItem="Mva-V2-u5W" secondAttribute="trailing" id="Zrp-BH-r56"/>
-                                    <constraint firstItem="Ttq-3v-Ft3" firstAttribute="width" secondItem="TGL-gC-ZfH" secondAttribute="width" multiplier="0.1855" id="bw7-5I-iMx"/>
+                                    <constraint firstItem="Ttq-3v-Ft3" firstAttribute="width" secondItem="TGL-gC-ZfH" secondAttribute="width" multiplier="0.174" id="bw7-5I-iMx"/>
                                     <constraint firstItem="iZR-2W-mYP" firstAttribute="centerY" secondItem="v25-L8-Mgi" secondAttribute="centerY" id="cJh-wN-T2F"/>
                                     <constraint firstItem="jn1-ia-32M" firstAttribute="centerY" secondItem="iZR-2W-mYP" secondAttribute="centerY" id="dF0-hx-Q6c"/>
                                     <constraint firstItem="v25-L8-Mgi" firstAttribute="leading" secondItem="iZR-2W-mYP" secondAttribute="trailing" constant="8" id="eDw-MH-Hie"/>
@@ -393,10 +388,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byZ-7g-2eY" userLabel="constriantView3">
-                                <rect key="frame" x="62" y="239.66666666666666" width="290" height="88.333333333333343"/>
+                                <rect key="frame" x="134.5" y="303.5" width="499" height="102.5"/>
                                 <subviews>
                                     <view tag="4" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-mK-cGV" userLabel="View4" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="-4.6666666666666643" y="0.0" width="67.666666666666671" height="88.333333333333329"/>
+                                        <rect key="frame" x="1" y="0.0" width="86.5" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -406,7 +401,7 @@
                                         </connections>
                                     </view>
                                     <view tag="5" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="pIa-VR-9bI" userLabel="View5" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="71" y="0.0" width="67.666666666666686" height="88.333333333333329"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="87" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -416,7 +411,7 @@
                                         </connections>
                                     </view>
                                     <view tag="6" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="9me-MO-mIc" userLabel="View6" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="146.66666666666666" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
+                                        <rect key="frame" x="206.5" y="0.0" width="87" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -426,14 +421,14 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SQO-j6-e3C" userLabel="View21" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83.5"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="412" y="0.0" width="87" height="102.5"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wPZ-K3-bNH"/>
                                         </connections>
                                     </view>
                                     <view tag="7" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oTV-aH-8Yx" userLabel="View7" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="222.33333333333329" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
+                                        <rect key="frame" x="309.5" y="0.0" width="86.5" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -449,7 +444,7 @@
                                     <constraint firstItem="9me-MO-mIc" firstAttribute="height" secondItem="oTV-aH-8Yx" secondAttribute="height" id="1SN-XI-yvt"/>
                                     <constraint firstItem="5gF-mK-cGV" firstAttribute="top" secondItem="byZ-7g-2eY" secondAttribute="top" id="3EA-sy-249"/>
                                     <constraint firstItem="9me-MO-mIc" firstAttribute="top" secondItem="byZ-7g-2eY" secondAttribute="top" id="3Vn-7h-aFL"/>
-                                    <constraint firstItem="SQO-j6-e3C" firstAttribute="width" secondItem="byZ-7g-2eY" secondAttribute="width" multiplier="0.1855" id="3db-1I-bqM"/>
+                                    <constraint firstItem="SQO-j6-e3C" firstAttribute="width" secondItem="byZ-7g-2eY" secondAttribute="width" multiplier="0.174" id="3db-1I-bqM"/>
                                     <constraint firstAttribute="trailing" secondItem="SQO-j6-e3C" secondAttribute="trailing" id="4gA-6g-pb6"/>
                                     <constraint firstAttribute="bottom" secondItem="oTV-aH-8Yx" secondAttribute="bottom" id="5FZ-t2-XLP"/>
                                     <constraint firstItem="pIa-VR-9bI" firstAttribute="centerY" secondItem="9me-MO-mIc" secondAttribute="centerY" id="5RY-e7-roG"/>
@@ -565,10 +560,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLL-Vv-Cjo" userLabel="constraintView2">
-                                <rect key="frame" x="62" y="336" width="290" height="88"/>
+                                <rect key="frame" x="134.5" y="414" width="499" height="102"/>
                                 <subviews>
                                     <view tag="10" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="o2v-XA-2hy" userLabel="View10" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="146.66666666666666" y="0.0" width="67.666666666666657" height="88"/>
+                                        <rect key="frame" x="206.5" y="0.0" width="87" height="102"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -578,7 +573,7 @@
                                         </connections>
                                     </view>
                                     <view tag="9" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0sa-ZE-c1X" userLabel="View9" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="71" y="0.0" width="67.666666666666686" height="88"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="87" height="102"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -588,7 +583,7 @@
                                         </connections>
                                     </view>
                                     <view tag="8" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="W27-xg-aPU" userLabel="View8" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="-4.6666666666666643" y="0.0" width="67.666666666666671" height="88"/>
+                                        <rect key="frame" x="1" y="0.0" width="86.5" height="102"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -598,7 +593,7 @@
                                         </connections>
                                     </view>
                                     <view tag="11" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aeO-Pm-ht3" userLabel="View11" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="222.33333333333329" y="0.0" width="67.666666666666657" height="88"/>
+                                        <rect key="frame" x="309.5" y="0.0" width="86.5" height="102"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -608,8 +603,8 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5A0-nN-uKF" userLabel="View22" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83.5"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="412" y="0.0" width="87" height="102"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K1i-pI-5Jk"/>
                                         </connections>
@@ -629,7 +624,7 @@
                                     <constraint firstItem="0sa-ZE-c1X" firstAttribute="leading" secondItem="W27-xg-aPU" secondAttribute="trailing" constant="8.0000000000000284" id="GN9-zr-Wzj"/>
                                     <constraint firstItem="o2v-XA-2hy" firstAttribute="centerY" secondItem="aeO-Pm-ht3" secondAttribute="centerY" id="IkO-bX-NSF"/>
                                     <constraint firstItem="5A0-nN-uKF" firstAttribute="leading" secondItem="aeO-Pm-ht3" secondAttribute="trailing" constant="16" id="LCh-Dq-ok2"/>
-                                    <constraint firstItem="5A0-nN-uKF" firstAttribute="width" secondItem="JLL-Vv-Cjo" secondAttribute="width" multiplier="0.1855" id="O1S-9v-l84"/>
+                                    <constraint firstItem="5A0-nN-uKF" firstAttribute="width" secondItem="JLL-Vv-Cjo" secondAttribute="width" multiplier="0.174" id="O1S-9v-l84"/>
                                     <constraint firstItem="0sa-ZE-c1X" firstAttribute="width" secondItem="o2v-XA-2hy" secondAttribute="width" id="QQF-fm-4se"/>
                                     <constraint firstItem="aeO-Pm-ht3" firstAttribute="top" secondItem="JLL-Vv-Cjo" secondAttribute="top" id="SQt-zY-Cth"/>
                                     <constraint firstItem="0sa-ZE-c1X" firstAttribute="height" secondItem="o2v-XA-2hy" secondAttribute="height" id="U0r-wv-u2w"/>
@@ -737,10 +732,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDq-Wa-DNL" userLabel="constraintView1">
-                                <rect key="frame" x="62" y="432" width="290" height="88.333333333333371"/>
+                                <rect key="frame" x="134.5" y="524" width="499" height="102.5"/>
                                 <subviews>
                                     <view tag="13" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="gdr-0l-i3q" userLabel="View13" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="71" y="0.0" width="67.666666666666686" height="88.333333333333329"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="87" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -750,7 +745,7 @@
                                         </connections>
                                     </view>
                                     <view tag="14" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oNf-1c-LM2" userLabel="View14" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="146.66666666666666" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
+                                        <rect key="frame" x="206.5" y="0.0" width="87" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -760,14 +755,14 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ar-Of-9qj" userLabel="View23" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83.5"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="412" y="0.0" width="87" height="102.5"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hj7-ZV-5Ij"/>
                                         </connections>
                                     </view>
                                     <view tag="15" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="h1e-xY-xVD" userLabel="View15" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="222.33333333333329" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
+                                        <rect key="frame" x="309.5" y="0.0" width="86.5" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -794,7 +789,7 @@
                                     <constraint firstItem="gdr-0l-i3q" firstAttribute="width" secondItem="oNf-1c-LM2" secondAttribute="width" id="TzB-gk-lTP"/>
                                     <constraint firstItem="gdr-0l-i3q" firstAttribute="top" secondItem="dDq-Wa-DNL" secondAttribute="top" id="VSM-q5-raj"/>
                                     <constraint firstItem="oNf-1c-LM2" firstAttribute="width" secondItem="h1e-xY-xVD" secondAttribute="width" id="VxJ-m7-C4k"/>
-                                    <constraint firstItem="1ar-Of-9qj" firstAttribute="width" secondItem="dDq-Wa-DNL" secondAttribute="width" multiplier="0.1855" id="XEV-Qq-AgA"/>
+                                    <constraint firstItem="1ar-Of-9qj" firstAttribute="width" secondItem="dDq-Wa-DNL" secondAttribute="width" multiplier="0.174" id="XEV-Qq-AgA"/>
                                     <constraint firstItem="oNf-1c-LM2" firstAttribute="centerY" secondItem="h1e-xY-xVD" secondAttribute="centerY" id="ZeU-NV-f4s"/>
                                     <constraint firstItem="1ar-Of-9qj" firstAttribute="centerY" secondItem="dDq-Wa-DNL" secondAttribute="centerY" id="b9V-CH-9xr"/>
                                     <constraint firstItem="oNf-1c-LM2" firstAttribute="height" secondItem="h1e-xY-xVD" secondAttribute="height" id="d5d-cA-P6c"/>
@@ -877,10 +872,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3Y-jq-77n" userLabel="constriantView0">
-                                <rect key="frame" x="62" y="528.33333333333337" width="290" height="88.333333333333371"/>
+                                <rect key="frame" x="134.5" y="634.5" width="499" height="102.5"/>
                                 <subviews>
                                     <view tag="18" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Tzk-Z9-MK3" userLabel="View18" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="146.66666666666666" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
+                                        <rect key="frame" x="206.5" y="0.0" width="87" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -890,7 +885,7 @@
                                         </connections>
                                     </view>
                                     <view tag="17" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="W2F-91-TUN" userLabel="View17" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="71" y="0.0" width="67.666666666666686" height="88.333333333333329"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="87" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -900,7 +895,7 @@
                                         </connections>
                                     </view>
                                     <view tag="16" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="0Bl-jT-phB" userLabel="View16" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="-4.6666666666666643" y="0.0" width="67.666666666666671" height="88.333333333333329"/>
+                                        <rect key="frame" x="1" y="0.0" width="86.5" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -910,14 +905,14 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATw-Yr-bty" userLabel="View24" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="412" y="0.0" width="87" height="102.5"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t8g-Zw-5CK"/>
                                         </connections>
                                     </view>
                                     <view tag="19" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-Pr-Jix" userLabel="View19" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="222.33333333333329" y="0.0" width="67.666666666666657" height="88.333333333333329"/>
+                                        <rect key="frame" x="309.5" y="0.0" width="86.5" height="102.5"/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
@@ -956,7 +951,7 @@
                                     <constraint firstItem="EwV-Pr-Jix" firstAttribute="width" secondItem="ATw-Yr-bty" secondAttribute="width" id="ap3-g5-4qi"/>
                                     <constraint firstItem="ATw-Yr-bty" firstAttribute="leading" secondItem="EwV-Pr-Jix" secondAttribute="trailing" constant="16" id="bSG-Oh-0LY"/>
                                     <constraint firstAttribute="bottom" secondItem="W2F-91-TUN" secondAttribute="bottom" id="dEd-CL-Yls"/>
-                                    <constraint firstItem="ATw-Yr-bty" firstAttribute="width" secondItem="j3Y-jq-77n" secondAttribute="width" multiplier="0.1855" id="hI5-IP-cPF"/>
+                                    <constraint firstItem="ATw-Yr-bty" firstAttribute="width" secondItem="j3Y-jq-77n" secondAttribute="width" multiplier="0.174" id="hI5-IP-cPF"/>
                                     <constraint firstItem="W2F-91-TUN" firstAttribute="leading" secondItem="0Bl-jT-phB" secondAttribute="trailing" constant="8.0000000000000142" id="hez-dX-9vn"/>
                                     <constraint firstItem="ATw-Yr-bty" firstAttribute="centerY" secondItem="j3Y-jq-77n" secondAttribute="centerY" id="kjX-w9-Hhb"/>
                                     <constraint firstItem="W2F-91-TUN" firstAttribute="width" secondItem="Tzk-Z9-MK3" secondAttribute="width" id="lFO-4L-dEm"/>
@@ -1053,39 +1048,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qff-pU-qeI" userLabel="constraintViewiPad">
-                                <rect key="frame" x="222.5" y="616.5" width="667" height="83.5"/>
+                                <rect key="frame" x="134.5" y="745" width="499" height="102.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rNS-Fm-24f" userLabel="View25" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="543.5" y="0.0" width="123.5" height="83.5"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="412" y="0.0" width="87" height="102.5"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IUD-oX-cgy"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5n-JM-wXa" userLabel="View26" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="403.5" y="0.0" width="124" height="83.5"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="309.5" y="0.0" width="86.5" height="102.5"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="cardSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SMc-ct-QEv"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNi-t0-KAF" userLabel="View27" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="264" y="0.0" width="123.5" height="83.5"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="206.5" y="0.0" width="87" height="102.5"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfB-x9-SJp" userLabel="View28" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="124" y="0.0" width="124" height="83.5"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="103.5" y="0.0" width="87" height="102.5"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iO5-Oe-zUh" userLabel="View29" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                        <rect key="frame" x="-15.5" y="0.0" width="123.5" height="83.5"/>
-                                        <color key="backgroundColor" red="0.39117980000000002" green="0.68983453510000003" blue="0.70981878040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="1" y="0.0" width="86.5" height="102.5"/>
+                                        <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="iO5-Oe-zUh" firstAttribute="width" secondItem="qfB-x9-SJp" secondAttribute="width" id="3KY-1C-l26"/>
-                                    <constraint firstItem="rNS-Fm-24f" firstAttribute="width" secondItem="qff-pU-qeI" secondAttribute="width" multiplier="0.1855" id="51F-Zr-iIr"/>
+                                    <constraint firstItem="rNS-Fm-24f" firstAttribute="width" secondItem="qff-pU-qeI" secondAttribute="width" multiplier="0.174" id="51F-Zr-iIr"/>
                                     <constraint firstItem="t5n-JM-wXa" firstAttribute="leading" secondItem="bNi-t0-KAF" secondAttribute="trailing" constant="16" id="HJc-FM-Eyw"/>
                                     <constraint firstItem="t5n-JM-wXa" firstAttribute="width" secondItem="rNS-Fm-24f" secondAttribute="width" id="HnW-fc-z4q"/>
                                     <constraint firstItem="iO5-Oe-zUh" firstAttribute="height" secondItem="qfB-x9-SJp" secondAttribute="height" id="Kkq-vc-jfK"/>
@@ -1172,7 +1167,7 @@
                                 </variation>
                             </view>
                             <view tag="12" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="4r6-2B-ifq" userLabel="View12" customClass="Card" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                <rect key="frame" x="57.333333333333336" y="432" width="67.666666666666657" height="88.333333333333371"/>
+                                <rect key="frame" x="135.5" y="524" width="86.5" height="102.5"/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.80000000000000004" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
@@ -1188,7 +1183,6 @@
                             <constraint firstItem="I5i-C1-Rhn" firstAttribute="top" secondItem="gra-KJ-btG" secondAttribute="bottom" id="3H4-dU-4Wm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gra-KJ-btG" secondAttribute="bottom" id="3d6-Th-1Vu"/>
                             <constraint firstItem="I5i-C1-Rhn" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="4K2-Xe-4Rh"/>
-                            <constraint firstItem="5Hd-Gd-SVQ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4ZF-rf-VFh"/>
                             <constraint firstItem="JLL-Vv-Cjo" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.145" id="4k1-pi-CsO"/>
                             <constraint firstItem="dDq-Wa-DNL" firstAttribute="centerX" secondItem="JLL-Vv-Cjo" secondAttribute="centerX" id="5BQ-2c-R5w"/>
                             <constraint firstItem="I5i-C1-Rhn" firstAttribute="top" secondItem="qVr-mL-bqM" secondAttribute="bottom" id="5EY-bc-iak"/>
@@ -1202,16 +1196,12 @@
                             <constraint firstItem="gra-KJ-btG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="Bdp-YL-cAt"/>
                             <constraint firstItem="JLL-Vv-Cjo" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="Bjb-wc-5iq"/>
                             <constraint firstItem="nUT-Om-muB" firstAttribute="centerX" secondItem="gra-KJ-btG" secondAttribute="centerX" id="Bzy-pL-lae"/>
-                            <constraint firstItem="5Hd-Gd-SVQ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="C5K-sj-Jw3"/>
                             <constraint firstItem="JLL-Vv-Cjo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.85" id="D2Y-b9-20y"/>
                             <constraint firstItem="4r6-2B-ifq" firstAttribute="width" secondItem="gdr-0l-i3q" secondAttribute="width" id="EhE-7t-okt"/>
-                            <constraint firstItem="5Hd-Gd-SVQ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.001" id="Ewh-iL-CG8"/>
                             <constraint firstItem="JLL-Vv-Cjo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="HKq-J9-4SB"/>
                             <constraint firstItem="4r6-2B-ifq" firstAttribute="centerY" secondItem="gdr-0l-i3q" secondAttribute="centerY" id="HPK-sv-Nve"/>
                             <constraint firstItem="qff-pU-qeI" firstAttribute="height" secondItem="j3Y-jq-77n" secondAttribute="height" id="HXX-Fl-KMZ"/>
                             <constraint firstItem="qff-pU-qeI" firstAttribute="width" secondItem="j3Y-jq-77n" secondAttribute="width" id="JRi-7A-y7O"/>
-                            <constraint firstItem="5Hd-Gd-SVQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-8" id="JST-yS-PrZ"/>
-                            <constraint firstItem="5Hd-Gd-SVQ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="JvA-hZ-qKx"/>
                             <constraint firstItem="I5i-C1-Rhn" firstAttribute="leading" secondItem="gra-KJ-btG" secondAttribute="trailing" id="K5l-QO-had"/>
                             <constraint firstItem="I5i-C1-Rhn" firstAttribute="top" secondItem="gra-KJ-btG" secondAttribute="bottom" id="KHe-wx-mxL"/>
                             <constraint firstItem="LZC-hN-DO9" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="KaX-w0-euV"/>
@@ -1232,10 +1222,8 @@
                             <constraint firstItem="JLL-Vv-Cjo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VY4-Kk-jFh"/>
                             <constraint firstItem="qVr-mL-bqM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="Vin-ZY-p2W"/>
                             <constraint firstItem="Euc-CF-3pN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="Voj-Un-HxX"/>
-                            <constraint firstItem="5Hd-Gd-SVQ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="WTg-CP-WWi"/>
                             <constraint firstItem="byZ-7g-2eY" firstAttribute="centerX" secondItem="JLL-Vv-Cjo" secondAttribute="centerX" id="YHy-wN-1Gi"/>
                             <constraint firstAttribute="trailing" secondItem="qVr-mL-bqM" secondAttribute="trailing" id="Yi4-Rm-EeS"/>
-                            <constraint firstItem="5Hd-Gd-SVQ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.001" id="bLg-8C-ZIe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gra-KJ-btG" secondAttribute="bottom" id="bjx-CH-jY3"/>
                             <constraint firstItem="I5i-C1-Rhn" firstAttribute="top" secondItem="Euc-CF-3pN" secondAttribute="bottom" id="cZx-dL-MQ2"/>
                             <constraint firstItem="byZ-7g-2eY" firstAttribute="height" secondItem="JLL-Vv-Cjo" secondAttribute="height" id="cwd-2I-aXp"/>
@@ -1246,7 +1234,6 @@
                             <constraint firstAttribute="bottom" secondItem="I5i-C1-Rhn" secondAttribute="bottom" id="fqf-Ze-57A"/>
                             <constraint firstItem="gra-KJ-btG" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="ft0-vb-aUg"/>
                             <constraint firstItem="I5i-C1-Rhn" firstAttribute="top" secondItem="gra-KJ-btG" secondAttribute="bottom" id="geR-C2-3Ph"/>
-                            <constraint firstItem="5Hd-Gd-SVQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hr2-lE-i5a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gra-KJ-btG" secondAttribute="trailing" id="iE7-gu-2uA"/>
                             <constraint firstItem="dDq-Wa-DNL" firstAttribute="height" secondItem="JLL-Vv-Cjo" secondAttribute="height" id="iXQ-GM-ZPc"/>
                             <constraint firstItem="byZ-7g-2eY" firstAttribute="width" secondItem="JLL-Vv-Cjo" secondAttribute="width" id="jAf-p5-eBh"/>
@@ -1256,7 +1243,7 @@
                             <constraint firstItem="byZ-7g-2eY" firstAttribute="top" secondItem="TGL-gC-ZfH" secondAttribute="bottom" constant="8" id="m7L-wg-1if"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gra-KJ-btG" secondAttribute="bottom" constant="2" id="o1z-bh-8HF"/>
                             <constraint firstItem="qVr-mL-bqM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="qUf-BJ-XyQ"/>
-                            <constraint firstItem="JLL-Vv-Cjo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="quq-wA-MRY"/>
+                            <constraint firstItem="JLL-Vv-Cjo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.65" id="quq-wA-MRY"/>
                             <constraint firstItem="4r6-2B-ifq" firstAttribute="height" secondItem="gdr-0l-i3q" secondAttribute="height" id="r0q-i4-rA0"/>
                             <constraint firstItem="j3Y-jq-77n" firstAttribute="centerX" secondItem="dDq-Wa-DNL" secondAttribute="centerX" id="rAI-Us-ciU"/>
                             <constraint firstItem="JLL-Vv-Cjo" firstAttribute="top" secondItem="byZ-7g-2eY" secondAttribute="bottom" constant="8" id="s04-OU-BPe"/>
@@ -1281,10 +1268,6 @@
                                 <exclude reference="iE7-gu-2uA"/>
                                 <exclude reference="o1z-bh-8HF"/>
                                 <exclude reference="qUf-BJ-XyQ"/>
-                                <exclude reference="4ZF-rf-VFh"/>
-                                <exclude reference="JST-yS-PrZ"/>
-                                <exclude reference="JvA-hZ-qKx"/>
-                                <exclude reference="bLg-8C-ZIe"/>
                                 <exclude reference="4k1-pi-CsO"/>
                                 <exclude reference="Bjb-wc-5iq"/>
                                 <exclude reference="D2Y-b9-20y"/>
@@ -1324,14 +1307,6 @@
                                 <exclude reference="o1z-bh-8HF"/>
                                 <exclude reference="RAy-3c-I9e"/>
                                 <include reference="qUf-BJ-XyQ"/>
-                                <include reference="4ZF-rf-VFh"/>
-                                <exclude reference="C5K-sj-Jw3"/>
-                                <exclude reference="Ewh-iL-CG8"/>
-                                <include reference="JST-yS-PrZ"/>
-                                <include reference="JvA-hZ-qKx"/>
-                                <exclude reference="WTg-CP-WWi"/>
-                                <include reference="bLg-8C-ZIe"/>
-                                <exclude reference="hr2-lE-i5a"/>
                                 <include reference="4k1-pi-CsO"/>
                                 <include reference="HKq-J9-4SB"/>
                                 <exclude reference="NXk-5M-MDn"/>
@@ -1380,15 +1355,10 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
-                                <exclude reference="5Hd-Gd-SVQ"/>
                                 <exclude reference="xGZ-iZ-wAE"/>
                                 <include reference="qff-pU-qeI"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="C5K-sj-Jw3"/>
-                                <exclude reference="Ewh-iL-CG8"/>
-                                <exclude reference="WTg-CP-WWi"/>
-                                <exclude reference="hr2-lE-i5a"/>
                                 <include reference="Bjb-wc-5iq"/>
                                 <include reference="D2Y-b9-20y"/>
                                 <exclude reference="NXk-5M-MDn"/>
@@ -1461,6 +1431,7 @@
                         <outletCollection property="iPadCards" destination="o2v-XA-2hy" collectionClass="NSMutableArray" id="Aiw-cg-V7w"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3999.6093749999995" y="102.34260614934114"/>
         </scene>
@@ -1469,68 +1440,68 @@
             <objects>
                 <tableViewController id="Pme-jp-ydI" customClass="ScoresTableViewController" customModule="SharkeyEric_4_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LbU-1Z-kYH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scoreCell" rowHeight="106" id="dCf-sM-BBt" customClass="ScoresTableViewCell" customModule="SharkeyEric_4_1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="106"/>
+                                <rect key="frame" x="0.0" y="28" width="768" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dCf-sM-BBt" id="wiZ-FQ-jed">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="105.66666666666667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="105.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65m-27-Kny">
-                                            <rect key="frame" x="20" y="0.0" width="62" height="105.66666666666667"/>
+                                            <rect key="frame" x="20" y="0.0" width="115" height="105.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-Iw-hSM">
-                                            <rect key="frame" x="102" y="4" width="50" height="21"/>
+                                            <rect key="frame" x="155" y="4" width="50" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tAI-4w-JeR">
-                                            <rect key="frame" x="172" y="54" width="248.66666666666663" height="21"/>
+                                            <rect key="frame" x="225" y="54" width="461" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="CSC-15-ROH">
-                                            <rect key="frame" x="102" y="54" width="55" height="21"/>
+                                            <rect key="frame" x="155" y="54" width="55" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0uu-vO-I5M">
-                                            <rect key="frame" x="172" y="79" width="248.66666666666663" height="20.666666666666671"/>
+                                            <rect key="frame" x="225" y="79" width="461" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="hkA-rN-PvE">
-                                            <rect key="frame" x="102" y="79" width="41" height="21"/>
+                                            <rect key="frame" x="155" y="79" width="41" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Egc-OO-KLh">
-                                            <rect key="frame" x="172" y="29" width="248.66666666666663" height="21"/>
+                                            <rect key="frame" x="225" y="29" width="461" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="a9b-vC-PEC">
-                                            <rect key="frame" x="102" y="29" width="43" height="21"/>
+                                            <rect key="frame" x="155" y="29" width="43" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hEx-YK-4b3">
-                                            <rect key="frame" x="172" y="4" width="248.66666666666663" height="21"/>
+                                            <rect key="frame" x="225" y="4" width="461" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1593,7 +1564,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c7x-HM-tqK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tJf-D9-78r">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1607,7 +1578,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="leaderBoard" width="75" height="75"/>
-        <image name="play" width="512" height="512"/>
+        <image name="leaderBoard" width="45" height="45"/>
+        <image name="play" width="256" height="256"/>
     </resources>
 </document>
